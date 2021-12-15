@@ -9,18 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     name: build
     steps:
-
-      # first checkout your code
       - name: Checkout
         uses: actions/checkout@v2
-
-      # then use redoc-cli-github-action to generate your HTML bundle
       - run: npm i -g redoc-cli
       - run: redoc-cli bundle oas.yml
-      - run: ls
       - run: mkdir build
       - run: mv redoc-static.html build/index.html
-      - run: ls build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
