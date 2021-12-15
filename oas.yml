@@ -33,22 +33,19 @@ info:
 
     <SecurityDefinitions />
 
-    ## Generating the user identification
-    HelloGold API requires user identification to be included, as part of any request. The user identification consists of:
-    - Partner ID, provided to you as part of the partner onboarding
-    - Partner's User ID, which is a unique identifier that you used to identify the user on your platform.
+    ## Passing the user identification
+    HelloGold API requires both the API key, and user identification to be included, as part of any request.
 
     Example:
     ```
     # APIKEY = cvh1l4o8vhd8vgoqi8r4rea4i
     # USERID = 727ab067-28d9-4938-9ba1-64acfc373e7f
-    # APIUSER = ${APIKEY}_${USERID}
 
     curl --request GET \
       --url https://stage-api.hellogold.com/v1/al/placeholder \
       --header 'Content-Type: application/json' \
       --header "x-api-key": "'"$APIKEY"'", \
-      --header "x-user-id": "'"$APIUSER"'", \
+      --header "x-user-id": "'"$USERID"'", \
     ```
 servers:
   - url: 'https://stage-api.hellogold.com'
