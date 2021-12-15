@@ -997,6 +997,154 @@ paths:
         - accounts
       operationId: getTransactions
     parameters: []
+  /v1/al/quotes/create:
+    post:
+      summary: Create a quote
+      description: Create a new quote for a user.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    userid: 61b991538bf8fd18d922b1a7_4aca60ca-a95f-4e70-a002-57a39034b942
+                    type: quote
+                    action: buy
+                    created_at: '2021-12-15T06:55:15+00:00'
+                    updated_at: '2021-12-15T06:55:36+00:00'
+                    expire_on: '2021-12-15T06:57:15+00:00'
+                    status: accepted
+                    transition:
+                      accepted: '2021-12-15T06:55:36+00:00'
+                    details:
+                      line_items:
+                        - id: DGLD-001
+                          symbol: GLD
+                          amount: '1.32100014'
+                          value: '320.12'
+                          uom: g
+                      subtotal: '320.12'
+                      discount: '1.00'
+                      tax: '0.00'
+                      shipping: '0.00'
+                      total: '319.12'
+                properties:
+                  userid:
+                    type: string
+                    minLength: 1
+                  type:
+                    type: string
+                    minLength: 1
+                  action:
+                    type: string
+                    minLength: 1
+                  created_at:
+                    type: string
+                    minLength: 1
+                  updated_at:
+                    type: string
+                    minLength: 1
+                  expire_on:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                  transition:
+                    type: object
+                    properties:
+                      accepted:
+                        type: string
+                        minLength: 1
+                  details:
+                    type: object
+                    properties:
+                      line_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              minLength: 1
+                            symbol:
+                              type: string
+                              minLength: 1
+                            amount:
+                              type: string
+                              minLength: 1
+                            value:
+                              type: string
+                              minLength: 1
+                            uom:
+                              type: string
+                              minLength: 1
+                      subtotal:
+                        type: string
+                        minLength: 1
+                      discount:
+                        type: string
+                        minLength: 1
+                      tax:
+                        type: string
+                        minLength: 1
+                      shipping:
+                        type: string
+                        minLength: 1
+                      total:
+                        type: string
+                        minLength: 1
+              example:
+                value:
+                  type: quote
+                  action: buy
+                  status: open
+                  userid: 61b991537b1f9e1e10d444e5_9a578ce0-258e-4d65-842f-f73302b4285b
+                  details:
+                    tax: '0.00'
+                    total: '319.12'
+                    discount: '1.00'
+                    shipping: '0.00'
+                    subtotal: '320.12'
+                    line_items:
+                      - id: DGLD-001
+                        uom: g
+                        value: '320.12'
+                        amount: '1.32100014'
+                        symbol: GLD
+                  expire_on: '2021-12-15T06:57:15+00:00'
+                  created_at: '2021-12-15T06:55:15+00:00'
+                  updated_at: '2021-12-15T06:55:36+00:00'
+      tags:
+        - transactions
+      operationId: createQuote
+    parameters: []
   /v1/al/quotes/retrieve:
     get:
       summary: Get a quote
@@ -1146,154 +1294,6 @@ paths:
       tags:
         - transactions
       operationId: getQuote
-    parameters: []
-  /v1/al/quotes/create:
-    post:
-      summary: Create a quote
-      description: Create a new quote for a user.
-      parameters:
-        - name: x-api-key
-          in: header
-          schema:
-            type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
-          required: true
-          description: The API key required for authentication.
-        - name: x-user-id
-          in: header
-          schema:
-            type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
-          required: true
-          description: The unique identifier of the user.
-      responses:
-        '200':
-          description: OK
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                description: ''
-                type: object
-                x-examples:
-                  example-1:
-                    userid: 61b991538bf8fd18d922b1a7_4aca60ca-a95f-4e70-a002-57a39034b942
-                    type: quote
-                    action: buy
-                    created_at: '2021-12-15T06:55:15+00:00'
-                    updated_at: '2021-12-15T06:55:36+00:00'
-                    expire_on: '2021-12-15T06:57:15+00:00'
-                    status: accepted
-                    transition:
-                      accepted: '2021-12-15T06:55:36+00:00'
-                    details:
-                      line_items:
-                        - id: DGLD-001
-                          symbol: GLD
-                          amount: '1.32100014'
-                          value: '320.12'
-                          uom: g
-                      subtotal: '320.12'
-                      discount: '1.00'
-                      tax: '0.00'
-                      shipping: '0.00'
-                      total: '319.12'
-                properties:
-                  userid:
-                    type: string
-                    minLength: 1
-                  type:
-                    type: string
-                    minLength: 1
-                  action:
-                    type: string
-                    minLength: 1
-                  created_at:
-                    type: string
-                    minLength: 1
-                  updated_at:
-                    type: string
-                    minLength: 1
-                  expire_on:
-                    type: string
-                    minLength: 1
-                  status:
-                    type: string
-                    minLength: 1
-                  transition:
-                    type: object
-                    properties:
-                      accepted:
-                        type: string
-                        minLength: 1
-                  details:
-                    type: object
-                    properties:
-                      line_items:
-                        type: array
-                        uniqueItems: true
-                        minItems: 1
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              minLength: 1
-                            symbol:
-                              type: string
-                              minLength: 1
-                            amount:
-                              type: string
-                              minLength: 1
-                            value:
-                              type: string
-                              minLength: 1
-                            uom:
-                              type: string
-                              minLength: 1
-                      subtotal:
-                        type: string
-                        minLength: 1
-                      discount:
-                        type: string
-                        minLength: 1
-                      tax:
-                        type: string
-                        minLength: 1
-                      shipping:
-                        type: string
-                        minLength: 1
-                      total:
-                        type: string
-                        minLength: 1
-              example:
-                value:
-                  type: quote
-                  action: buy
-                  status: open
-                  userid: 61b991537b1f9e1e10d444e5_9a578ce0-258e-4d65-842f-f73302b4285b
-                  details:
-                    tax: '0.00'
-                    total: '319.12'
-                    discount: '1.00'
-                    shipping: '0.00'
-                    subtotal: '320.12'
-                    line_items:
-                      - id: DGLD-001
-                        uom: g
-                        value: '320.12'
-                        amount: '1.32100014'
-                        symbol: GLD
-                  expire_on: '2021-12-15T06:57:15+00:00'
-                  created_at: '2021-12-15T06:55:15+00:00'
-                  updated_at: '2021-12-15T06:55:36+00:00'
-      tags:
-        - transactions
-      operationId: createQuote
     parameters: []
   /v1/al/quotes/accept:
     get:
