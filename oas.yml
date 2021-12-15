@@ -1,0 +1,1425 @@
+openapi: 3.0.0
+info:
+  title: HelloGold API (draft)
+  version: 1.0.0
+  contact:
+    name: API Support
+    email: test@hellogold.com
+    url: 'https://github.com/myHelloGold'
+  x-logo:
+    url: 'https://hg-web-app-assets.s3.ap-southeast-1.amazonaws.com/201129_hg_logo_rgb_white_stacked.png'
+    altText: HelloGold logo
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  description: |-
+    # Introduction
+    Welcome to HelloGold API, which is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
+
+    ## Versioning
+
+    The current API version is v1. The version is specified in the URL.
+
+    ## Contact us
+
+    Need help? Feel free to get in touch with our team by sending an email to us at hello@hellogold.com
+
+    # Authentication
+    HelloGold API uses API keys to authenticate requests. At the moment, API keys will only be provided to selected partners, manually.
+
+    Please ensure that you keep your API keys secure. Do not share your secret API keys publicly.
+
+    All requests should be made over HTTPS. Any calls made over plain HTTP, or without authentication will fail.
+
+    <SecurityDefinitions />
+
+    ## Generating the user identification
+    HelloGold API requires user identification to be included, as part of any request. The user identification consists of:
+    - Partner ID, provided to you as part of the partner onboarding
+    - Partner's User ID, which is a unique identifier that you used to identify the user on your platform.
+
+    Example:
+    ```
+    # APIKEY = cvh1l4o8vhd8vgoqi8r4rea4i
+    # USERID = 727ab067-28d9-4938-9ba1-64acfc373e7f
+    # APIUSER = ${APIKEY}_${USERID}
+
+    curl --request GET \
+      --url https://stage-api.hellogold.com/v1/al/placeholder \
+      --header 'Content-Type: application/json' \
+      --header "x-api-key": "'"$APIKEY"'", \
+      --header "x-user-id": "'"$APIUSER"'", \
+    ```
+servers:
+  - url: 'https://stage-api.hellogold.com'
+paths:
+  /v1/al/accounts/create:
+    post:
+      summary: Create an account
+      description: Create a new account for a user.
+      requestBody:
+        content: {}
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
+                    username: ef376fac-5d38-47e7-b348-9acf72dbc264
+                    status: active
+                    referral_code: lmnwtozuv2q
+                    created_at: '2010-11-06T05:24:37.099Z'
+                    updated_at: '2021-12-15T05:41:51.707Z'
+                    deleted_at: null
+                    balances:
+                      - asset: GLD
+                        total_balance: 9.90967941
+                        total_locked_balance: 2.00885041
+                        total_available_balance: 8.32374403
+                        accrued_fees: 0.67424463
+                        uom: g
+                    configuration:
+                      buy_enabled: false
+                      sell_enabled: true
+                      smartsaver_enabled: true
+                      transfer_enabled: false
+                      withdrwa_enabled: false
+                    recent_transactions:
+                      - type: Buy Gold
+                        status: in-progress
+                        timestamp: '2020-12-30T10:37:51.832Z'
+                        amount: 4.44378483
+                        value: 2522.96
+                      - type: Sell Gold
+                        status: cancelled
+                        timestamp: '2020-04-18T21:41:13.616Z'
+                        amount: 2.68128136
+                        value: 4537.15
+                      - type: Buy Gold
+                        status: in-progress
+                        timestamp: '2020-04-02T02:51:58.458Z'
+                        amount: 7.04860872
+                        value: 3926.27
+                properties:
+                  userid:
+                    type: string
+                    minLength: 1
+                    description: The unique identifier for the account.
+                  username:
+                    type: string
+                    minLength: 1
+                    description: The username for the account.
+                  status:
+                    type: string
+                    minLength: 1
+                    description: The status of the account.
+                  referral_code:
+                    type: string
+                    minLength: 1
+                    description: The referral code for the account.
+                  created_at:
+                    type: string
+                    minLength: 1
+                    description: Timestamp of when the account was created.
+                  updated_at:
+                    type: string
+                    minLength: 1
+                    description: Timestamp of when the account was last updated.
+                  deleted_at:
+                    type: string
+                    description: Timestamp of when the account was deleted.
+                    minLength: 1
+                  balances:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      type: object
+                      properties:
+                        asset:
+                          type: string
+                          minLength: 1
+                          description: The type of asset.
+                        total_balance:
+                          type: number
+                          description: 'The asset''s total balance, which includes both locked balance, and available balance'
+                        total_locked_balance:
+                          type: number
+                          description: The asset's total locked balance.
+                        total_available_balance:
+                          type: number
+                          description: The asset's total available balance.
+                        accrued_fees:
+                          type: number
+                          description: Total fees accrued.
+                        uom:
+                          type: string
+                          minLength: 1
+                          description: The Unit of Measurement (UOM) of the asset.
+                  configuration:
+                    type: object
+                    properties:
+                      buy_enabled:
+                        type: boolean
+                        description: Flag to indicate if buy is enabled for the account.
+                      sell_enabled:
+                        type: boolean
+                        description: Flag to indicate if sell is enabled for the account.
+                      smartsaver_enabled:
+                        type: boolean
+                        description: Flag to indicate if SmartSaver is enabled for the account.
+                      transfer_enabled:
+                        type: boolean
+                        description: Flag to indicate if transfer of assets is enabled for the account.
+                      withdraw_enabled:
+                        type: boolean
+                        description: Flag to indicate if withdrawal of funds is enabled for the account.
+                  recent_transactions:
+                    type: array
+                    uniqueItems: true
+                    minItems: 0
+                    maxItems: 5
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          minLength: 1
+                          description: The type of the transaction.
+                        status:
+                          type: string
+                          minLength: 1
+                          description: The status of the transaction.
+                        timestamp:
+                          type: string
+                          minLength: 1
+                          description: Timestamp of when the transaction was created.
+                        amount:
+                          type: number
+                          description: The transaction amount of an asset.
+                        value:
+                          type: number
+                          description: 'The transaction value, in fiat.'
+              example:
+                value:
+                  userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
+                  username: ef376fac-5d38-47e7-b348-9acf72dbc264
+                  status: active
+                  referral_code: lmnwtozuv2q
+                  created_at: '2010-11-06T05:24:37.099Z'
+                  updated_at: '2021-12-15T05:41:51.707Z'
+                  deleted_at: null
+                  balances:
+                    - asset: GLD
+                      total_balance: 9.90967941
+                      total_locked_balance: 2.00885041
+                      total_available_balance: 8.32374403
+                      accrued_fees: 0.67424463
+                      uom: g
+                  configuration:
+                    buy_enabled: false
+                    sell_enabled: true
+                    smartsaver_enabled: true
+                    transfer_enabled: false
+                    withdrwa_enabled: false
+                  recent_transactions:
+                    - type: Buy Gold
+                      status: in-progress
+                      timestamp: '2020-12-30T10:37:51.832Z'
+                      amount: 4.44378483
+                      value: 2522.96
+                    - type: Sell Gold
+                      status: cancelled
+                      timestamp: '2020-04-18T21:41:13.616Z'
+                      amount: 2.68128136
+                      value: 4537.15
+                    - type: Buy Gold
+                      status: in-progress
+                      timestamp: '2020-04-02T02:51:58.458Z'
+                      amount: 7.04860872
+                      value: 3926.27
+        '400':
+          description: Bad Request
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '':
+                    type: string
+              example:
+                cws_code: '1010'
+                cws_message: partner parameter is missing
+      tags:
+        - accounts
+      operationId: createAccount
+    parameters: []
+  /v1/al/accounts/retrieve:
+    get:
+      tags:
+        - accounts
+      summary: Get an account
+      description: Get information about a user's account.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
+                    username: ef376fac-5d38-47e7-b348-9acf72dbc264
+                    status: active
+                    referral_code: lmnwtozuv2q
+                    created_at: '2010-11-06T05:24:37.099Z'
+                    updated_at: '2021-12-15T05:41:51.707Z'
+                    deleted_at: null
+                    balances:
+                      - asset: GLD
+                        total_balance: 9.90967941
+                        total_locked_balance: 2.00885041
+                        total_available_balance: 8.32374403
+                        accrued_fees: 0.67424463
+                        uom: g
+                    configuration:
+                      buy_enabled: false
+                      sell_enabled: true
+                      smartsaver_enabled: true
+                      transfer_enabled: false
+                      withdrwa_enabled: false
+                    recent_transactions:
+                      - type: Buy Gold
+                        status: in-progress
+                        timestamp: '2020-12-30T10:37:51.832Z'
+                        amount: 4.44378483
+                        value: 2522.96
+                      - type: Sell Gold
+                        status: cancelled
+                        timestamp: '2020-04-18T21:41:13.616Z'
+                        amount: 2.68128136
+                        value: 4537.15
+                      - type: Buy Gold
+                        status: in-progress
+                        timestamp: '2020-04-02T02:51:58.458Z'
+                        amount: 7.04860872
+                        value: 3926.27
+                properties:
+                  userid:
+                    type: string
+                    minLength: 1
+                    description: The unique identifier for the account.
+                  username:
+                    type: string
+                    minLength: 1
+                    description: The username for the account.
+                  status:
+                    type: string
+                    minLength: 1
+                    description: The status of the account.
+                  referral_code:
+                    type: string
+                    minLength: 1
+                    description: The referral code for the account.
+                  created_at:
+                    type: string
+                    minLength: 1
+                    description: Timestamp of when the account was created.
+                  updated_at:
+                    type: string
+                    minLength: 1
+                    description: Timestamp of when the account was last updated.
+                  deleted_at:
+                    type: string
+                    description: Timestamp of when the account was deleted.
+                  balances:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      type: object
+                      properties:
+                        asset:
+                          type: string
+                          minLength: 1
+                          description: The type of asset.
+                        total_balance:
+                          type: number
+                          description: 'The asset''s total balance, which includes both locked balance, and available balance'
+                        total_locked_balance:
+                          type: number
+                          description: The asset's total locked balance.
+                        total_available_balance:
+                          type: number
+                          description: The asset's total available balance.
+                        accrued_fees:
+                          type: number
+                          description: Total fees accrued.
+                        uom:
+                          type: string
+                          minLength: 1
+                          description: The Unit of Measurement (UOM) of the asset.
+                  configuration:
+                    type: object
+                    properties:
+                      buy_enabled:
+                        type: boolean
+                        description: Flag to indicate if buy is enabled for the account.
+                      sell_enabled:
+                        type: boolean
+                        description: Flag to indicate if sell is enabled for the account.
+                      smartsaver_enabled:
+                        type: boolean
+                        description: Flag to indicate if SmartSaver is enabled for the account.
+                      transfer_enabled:
+                        type: boolean
+                        description: Flag to indicate if transfer of assets is enabled for the account.
+                      withdraw_enabled:
+                        type: boolean
+                        description: Flag to indicate if withdrawal of funds is enabled for the account.
+                  recent_transactions:
+                    type: array
+                    uniqueItems: true
+                    minItems: 0
+                    maxItems: 5
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          minLength: 1
+                          description: The type of the transaction.
+                        status:
+                          type: string
+                          minLength: 1
+                          description: The status of the transaction.
+                        timestamp:
+                          type: string
+                          minLength: 1
+                          description: Timestamp of when the transaction was created.
+                        amount:
+                          type: number
+                          description: The transaction amount of an asset.
+                        value:
+                          type: number
+                          description: 'The transaction value, in fiat.'
+              example:
+                value:
+                  userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
+                  username: ef376fac-5d38-47e7-b348-9acf72dbc264
+                  status: active
+                  referral_code: lmnwtozuv2q
+                  created_at: '2010-11-06T05:24:37.099Z'
+                  updated_at: '2021-12-15T05:41:51.707Z'
+                  deleted_at: null
+                  balances:
+                    - asset: GLD
+                      total_balance: 9.90967941
+                      total_locked_balance: 2.00885041
+                      total_available_balance: 8.32374403
+                      accrued_fees: 0.67424463
+                      uom: g
+                  configuration:
+                    buy_enabled: false
+                    sell_enabled: true
+                    smartsaver_enabled: true
+                    transfer_enabled: false
+                    withdrwa_enabled: false
+                  recent_transactions:
+                    - type: Buy Gold
+                      status: in-progress
+                      timestamp: '2020-12-30T10:37:51.832Z'
+                      amount: 4.44378483
+                      value: 2522.96
+                    - type: Sell Gold
+                      status: cancelled
+                      timestamp: '2020-04-18T21:41:13.616Z'
+                      amount: 2.68128136
+                      value: 4537.15
+                    - type: Buy Gold
+                      status: in-progress
+                      timestamp: '2020-04-02T02:51:58.458Z'
+                      amount: 7.04860872
+                      value: 3926.27
+      operationId: getAccount
+    parameters: []
+  /v1/al/accounts/update:
+    get:
+      tags:
+        - accounts
+      summary: Update an account
+      description: Update the information tied to a user's account.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                customers:
+                  - name: Blanche Devereux
+                  - name: Rose Nylund
+                  - name: Shady Pines
+                mission_names:
+                  - FalconSat
+                  - DemoSat
+                  - Trailblazer
+                  - RatSat
+                  - RazakSat
+                  - Falcon 9 Test Flight
+                  - COTS 1
+                  - COTS 2
+                  - CRS-1
+                  - CRS-2
+                  - CASSIOPE
+                  - SES-8
+                  - Thaicom 6
+                  - CRS-3
+                  - OG-2 Mission 1
+                  - AsiaSat 8
+                  - AsiaSat 6
+                  - CRS-4
+                  - CRS-5
+                  - DSCOVR
+                  - ABS-3A / Eutelsat 115W B
+                  - CRS-6
+                  - TürkmenÄlem 52°E / MonacoSAT
+                  - CRS-7
+                  - OG-2 Mission 2
+                  - Jason 3
+                  - SES-9
+                  - CRS-8
+                  - JCSAT-2B
+                  - Thaicom 8
+                  - ABS-2A / Eutelsat 117W B
+                  - CRS-9
+                  - JCSAT-16
+                  - Amos-6
+                  - Iridium NEXT Mission 1
+                  - CRS-10
+                  - EchoStar 23
+                  - SES-10
+                  - NROL-76
+                  - Inmarsat-5 F4
+                  - CRS-11
+                  - BulgariaSat-1
+                  - Iridium NEXT Mission 2
+                  - Intelsat 35e
+                  - CRS-12
+                  - FormoSat-5
+                  - Boeing X-37B OTV-5
+                  - Iridium NEXT Mission 3
+                  - SES-11 / Echostar 105
+                  - KoreaSat 5A
+                  - CRS-13
+                  - Iridium NEXT Mission 4
+                  - ZUMA
+                  - SES-16 / GovSat-1
+                  - Falcon Heavy Test Flight
+                  - Paz / Starlink Demo
+                  - Hispasat 30W-6
+                  - Iridium NEXT Mission 5
+                  - CRS-14
+                  - TESS
+                  - Bangabandhu-1
+                  - Iridium NEXT Mission 6
+                  - SES-12
+                  - CRS-15
+                  - Telstar 19V
+                  - Iridium NEXT Mission 7
+                  - Merah Putih
+                  - Telstar 18V
+                  - SAOCOM 1A
+                  - Es’hail 2
+                  - SSO-A
+                  - CRS-16
+                  - GPS III SV01
+                  - Iridium NEXT Mission 8
+                  - Nusantara Satu (PSN-6) / S5 / Beresheet
+                  - CCtCap Demo Mission 1
+                  - ArabSat 6A
+                  - CRS-17
+                  - Starlink v0.9
+                  - RADARSAT Constellation
+                  - STP-2
+                  - CRS-18
+                  - Amos-17
+                  - Starlink 1
+                  - CRS-19
+                  - JCSat 18 / Kacific 1
+                  - Starlink 2
+                  - Crew Dragon In Flight Abort Test
+                  - Starlink 3
+                  - Starlink 4
+                  - CRS-20
+                  - Starlink 5
+                  - Starlink 6
+                  - CCtCap Demo Mission 2
+                  - Starlink 7
+                  - Starlink-8 & SkySat 16-18
+                  - GPS III SV03 (Columbus)
+                  - ANASIS-II
+                  - Starlink-9 (v1.0) & BlackSky Global 5-6
+                  - Starlink-10 (v1.0) & SkySat 19-21
+                  - 'SAOCOM 1B, GNOMES-1, Tyvak-0172'
+                  - Starlink-11 (v1.0)
+                  - Starlink-12 (v1.0)
+                  - Starlink-13 (v1.0)
+                  - Starlink-14 (v1.0)
+                  - GPS III SV04 (Sacagawea)
+                  - Crew-1
+                  - Sentinel-6 Michael Freilich
+                  - Starlink-15 (v1.0)
+                bpi:
+                  USD:
+                    code: USD
+                    symbol: '&#36;'
+                    rate: '48,957.1667'
+                    description: United States Dollar
+                    rate_float: 48957.1667
+                  GBP:
+                    code: GBP
+                    symbol: '&pound;'
+                    rate: '36,893.3864'
+                    description: British Pound Sterling
+                    rate_float: 36893.3864
+                  EUR:
+                    code: EUR
+                    symbol: '&euro;'
+                    rate: '43,259.8254'
+                    description: Euro
+                    rate_float: 43259.8254
+      operationId: updateAccount
+    parameters: []
+  /v1/al/accounts/delete:
+    get:
+      tags:
+        - accounts
+      summary: Delete an account
+      description: Delete a user's account.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                customers:
+                  - name: Blanche Devereux
+                  - name: Rose Nylund
+                  - name: Shady Pines
+                mission_names:
+                  - FalconSat
+                  - DemoSat
+                  - Trailblazer
+                  - RatSat
+                  - RazakSat
+                  - Falcon 9 Test Flight
+                  - COTS 1
+                  - COTS 2
+                  - CRS-1
+                  - CRS-2
+                  - CASSIOPE
+                  - SES-8
+                  - Thaicom 6
+                  - CRS-3
+                  - OG-2 Mission 1
+                  - AsiaSat 8
+                  - AsiaSat 6
+                  - CRS-4
+                  - CRS-5
+                  - DSCOVR
+                  - ABS-3A / Eutelsat 115W B
+                  - CRS-6
+                  - TürkmenÄlem 52°E / MonacoSAT
+                  - CRS-7
+                  - OG-2 Mission 2
+                  - Jason 3
+                  - SES-9
+                  - CRS-8
+                  - JCSAT-2B
+                  - Thaicom 8
+                  - ABS-2A / Eutelsat 117W B
+                  - CRS-9
+                  - JCSAT-16
+                  - Amos-6
+                  - Iridium NEXT Mission 1
+                  - CRS-10
+                  - EchoStar 23
+                  - SES-10
+                  - NROL-76
+                  - Inmarsat-5 F4
+                  - CRS-11
+                  - BulgariaSat-1
+                  - Iridium NEXT Mission 2
+                  - Intelsat 35e
+                  - CRS-12
+                  - FormoSat-5
+                  - Boeing X-37B OTV-5
+                  - Iridium NEXT Mission 3
+                  - SES-11 / Echostar 105
+                  - KoreaSat 5A
+                  - CRS-13
+                  - Iridium NEXT Mission 4
+                  - ZUMA
+                  - SES-16 / GovSat-1
+                  - Falcon Heavy Test Flight
+                  - Paz / Starlink Demo
+                  - Hispasat 30W-6
+                  - Iridium NEXT Mission 5
+                  - CRS-14
+                  - TESS
+                  - Bangabandhu-1
+                  - Iridium NEXT Mission 6
+                  - SES-12
+                  - CRS-15
+                  - Telstar 19V
+                  - Iridium NEXT Mission 7
+                  - Merah Putih
+                  - Telstar 18V
+                  - SAOCOM 1A
+                  - Es’hail 2
+                  - SSO-A
+                  - CRS-16
+                  - GPS III SV01
+                  - Iridium NEXT Mission 8
+                  - Nusantara Satu (PSN-6) / S5 / Beresheet
+                  - CCtCap Demo Mission 1
+                  - ArabSat 6A
+                  - CRS-17
+                  - Starlink v0.9
+                  - RADARSAT Constellation
+                  - STP-2
+                  - CRS-18
+                  - Amos-17
+                  - Starlink 1
+                  - CRS-19
+                  - JCSat 18 / Kacific 1
+                  - Starlink 2
+                  - Crew Dragon In Flight Abort Test
+                  - Starlink 3
+                  - Starlink 4
+                  - CRS-20
+                  - Starlink 5
+                  - Starlink 6
+                  - CCtCap Demo Mission 2
+                  - Starlink 7
+                  - Starlink-8 & SkySat 16-18
+                  - GPS III SV03 (Columbus)
+                  - ANASIS-II
+                  - Starlink-9 (v1.0) & BlackSky Global 5-6
+                  - Starlink-10 (v1.0) & SkySat 19-21
+                  - 'SAOCOM 1B, GNOMES-1, Tyvak-0172'
+                  - Starlink-11 (v1.0)
+                  - Starlink-12 (v1.0)
+                  - Starlink-13 (v1.0)
+                  - Starlink-14 (v1.0)
+                  - GPS III SV04 (Sacagawea)
+                  - Crew-1
+                  - Sentinel-6 Michael Freilich
+                  - Starlink-15 (v1.0)
+                bpi:
+                  USD:
+                    code: USD
+                    symbol: '&#36;'
+                    rate: '48,957.1667'
+                    description: United States Dollar
+                    rate_float: 48957.1667
+                  GBP:
+                    code: GBP
+                    symbol: '&pound;'
+                    rate: '36,893.3864'
+                    description: British Pound Sterling
+                    rate_float: 36893.3864
+                  EUR:
+                    code: EUR
+                    symbol: '&euro;'
+                    rate: '43,259.8254'
+                    description: Euro
+                    rate_float: 43259.8254
+      operationId: deleteAccount
+    parameters: []
+  /v1/al/accounts/balance:
+    get:
+      tags:
+        - accounts
+      summary: Get wallet balance of an account
+      description: Get information about a specific user's account balance.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_727ab067-28d9-4938-9ba1-64acfc373e7f
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+              description: The MIME type of the resource or the data.
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    userid: cvh1l4o8vhd8vgoqi8r4rea4i_727ab067-28d9-4938-9ba1-64acfc373e7f
+                    balances:
+                      - asset: gold
+                        total_balance: '20.9896461'
+                        total_locked_balance: TODO
+                        total_available_balance: '4931.21'
+                        accrued_fees: '0.012647828005'
+                        uom: g
+                      - asset: fiat
+                        total_balance: '0.00'
+                        total_locked_balance: TODO
+                        total_available_balance: '4931.21'
+                        accrued_fees: '0.012647828005'
+                        uom: RM
+                properties:
+                  userid:
+                    type: string
+                    minLength: 1
+                    description: The unique identifier of the user.
+                  balances:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      type: object
+                      properties:
+                        asset:
+                          type: string
+                          description: The type of asset.
+                          minLength: 1
+                        total_balance:
+                          type: string
+                          minLength: 1
+                          description: 'The asset''s total balance, which includes both locked balance, and available balance.'
+                        total_locked_balance:
+                          type: string
+                          minLength: 1
+                          description: The asset's total locked balance.
+                        total_available_balance:
+                          type: string
+                          minLength: 1
+                          description: The asset's total available balance.
+                        accrued_fees:
+                          type: string
+                          minLength: 1
+                          description: Total fees accrued.
+                        uom:
+                          type: string
+                          minLength: 1
+                          description: The Unit of Measurement (UOM) of the asset.
+              example:
+                userid: cvh1l4o8vhd8vgoqi8r4rea4i_727ab067-28d9-4938-9ba1-64acfc373e7f
+                balances:
+                  - asset: gold
+                    total_balance: '20.9896461'
+                    total_locked_balance: TODO
+                    total_available_balance: '4931.21'
+                    accrued_fees: '0.012647828005'
+                    uom: g
+                  - asset: fiat
+                    total_balance: '0.00'
+                    total_locked_balance: TODO
+                    total_available_balance: '4931.21'
+                    accrued_fees: '0.012647828005'
+                    uom: RM
+      operationId: getBalance
+    parameters: []
+  /v1/al/accounts/transactions:
+    get:
+      summary: Get transactions for an account
+      description: Get a list of past transactions tied to a user's account.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                records:
+                  - id: '134052'
+                    created_at: '2021-11-30T16:36:15Z'
+                    currency: GLD
+                    txtype: management_fee
+                    amount: '0.01035'
+                    start_date: '2021-11-21T16:22:38Z'
+                    end_date: '2021-11-29T16:22:12Z'
+                  - id: '13046'
+                    created_at: '2021-11-22T05:50:17Z'
+                    txtype: cash_to_gold_topup
+                    currency: MYR
+                    spot_price: null
+                    amount: '20.00'
+                    fee: null
+                    spread: null
+                    fee_rate: null
+                    spread_rate: null
+                  - id: '13045'
+                    created_at: '2021-11-22T05:45:25Z'
+                    txtype: cash_to_gold_topup
+                    currency: MYR
+                    spot_price: null
+                    amount: '20.00'
+                    fee: null
+                    spread: null
+                    fee_rate: null
+                    spread_rate: null
+      tags:
+        - accounts
+      operationId: getTransactions
+    parameters: []
+  /v1/al/quotes/retrieve:
+    get:
+      summary: Get a quote
+      description: Get information about a specific quote.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                value:
+                  type: quote
+                  action: buy
+                  status: accepted
+                  userid: 61b991537b1f9e1e10d444e5_9a578ce0-258e-4d65-842f-f73302b4285b
+                  details:
+                    tax: '0.00'
+                    total: '319.12'
+                    discount: '1.00'
+                    shipping: '0.00'
+                    subtotal: '320.12'
+                    line_items:
+                      - id: DGLD-001
+                        uom: g
+                        value: '320.12'
+                        amount: '1.32100014'
+                        symbol: GLD
+                  expire_on: '2021-12-15T06:57:15+00:00'
+                  created_at: '2021-12-15T06:55:15+00:00'
+                  transition:
+                    accepted: '2021-12-15T06:55:36+00:00'
+                  updated_at: '2021-12-15T06:55:36+00:00'
+      tags:
+        - transactions
+      operationId: getQuote
+    parameters: []
+  /v1/al/quotes/create:
+    get:
+      summary: Create a quote
+      description: Create a new quote for a user.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    userid: 61b991538bf8fd18d922b1a7_4aca60ca-a95f-4e70-a002-57a39034b942
+                    type: quote
+                    action: buy
+                    created_at: '2021-12-15T06:55:15+00:00'
+                    updated_at: '2021-12-15T06:55:36+00:00'
+                    expire_on: '2021-12-15T06:57:15+00:00'
+                    status: accepted
+                    transition:
+                      accepted: '2021-12-15T06:55:36+00:00'
+                    details:
+                      line_items:
+                        - id: DGLD-001
+                          symbol: GLD
+                          amount: '1.32100014'
+                          value: '320.12'
+                          uom: g
+                      subtotal: '320.12'
+                      discount: '1.00'
+                      tax: '0.00'
+                      shipping: '0.00'
+                      total: '319.12'
+                properties:
+                  userid:
+                    type: string
+                    minLength: 1
+                  type:
+                    type: string
+                    minLength: 1
+                  action:
+                    type: string
+                    minLength: 1
+                  created_at:
+                    type: string
+                    minLength: 1
+                  updated_at:
+                    type: string
+                    minLength: 1
+                  expire_on:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                  transition:
+                    type: object
+                    properties:
+                      accepted:
+                        type: string
+                        minLength: 1
+                  details:
+                    type: object
+                    properties:
+                      line_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              minLength: 1
+                            symbol:
+                              type: string
+                              minLength: 1
+                            amount:
+                              type: string
+                              minLength: 1
+                            value:
+                              type: string
+                              minLength: 1
+                            uom:
+                              type: string
+                              minLength: 1
+                      subtotal:
+                        type: string
+                        minLength: 1
+                      discount:
+                        type: string
+                        minLength: 1
+                      tax:
+                        type: string
+                        minLength: 1
+                      shipping:
+                        type: string
+                        minLength: 1
+                      total:
+                        type: string
+                        minLength: 1
+              example:
+                value:
+                  type: quote
+                  action: buy
+                  status: open
+                  userid: 61b991537b1f9e1e10d444e5_9a578ce0-258e-4d65-842f-f73302b4285b
+                  details:
+                    tax: '0.00'
+                    total: '319.12'
+                    discount: '1.00'
+                    shipping: '0.00'
+                    subtotal: '320.12'
+                    line_items:
+                      - id: DGLD-001
+                        uom: g
+                        value: '320.12'
+                        amount: '1.32100014'
+                        symbol: GLD
+                  expire_on: '2021-12-15T06:57:15+00:00'
+                  created_at: '2021-12-15T06:55:15+00:00'
+                  updated_at: '2021-12-15T06:55:36+00:00'
+      tags:
+        - transactions
+      operationId: createQuote
+    parameters: []
+  /v1/al/quotes/accept:
+    get:
+      summary: Accept a quote
+      description: Accept an existing quote for a user.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                records:
+                  - id: '134052'
+                    created_at: '2021-11-30T16:36:15Z'
+                    currency: GLD
+                    txtype: management_fee
+                    amount: '0.01035'
+                    start_date: '2021-11-21T16:22:38Z'
+                    end_date: '2021-11-29T16:22:12Z'
+                  - id: '13046'
+                    created_at: '2021-11-22T05:50:17Z'
+                    txtype: cash_to_gold_topup
+                    currency: MYR
+                    spot_price: null
+                    amount: '20.00'
+                    fee: null
+                    spread: null
+                    fee_rate: null
+                    spread_rate: null
+                  - id: '13045'
+                    created_at: '2021-11-22T05:45:25Z'
+                    txtype: cash_to_gold_topup
+                    currency: MYR
+                    spot_price: null
+                    amount: '20.00'
+                    fee: null
+                    spread: null
+                    fee_rate: null
+                    spread_rate: null
+      tags:
+        - transactions
+      operationId: acceptQuote
+    parameters: []
+  /v1/al/quotes/delete:
+    get:
+      summary: Delete a quote
+      description: Delete an existing quote for a user.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                records:
+                  - id: '134052'
+                    created_at: '2021-11-30T16:36:15Z'
+                    currency: GLD
+                    txtype: management_fee
+                    amount: '0.01035'
+                    start_date: '2021-11-21T16:22:38Z'
+                    end_date: '2021-11-29T16:22:12Z'
+                  - id: '13046'
+                    created_at: '2021-11-22T05:50:17Z'
+                    txtype: cash_to_gold_topup
+                    currency: MYR
+                    spot_price: null
+                    amount: '20.00'
+                    fee: null
+                    spread: null
+                    fee_rate: null
+                    spread_rate: null
+                  - id: '13045'
+                    created_at: '2021-11-22T05:45:25Z'
+                    txtype: cash_to_gold_topup
+                    currency: MYR
+                    spot_price: null
+                    amount: '20.00'
+                    fee: null
+                    spread: null
+                    fee_rate: null
+                    spread_rate: null
+      tags:
+        - transactions
+      operationId: deleteQuote
+    parameters: []
+  /v1/al/orders/create:
+    get:
+      summary: Create an order
+      description: Create a new order for a user.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          required: true
+          description: The unique identifier of the user.
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                records:
+                  - id: '134052'
+                    created_at: '2021-11-30T16:36:15Z'
+                    currency: GLD
+                    txtype: management_fee
+                    amount: '0.01035'
+                    start_date: '2021-11-21T16:22:38Z'
+                    end_date: '2021-11-29T16:22:12Z'
+                  - id: '13046'
+                    created_at: '2021-11-22T05:50:17Z'
+                    txtype: cash_to_gold_topup
+                    currency: MYR
+                    spot_price: null
+                    amount: '20.00'
+                    fee: null
+                    spread: null
+                    fee_rate: null
+                    spread_rate: null
+                  - id: '13045'
+                    created_at: '2021-11-22T05:45:25Z'
+                    txtype: cash_to_gold_topup
+                    currency: MYR
+                    spot_price: null
+                    amount: '20.00'
+                    fee: null
+                    spread: null
+                    fee_rate: null
+                    spread_rate: null
+      tags:
+        - transactions
+      operationId: createOrder
+    parameters: []
+  /v1/al/accounts/create - copy:
+    parameters: []
+  /v1/al/accounts/balance - copy:
+    parameters: []
+  /v1/al/bank-list: {}
+  /v1/al/user-kyc: {}
+  /v1/al/resend-email: {}
+  /v1/al/check-email-verification: {}
+  /v1/al/countries: {}
+  /v1/al/promo-code: {}
+  /v1/al/user-tier: {}
+  /v1/al/goals: {}
+  /v1/al/goal: {}
+  /v1/al/notifications: {}
+  /v1/al/user-policy: {}
+  /v1/al/mandate-quotation: {}
+  /v1/al/my-new-endpoint: {}
+components:
+  securitySchemes:
+    x-api-key:
+      name: x-api-key
+      type: apiKey
+      in: header
+security:
+  - x-api-key: []
