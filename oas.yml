@@ -1,10 +1,10 @@
 openapi: 3.0.0
 info:
-  title: HelloGold API (in progress)
+  title: HelloGold API (draft)
   version: 1.0.0
   contact:
     name: API Support
-    email: test@hellogold.com
+    email: apiteam@hellogold.com
     url: 'https://github.com/myHelloGold'
   x-logo:
     url: 'https://hg-web-app-assets.s3.ap-southeast-1.amazonaws.com/201129_hg_logo_rgb_white_stacked.png'
@@ -495,7 +495,7 @@ paths:
       operationId: getAccount
     parameters: []
   /v1/al/accounts/update:
-    get:
+    put:
       tags:
         - accounts
       summary: Update an account
@@ -664,7 +664,7 @@ paths:
       operationId: updateAccount
     parameters: []
   /v1/al/accounts/delete:
-    get:
+    delete:
       tags:
         - accounts
       summary: Delete an account
@@ -1030,7 +1030,99 @@ paths:
           content:
             application/json:
               schema:
+                description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    type: quote
+                    action: buy
+                    status: accepted
+                    userid: 61b991538bf8fd18d922b1a7_4aca60ca-a95f-4e70-a002-57a39034b942
+                    details:
+                      tax: '0.00'
+                      total: '319.12'
+                      discount: '1.00'
+                      shipping: '0.00'
+                      subtotal: '320.12'
+                      line_items:
+                        - id: DGLD-001
+                          uom: g
+                          value: '320.12'
+                          amount: '1.32100014'
+                          symbol: GLD
+                    expire_on: '2021-12-15T06:57:15+00:00'
+                    created_at: '2021-12-15T06:55:15+00:00'
+                    transition:
+                      accepted: '2021-12-15T06:55:36+00:00'
+                    updated_at: '2021-12-15T06:55:36+00:00'
+                properties:
+                  type:
+                    type: string
+                    minLength: 1
+                  action:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                  userid:
+                    type: string
+                    minLength: 1
+                  details:
+                    type: object
+                    properties:
+                      tax:
+                        type: string
+                        minLength: 1
+                      total:
+                        type: string
+                        minLength: 1
+                      discount:
+                        type: string
+                        minLength: 1
+                      shipping:
+                        type: string
+                        minLength: 1
+                      subtotal:
+                        type: string
+                        minLength: 1
+                      line_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              minLength: 1
+                            uom:
+                              type: string
+                              minLength: 1
+                            value:
+                              type: string
+                              minLength: 1
+                            amount:
+                              type: string
+                              minLength: 1
+                            symbol:
+                              type: string
+                              minLength: 1
+                  expire_on:
+                    type: string
+                    minLength: 1
+                  created_at:
+                    type: string
+                    minLength: 1
+                  transition:
+                    type: object
+                    properties:
+                      accepted:
+                        type: string
+                        minLength: 1
+                  updated_at:
+                    type: string
+                    minLength: 1
               example:
                 value:
                   type: quote
@@ -1059,7 +1151,7 @@ paths:
       operationId: getQuote
     parameters: []
   /v1/al/quotes/create:
-    get:
+    post:
       summary: Create a quote
       description: Create a new quote for a user.
       parameters:
@@ -1271,7 +1363,7 @@ paths:
       operationId: acceptQuote
     parameters: []
   /v1/al/quotes/delete:
-    get:
+    delete:
       summary: Delete a quote
       description: Delete an existing quote for a user.
       parameters:
@@ -1335,7 +1427,7 @@ paths:
       operationId: deleteQuote
     parameters: []
   /v1/al/orders/create:
-    get:
+    post:
       summary: Create an order
       description: Create a new order for a user.
       parameters:
