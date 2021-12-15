@@ -38,14 +38,14 @@ info:
 
     Example:
     ```
-    # APIKEY = 0912535a-5d76-4c6e-8f30-c0bc54f78074
-    # USERID = 727ab067-28d9-4938-9ba1-64acfc373e7f
+    # x-api-key = 0912535a-5d76-4c6e-8f30-c0bc54f78074
+    # x-user-id = 727ab067-28d9-4938-9ba1-64acfc373e7f
 
     curl --request GET \
       --url https://stage-api.hellogold.com/v1/al/placeholder \
       --header 'Content-Type: application/json' \
-      --header "x-api-key": "'"$APIKEY"'", \
-      --header "x-user-id": "'"$USERID"'", \
+      --header "x-api-key": "0912535a-5d76-4c6e-8f30-c0bc54f78074", \
+      --header "x-user-id": "727ab067-28d9-4938-9ba1-64acfc373e7f", \
     ```
 servers:
   - url: 'https://stage-api.hellogold.com'
