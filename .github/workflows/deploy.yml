@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Test
+    name: build
     steps:
 
       # first checkout your code
@@ -15,7 +15,17 @@ jobs:
         uses: actions/checkout@v2
 
       # then use redoc-cli-github-action to generate your HTML bundle
-      - name: redoc-cli test
+      - name: redoc-cli bundle
         uses: seeebiii/redoc-cli-github-action@v10
         with:
           args: 'oas.yml'
+
+      - run: mkdir build
+      - run: ls
+      - run: mv index.html build/index.html
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          keep_files: true
