@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: HelloGold API (draft)
+  title: HelloGold API (in progress)
   version: 1.0.0
   contact:
     name: API Support
