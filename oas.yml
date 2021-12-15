@@ -38,7 +38,7 @@ info:
 
     Example:
     ```
-    # APIKEY = cvh1l4o8vhd8vgoqi8r4rea4i
+    # APIKEY = 0912535a-5d76-4c6e-8f30-c0bc54f78074
     # USERID = 727ab067-28d9-4938-9ba1-64acfc373e7f
 
     curl --request GET \
