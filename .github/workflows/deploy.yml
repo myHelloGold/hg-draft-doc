@@ -19,7 +19,7 @@ jobs:
       - run: redoc-cli bundle oas.yml
       - run: ls
       - run: mkdir build
-      - run: mv index.html build/index.html
+      - run: mv redoc-static.html build/index.html
       - run: ls build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
