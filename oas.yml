@@ -68,7 +68,7 @@ paths:
           in: header
           schema:
             type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
       responses:
@@ -298,7 +298,7 @@ paths:
           in: header
           schema:
             type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
       responses:
@@ -509,7 +509,7 @@ paths:
           in: header
           schema:
             type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
       responses:
@@ -678,7 +678,7 @@ paths:
           in: header
           schema:
             type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
       responses:
@@ -847,7 +847,7 @@ paths:
           in: header
           schema:
             type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_727ab067-28d9-4938-9ba1-64acfc373e7f
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
       responses:
@@ -866,7 +866,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: cvh1l4o8vhd8vgoqi8r4rea4i_727ab067-28d9-4938-9ba1-64acfc373e7f
+                    userid: 727ab067-28d9-4938-9ba1-64acfc373e7f
                     balances:
                       - asset: gold
                         total_balance: '20.9896461'
@@ -917,7 +917,7 @@ paths:
                           minLength: 1
                           description: The Unit of Measurement (UOM) of the asset.
               example:
-                userid: cvh1l4o8vhd8vgoqi8r4rea4i_727ab067-28d9-4938-9ba1-64acfc373e7f
+                userid: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 balances:
                   - asset: gold
                     total_balance: '20.9896461'
@@ -949,7 +949,7 @@ paths:
           in: header
           schema:
             type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
       responses:
@@ -1013,7 +1013,7 @@ paths:
           in: header
           schema:
             type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
       responses:
@@ -1161,7 +1161,7 @@ paths:
           in: header
           schema:
             type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
       responses:
@@ -1311,7 +1311,7 @@ paths:
           in: header
           schema:
             type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
       responses:
@@ -1375,7 +1375,7 @@ paths:
           in: header
           schema:
             type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
       responses:
@@ -1439,7 +1439,7 @@ paths:
           in: header
           schema:
             type: string
-          example: cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
       responses:
