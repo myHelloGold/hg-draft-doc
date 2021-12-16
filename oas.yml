@@ -1633,7 +1633,7 @@ paths:
                   minLength: 1
                 remark:
                   type: string
-                  minLength: 1
+                  minLength: 0
                 status:
                   type: string
                   minLength: 1
@@ -1658,6 +1658,19 @@ paths:
                 updated_at:
                   type: string
                   minLength: 1
+            example:
+              type: order
+              total: '320.12'
+              action: buy
+              remark: ''
+              status: completed
+              userid: 61badd45b881e46b9081c00f_e6f6035a-6902-4134-b249-985d74963b10
+              checksum: F5C6398E6EF2F2695F045Df5c27b7e80
+              reference:
+                hg: 61badd454c7c033061e18f20
+                quote: 61badd459e29a1d268cc9bcc
+                partner: 61badd453944e8df8a8b7602
+              updated_at: '2021-12-16T06:31:54+00:00'
   /v1/al/accounts/balance - copy:
     parameters: []
   /v1/al/bank-list: {}
