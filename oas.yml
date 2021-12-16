@@ -1625,50 +1625,39 @@ paths:
                 type:
                   type: string
                   minLength: 1
-                  readOnly: true
                 total:
                   type: string
                   minLength: 1
-                  readOnly: true
                 action:
                   type: string
                   minLength: 1
-                  readOnly: true
                 remark:
                   type: string
                   minLength: 1
-                  readOnly: true
                 status:
                   type: string
                   minLength: 1
-                  readOnly: true
                 userid:
                   type: string
                   minLength: 1
-                  readOnly: true
                 checksum:
                   type: string
                   minLength: 1
-                  readOnly: true
                 reference:
                   type: object
                   properties:
                     hg:
                       type: string
                       minLength: 1
-                      readOnly: true
                     quote:
                       type: string
                       minLength: 1
-                      readOnly: true
                     partner:
                       type: string
                       minLength: 1
-                      readOnly: true
                 updated_at:
                   type: string
                   minLength: 1
-                  readOnly: true
   /v1/al/accounts/balance - copy:
     parameters: []
   /v1/al/bank-list: {}
