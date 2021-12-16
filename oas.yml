@@ -1671,6 +1671,7 @@ paths:
                 quote: 61badd459e29a1d268cc9bcc
                 partner: 61badd453944e8df8a8b7602
               updated_at: '2021-12-16T06:31:54+00:00'
+      security: []
   /v1/al/accounts/balance - copy:
     parameters: []
   /v1/al/bank-list: {}
