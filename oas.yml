@@ -45,10 +45,11 @@ info:
       --url https://stage-api.hellogold.com/v1/al/placeholder \
       --header 'Content-Type: application/json' \
       --header "x-api-key": "'"$APIKEY"'", \
-      --header "x-user-id": "'"$USERID"'", \
+      --header "x-user-id": "'"$USERID"'",
     ```
 servers:
   - url: 'https://stage-api.hellogold.com'
+  - url: 'https://callback.partner.com'
 paths:
   /v1/al/accounts/create:
     post:
