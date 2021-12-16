@@ -1448,7 +1448,7 @@ paths:
         - schema:
             type: string
           in: header
-          name: partner-ref-id
+          name: refId
           description: 'The reference id of the order, used internally by the partner.'
           required: true
       responses:
@@ -1605,8 +1605,70 @@ paths:
         content:
           application/json:
             schema:
+              description: ''
               type: object
-              properties: {}
+              x-examples:
+                example-1:
+                  type: order
+                  total: '320.12'
+                  action: buy
+                  remark: veniam cillum eu
+                  status: completed
+                  userid: 61badd45b881e46b9081c00f_e6f6035a-6902-4134-b249-985d74963b10
+                  checksum: F5C6398E6EF2F2695F045Df5c27b7e80
+                  reference:
+                    hg: 61badd454c7c033061e18f20
+                    quote: 61badd459e29a1d268cc9bcc
+                    partner: 61badd453944e8df8a8b7602
+                  updated_at: '2021-12-16T06:31:54+00:00'
+              properties:
+                type:
+                  type: string
+                  minLength: 1
+                  readOnly: true
+                total:
+                  type: string
+                  minLength: 1
+                  readOnly: true
+                action:
+                  type: string
+                  minLength: 1
+                  readOnly: true
+                remark:
+                  type: string
+                  minLength: 1
+                  readOnly: true
+                status:
+                  type: string
+                  minLength: 1
+                  readOnly: true
+                userid:
+                  type: string
+                  minLength: 1
+                  readOnly: true
+                checksum:
+                  type: string
+                  minLength: 1
+                  readOnly: true
+                reference:
+                  type: object
+                  properties:
+                    hg:
+                      type: string
+                      minLength: 1
+                      readOnly: true
+                    quote:
+                      type: string
+                      minLength: 1
+                      readOnly: true
+                    partner:
+                      type: string
+                      minLength: 1
+                      readOnly: true
+                updated_at:
+                  type: string
+                  minLength: 1
+                  readOnly: true
   /v1/al/accounts/balance - copy:
     parameters: []
   /v1/al/bank-list: {}
