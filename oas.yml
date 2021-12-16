@@ -916,6 +916,7 @@ paths:
                           type: string
                           minLength: 1
                           description: The Unit of Measurement (UOM) of the asset.
+                          nullable: true
               example:
                 userid: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 balances:
@@ -1105,6 +1106,7 @@ paths:
                             uom:
                               type: string
                               minLength: 1
+                              nullable: true
                       subtotal:
                         type: string
                         minLength: 1
@@ -1244,6 +1246,7 @@ paths:
                             uom:
                               type: string
                               minLength: 1
+                              nullable: true
                             value:
                               type: string
                               minLength: 1
@@ -1453,36 +1456,121 @@ paths:
           content:
             application/json:
               schema:
+                description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    userid: 61bac056d778242d5a454b11_93b477f1-594e-459a-b985-83070a397d09
+                    type: order
+                    action: buy
+                    created_at: '2021-12-16T04:28:06+00:00'
+                    updated_at: '2021-12-16T04:28:27+00:00'
+                    expire_on: '2021-12-16T04:30:06+00:00'
+                    status: open
+                    details:
+                      line_items:
+                        - id: DGLD-001
+                          symbol: GLD
+                          amount: '1.32100014'
+                          value: '320.12'
+                          uom: g
+                      subtotal: '320.12'
+                      discount: '1.00'
+                      tax: '0.00'
+                      shipping: '0.00'
+                      total: '319.12'
+                    related:
+                      quote: 61bac056ea54bcc8cf6e15e2
+                properties:
+                  userid:
+                    type: string
+                    minLength: 1
+                  type:
+                    type: string
+                    minLength: 1
+                  action:
+                    type: string
+                    minLength: 1
+                  created_at:
+                    type: string
+                    minLength: 1
+                  updated_at:
+                    type: string
+                    minLength: 1
+                  expire_on:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                  details:
+                    type: object
+                    properties:
+                      line_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              minLength: 1
+                            symbol:
+                              type: string
+                              minLength: 1
+                            amount:
+                              type: string
+                              minLength: 1
+                            value:
+                              type: string
+                              minLength: 1
+                            uom:
+                              type: string
+                              minLength: 1
+                      subtotal:
+                        type: string
+                        minLength: 1
+                      discount:
+                        type: string
+                        minLength: 1
+                      tax:
+                        type: string
+                        minLength: 1
+                      shipping:
+                        type: string
+                        minLength: 1
+                      total:
+                        type: string
+                        minLength: 1
+                  related:
+                    type: object
+                    properties:
+                      quote:
+                        type: string
+                        minLength: 1
               example:
-                records:
-                  - id: '134052'
-                    created_at: '2021-11-30T16:36:15Z'
-                    currency: GLD
-                    txtype: management_fee
-                    amount: '0.01035'
-                    start_date: '2021-11-21T16:22:38Z'
-                    end_date: '2021-11-29T16:22:12Z'
-                  - id: '13046'
-                    created_at: '2021-11-22T05:50:17Z'
-                    txtype: cash_to_gold_topup
-                    currency: MYR
-                    spot_price: null
-                    amount: '20.00'
-                    fee: null
-                    spread: null
-                    fee_rate: null
-                    spread_rate: null
-                  - id: '13045'
-                    created_at: '2021-11-22T05:45:25Z'
-                    txtype: cash_to_gold_topup
-                    currency: MYR
-                    spot_price: null
-                    amount: '20.00'
-                    fee: null
-                    spread: null
-                    fee_rate: null
-                    spread_rate: null
+                userid: 61bac056d778242d5a454b11_93b477f1-594e-459a-b985-83070a397d09
+                type: order
+                action: buy
+                created_at: '2021-12-16T04:28:06+00:00'
+                updated_at: '2021-12-16T04:28:27+00:00'
+                expire_on: '2021-12-16T04:30:06+00:00'
+                status: open
+                details:
+                  line_items:
+                    - id: DGLD-001
+                      symbol: GLD
+                      amount: '1.32100014'
+                      value: '320.12'
+                      uom: g
+                  subtotal: '320.12'
+                  discount: '1.00'
+                  tax: '0.00'
+                  shipping: '0.00'
+                  total: '319.12'
+                related:
+                  quote: 61bac056ea54bcc8cf6e15e2
       tags:
         - transactions
       operationId: createOrder
