@@ -1575,8 +1575,20 @@ paths:
         - transactions
       operationId: createOrder
     parameters: []
-  /v1/al/accounts/create - copy:
-    parameters: []
+  '/{partnerCallbackURL}':
+    parameters:
+      - schema:
+          type: string
+        name: partnerCallbackURL
+        in: path
+        required: true
+    post:
+      summary: Test Callback
+      operationId: posttest
+      responses:
+        '200':
+          description: OK
+      description: test
   /v1/al/accounts/balance - copy:
     parameters: []
   /v1/al/bank-list: {}
