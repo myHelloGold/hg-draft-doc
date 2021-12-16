@@ -1575,12 +1575,15 @@ paths:
         - transactions
       operationId: createOrder
     parameters: []
-  /partnerCallbackURL:
+  /partnerCallback:
     parameters: []
     post:
-      summary: '{partnerCallbackURL}'
-      operationId: posttest
-      description: This is to test the description of the endpoints
+      summary: Order callback notification
+      operationId: partnerCallback
+      description: |-
+        HelloGold will post a notification request to partner's callback URL when an order is either successful or failed. Partners are encourage to acknowledge this transaction.
+
+        Partner does not need to test this endpoint as this is an endpoint that will be triggered from HelloGold to the partner's server.
       tags:
         - transactions
       responses:
