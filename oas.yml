@@ -49,7 +49,6 @@ info:
     ```
 servers:
   - url: 'https://stage-api.hellogold.com'
-  - url: 'https://callback.partner.com'
 paths:
   /v1/al/accounts/create:
     post:
@@ -1576,20 +1575,17 @@ paths:
         - transactions
       operationId: createOrder
     parameters: []
-  '/{partnerCallbackURL}':
-    parameters:
-      - schema:
-          type: string
-        name: partnerCallbackURL
-        in: path
-        required: true
+  /partnerCallbackURL:
+    parameters: []
     post:
-      summary: Test Callback
+      summary: '{partnerCallbackURL}'
       operationId: posttest
+      description: This is to test the description of the endpoints
+      tags:
+        - transactions
       responses:
         '200':
           description: OK
-      description: test
   /v1/al/accounts/balance - copy:
     parameters: []
   /v1/al/bank-list: {}
