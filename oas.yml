@@ -1445,6 +1445,12 @@ paths:
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
+        - schema:
+            type: string
+          in: header
+          name: partner-ref-id
+          description: 'The reference id of the order, used internally by the partner.'
+          required: true
       responses:
         '200':
           description: OK
@@ -1460,13 +1466,13 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61bac056d778242d5a454b11_93b477f1-594e-459a-b985-83070a397d09
+                    userid: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
                     type: order
                     action: buy
-                    created_at: '2021-12-16T04:28:06+00:00'
-                    updated_at: '2021-12-16T04:28:27+00:00'
-                    expire_on: '2021-12-16T04:30:06+00:00'
-                    status: open
+                    created_at: '2021-12-16T06:06:24+00:00'
+                    updated_at: '2021-12-16T06:06:45+00:00'
+                    expire_on: '2021-12-16T06:08:24+00:00'
+                    status: pending
                     details:
                       line_items:
                         - id: DGLD-001
@@ -1475,12 +1481,13 @@ paths:
                           value: '320.12'
                           uom: g
                       subtotal: '320.12'
-                      discount: '1.00'
+                      discount: '0.00'
                       tax: '0.00'
                       shipping: '0.00'
-                      total: '319.12'
-                    related:
-                      quote: 61bac056ea54bcc8cf6e15e2
+                      total: '320.12'
+                    reference:
+                      quote: 61bad7607723df2833df0ad9
+                      partner: 61bad7600814317188ad4094
                 properties:
                   userid:
                     type: string
@@ -1543,34 +1550,39 @@ paths:
                       total:
                         type: string
                         minLength: 1
-                  related:
+                  reference:
                     type: object
                     properties:
                       quote:
                         type: string
                         minLength: 1
+                      partner:
+                        type: string
+                        minLength: 1
               example:
-                userid: 61bac056d778242d5a454b11_93b477f1-594e-459a-b985-83070a397d09
-                type: order
-                action: buy
-                created_at: '2021-12-16T04:28:06+00:00'
-                updated_at: '2021-12-16T04:28:27+00:00'
-                expire_on: '2021-12-16T04:30:06+00:00'
-                status: open
-                details:
-                  line_items:
-                    - id: DGLD-001
-                      symbol: GLD
-                      amount: '1.32100014'
-                      value: '320.12'
-                      uom: g
-                  subtotal: '320.12'
-                  discount: '1.00'
-                  tax: '0.00'
-                  shipping: '0.00'
-                  total: '319.12'
-                related:
-                  quote: 61bac056ea54bcc8cf6e15e2
+                value:
+                  userid: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
+                  type: order
+                  action: buy
+                  created_at: '2021-12-16T06:06:24+00:00'
+                  updated_at: '2021-12-16T06:06:45+00:00'
+                  expire_on: '2021-12-16T06:08:24+00:00'
+                  status: pending
+                  details:
+                    line_items:
+                      - id: DGLD-001
+                        symbol: GLD
+                        amount: '1.32100014'
+                        value: '320.12'
+                        uom: g
+                    subtotal: '320.12'
+                    discount: '0.00'
+                    tax: '0.00'
+                    shipping: '0.00'
+                    total: '320.12'
+                  reference:
+                    quote: 61bad7607723df2833df0ad9
+                    partner: 61bad7600814317188ad4094
       tags:
         - transactions
       operationId: createOrder
@@ -1589,6 +1601,12 @@ paths:
       responses:
         '200':
           description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
   /v1/al/accounts/balance - copy:
     parameters: []
   /v1/al/bank-list: {}
