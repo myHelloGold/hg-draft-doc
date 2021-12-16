@@ -38,14 +38,14 @@ info:
 
     Example:
     ```
-    # x-api-key = 0912535a-5d76-4c6e-8f30-c0bc54f78074
-    # x-user-id = 727ab067-28d9-4938-9ba1-64acfc373e7f
+    # APIKEY = 0912535a-5d76-4c6e-8f30-c0bc54f78074
+    # USERID = 727ab067-28d9-4938-9ba1-64acfc373e7f
 
     curl --request GET \
       --url https://stage-api.hellogold.com/v1/al/placeholder \
       --header 'Content-Type: application/json' \
-      --header "x-api-key": "0912535a-5d76-4c6e-8f30-c0bc54f78074", \
-      --header "x-user-id": "727ab067-28d9-4938-9ba1-64acfc373e7f", \
+      --header "x-api-key": "'"$APIKEY"'", \
+      --header "x-user-id": "'"$USERID"'", \
     ```
 servers:
   - url: 'https://stage-api.hellogold.com'
@@ -150,6 +150,7 @@ paths:
                     type: string
                     description: Timestamp of when the account was deleted.
                     minLength: 1
+                    nullable: true
                   balances:
                     type: array
                     uniqueItems: true
@@ -222,43 +223,42 @@ paths:
                           type: number
                           description: 'The transaction value, in fiat.'
               example:
-                value:
-                  userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
-                  username: ef376fac-5d38-47e7-b348-9acf72dbc264
-                  status: active
-                  referral_code: lmnwtozuv2q
-                  created_at: '2010-11-06T05:24:37.099Z'
-                  updated_at: '2021-12-15T05:41:51.707Z'
-                  deleted_at: null
-                  balances:
-                    - asset: GLD
-                      total_balance: 9.90967941
-                      total_locked_balance: 2.00885041
-                      total_available_balance: 8.32374403
-                      accrued_fees: 0.67424463
-                      uom: g
-                  configuration:
-                    buy_enabled: false
-                    sell_enabled: true
-                    smartsaver_enabled: true
-                    transfer_enabled: false
-                    withdrwa_enabled: false
-                  recent_transactions:
-                    - type: Buy Gold
-                      status: in-progress
-                      timestamp: '2020-12-30T10:37:51.832Z'
-                      amount: 4.44378483
-                      value: 2522.96
-                    - type: Sell Gold
-                      status: cancelled
-                      timestamp: '2020-04-18T21:41:13.616Z'
-                      amount: 2.68128136
-                      value: 4537.15
-                    - type: Buy Gold
-                      status: in-progress
-                      timestamp: '2020-04-02T02:51:58.458Z'
-                      amount: 7.04860872
-                      value: 3926.27
+                userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
+                username: ef376fac-5d38-47e7-b348-9acf72dbc264
+                status: active
+                referral_code: lmnwtozuv2q
+                created_at: '2010-11-06T05:24:37.099Z'
+                updated_at: '2021-12-15T05:41:51.707Z'
+                deleted_at: null
+                balances:
+                  - asset: GLD
+                    total_balance: 9.90967941
+                    total_locked_balance: 2.00885041
+                    total_available_balance: 8.32374403
+                    accrued_fees: 0.67424463
+                    uom: g
+                configuration:
+                  buy_enabled: false
+                  sell_enabled: true
+                  smartsaver_enabled: true
+                  transfer_enabled: false
+                  withdrwa_enabled: false
+                recent_transactions:
+                  - type: Buy Gold
+                    status: in-progress
+                    timestamp: '2020-12-30T10:37:51.832Z'
+                    amount: 4.44378483
+                    value: 2522.96
+                  - type: Sell Gold
+                    status: cancelled
+                    timestamp: '2020-04-18T21:41:13.616Z'
+                    amount: 2.68128136
+                    value: 4537.15
+                  - type: Buy Gold
+                    status: in-progress
+                    timestamp: '2020-04-02T02:51:58.458Z'
+                    amount: 7.04860872
+                    value: 3926.27
         '400':
           description: Bad Request
           headers:
@@ -380,6 +380,7 @@ paths:
                   deleted_at:
                     type: string
                     description: Timestamp of when the account was deleted.
+                    nullable: true
                   balances:
                     type: array
                     uniqueItems: true
@@ -452,43 +453,42 @@ paths:
                           type: number
                           description: 'The transaction value, in fiat.'
               example:
-                value:
-                  userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
-                  username: ef376fac-5d38-47e7-b348-9acf72dbc264
-                  status: active
-                  referral_code: lmnwtozuv2q
-                  created_at: '2010-11-06T05:24:37.099Z'
-                  updated_at: '2021-12-15T05:41:51.707Z'
-                  deleted_at: null
-                  balances:
-                    - asset: GLD
-                      total_balance: 9.90967941
-                      total_locked_balance: 2.00885041
-                      total_available_balance: 8.32374403
-                      accrued_fees: 0.67424463
-                      uom: g
-                  configuration:
-                    buy_enabled: false
-                    sell_enabled: true
-                    smartsaver_enabled: true
-                    transfer_enabled: false
-                    withdrwa_enabled: false
-                  recent_transactions:
-                    - type: Buy Gold
-                      status: in-progress
-                      timestamp: '2020-12-30T10:37:51.832Z'
-                      amount: 4.44378483
-                      value: 2522.96
-                    - type: Sell Gold
-                      status: cancelled
-                      timestamp: '2020-04-18T21:41:13.616Z'
-                      amount: 2.68128136
-                      value: 4537.15
-                    - type: Buy Gold
-                      status: in-progress
-                      timestamp: '2020-04-02T02:51:58.458Z'
-                      amount: 7.04860872
-                      value: 3926.27
+                userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
+                username: ef376fac-5d38-47e7-b348-9acf72dbc264
+                status: active
+                referral_code: lmnwtozuv2q
+                created_at: '2010-11-06T05:24:37.099Z'
+                updated_at: '2021-12-15T05:41:51.707Z'
+                deleted_at: null
+                balances:
+                  - asset: GLD
+                    total_balance: 9.90967941
+                    total_locked_balance: 2.00885041
+                    total_available_balance: 8.32374403
+                    accrued_fees: 0.67424463
+                    uom: g
+                configuration:
+                  buy_enabled: false
+                  sell_enabled: true
+                  smartsaver_enabled: true
+                  transfer_enabled: false
+                  withdrwa_enabled: false
+                recent_transactions:
+                  - type: Buy Gold
+                    status: in-progress
+                    timestamp: '2020-12-30T10:37:51.832Z'
+                    amount: 4.44378483
+                    value: 2522.96
+                  - type: Sell Gold
+                    status: cancelled
+                    timestamp: '2020-04-18T21:41:13.616Z'
+                    amount: 2.68128136
+                    value: 4537.15
+                  - type: Buy Gold
+                    status: in-progress
+                    timestamp: '2020-04-02T02:51:58.458Z'
+                    amount: 7.04860872
+                    value: 3926.27
       operationId: getAccount
     parameters: []
   /v1/al/accounts/update:
