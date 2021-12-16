@@ -1593,9 +1593,9 @@ paths:
       summary: Order callback notification
       operationId: partnerCallback
       description: |-
-        HelloGold will post a notification request to partner's callback URL when an order is either successful or failed. Partners are encourage to acknowledge this transaction.
+        HelloGold will post a notification request to partner's callback URL when an order is either successful, failed or cancelled. Partners are encourage to acknowledge this transaction.
 
-        Partner does not need to test this endpoint as this is an endpoint that will be triggered from HelloGold to the partner's server.
+        Partner do not need to test this endpoint as this is an endpoint that will be triggered from HelloGold to the partner's server.
       tags:
         - transactions
       responses:
@@ -1625,39 +1625,52 @@ paths:
                 type:
                   type: string
                   minLength: 1
+                  description: The type of the transaction.
                 total:
                   type: string
                   minLength: 1
+                  description: The total value of the transaction.
                 action:
                   type: string
                   minLength: 1
+                  description: The transaction's action type.
                 remark:
                   type: string
                   minLength: 0
                 status:
                   type: string
                   minLength: 1
+                  description: The status of the transaction.
                 userid:
                   type: string
                   minLength: 1
+                  description: The unique identifier for the account.
                 checksum:
                   type: string
                   minLength: 1
+                  description: |-
+                    Checksum used for validation purposes.
+
+                    `SHA256( PARTNER_KEY + PARTNER_ID + HG_REF_ID + PARTNER_REF_ID + TOTAL.delete(.) )`
                 reference:
                   type: object
                   properties:
                     hg:
                       type: string
                       minLength: 1
+                      description: 'The reference ID of the transaction, used internally by HelloGold.'
                     quote:
                       type: string
                       minLength: 1
+                      description: The reference ID of the quote that triggered the order.
                     partner:
                       type: string
                       minLength: 1
-                updated_at:
+                      description: 'The reference ID of the transaction, provided by the partner.'
+                created_at:
                   type: string
                   minLength: 1
+                  description: Timestamp of when the transaction was created.
             example:
               type: order
               total: '320.12'
