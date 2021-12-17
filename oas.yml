@@ -1328,36 +1328,139 @@ paths:
           content:
             application/json:
               schema:
+                description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    type: order
+                    action: buy
+                    status: pending
+                    userid: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
+                    details:
+                      tax: '0.00'
+                      total: '320.12'
+                      discount: '0.00'
+                      shipping: '0.00'
+                      subtotal: '320.12'
+                      line_items:
+                        - id: DGLD-001
+                          uom: g
+                          value: '320.12'
+                          amount: '1.32100014'
+                          symbol: GLD
+                    expire_on: '2021-12-16T06:08:24+00:00'
+                    reference:
+                      quote: 61bad7607723df2833df0ad9
+                      partner: 61bad7600814317188ad4094
+                    created_at: '2021-12-16T06:06:24+00:00'
+                    updated_at: '2021-12-16T06:06:45+00:00'
+                properties:
+                  userid:
+                    type: string
+                    minLength: 1
+                  type:
+                    type: string
+                    minLength: 1
+                  action:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                  created_at:
+                    type: string
+                    minLength: 1
+                  updated_at:
+                    type: string
+                    minLength: 1
+                  expire_on:
+                    type: string
+                    minLength: 1
+                  details:
+                    type: object
+                    required:
+                      - tax
+                      - total
+                      - discount
+                      - shipping
+                      - subtotal
+                      - line_items
+                    properties:
+                      tax:
+                        type: string
+                        minLength: 1
+                      total:
+                        type: string
+                        minLength: 1
+                      discount:
+                        type: string
+                        minLength: 1
+                      shipping:
+                        type: string
+                        minLength: 1
+                      subtotal:
+                        type: string
+                        minLength: 1
+                      line_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              minLength: 1
+                            uom:
+                              type: string
+                              minLength: 1
+                            value:
+                              type: string
+                              minLength: 1
+                            amount:
+                              type: string
+                              minLength: 1
+                            symbol:
+                              type: string
+                              minLength: 1
+                          required:
+                            - id
+                            - uom
+                            - value
+                            - amount
+                            - symbol
+                  reference:
+                    type: object
+                    properties:
+                      quote:
+                        type: string
+                        minLength: 1
+                      partner:
+                        type: string
+                        minLength: 1
               example:
-                records:
-                  - id: '134052'
-                    created_at: '2021-11-30T16:36:15Z'
-                    currency: GLD
-                    txtype: management_fee
-                    amount: '0.01035'
-                    start_date: '2021-11-21T16:22:38Z'
-                    end_date: '2021-11-29T16:22:12Z'
-                  - id: '13046'
-                    created_at: '2021-11-22T05:50:17Z'
-                    txtype: cash_to_gold_topup
-                    currency: MYR
-                    spot_price: null
-                    amount: '20.00'
-                    fee: null
-                    spread: null
-                    fee_rate: null
-                    spread_rate: null
-                  - id: '13045'
-                    created_at: '2021-11-22T05:45:25Z'
-                    txtype: cash_to_gold_topup
-                    currency: MYR
-                    spot_price: null
-                    amount: '20.00'
-                    fee: null
-                    spread: null
-                    fee_rate: null
-                    spread_rate: null
+                type: order
+                action: buy
+                status: pending
+                userid: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
+                created_at: '2021-12-16T06:06:24+00:00'
+                updated_at: '2021-12-16T06:06:45+00:00'
+                expire_on: '2021-12-16T06:08:24+00:00'
+                details:
+                  subtotal: '320.12'
+                  tax: '0.00'
+                  discount: '0.00'
+                  shipping: '0.00'
+                  total: '320.12'
+                  line_items:
+                    - id: DGLD-001
+                      uom: g
+                      value: '320.12'
+                      amount: '1.32100014'
+                      symbol: GLD
+                reference:
+                  quote: 61bad7607723df2833df0ad9
+                  partner: 61bad7600814317188ad4094
       tags:
         - transactions
       operationId: acceptQuote
@@ -1498,6 +1601,9 @@ paths:
                   action:
                     type: string
                     minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
                   created_at:
                     type: string
                     minLength: 1
@@ -1505,9 +1611,6 @@ paths:
                     type: string
                     minLength: 1
                   expire_on:
-                    type: string
-                    minLength: 1
-                  status:
                     type: string
                     minLength: 1
                   details:
@@ -1560,29 +1663,28 @@ paths:
                         type: string
                         minLength: 1
               example:
-                value:
-                  userid: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
-                  type: order
-                  action: buy
-                  created_at: '2021-12-16T06:06:24+00:00'
-                  updated_at: '2021-12-16T06:06:45+00:00'
-                  expire_on: '2021-12-16T06:08:24+00:00'
-                  status: pending
-                  details:
-                    line_items:
-                      - id: DGLD-001
-                        symbol: GLD
-                        amount: '1.32100014'
-                        value: '320.12'
-                        uom: g
-                    subtotal: '320.12'
-                    discount: '0.00'
-                    tax: '0.00'
-                    shipping: '0.00'
-                    total: '320.12'
-                  reference:
-                    quote: 61bad7607723df2833df0ad9
-                    partner: 61bad7600814317188ad4094
+                type: order
+                action: buy
+                status: pending
+                userid: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
+                created_at: '2021-12-16T06:06:24+00:00'
+                updated_at: '2021-12-16T06:06:45+00:00'
+                expire_on: '2021-12-16T06:08:24+00:00'
+                details:
+                  subtotal: '320.12'
+                  tax: '0.00'
+                  discount: '0.00'
+                  shipping: '0.00'
+                  total: '320.12'
+                  line_items:
+                    - id: DGLD-001
+                      uom: g
+                      value: '320.12'
+                      amount: '1.32100014'
+                      symbol: GLD
+                reference:
+                  quote: 61bad7607723df2833df0ad9
+                  partner: 61bad7600814317188ad4094
       tags:
         - transactions
       operationId: createOrder
