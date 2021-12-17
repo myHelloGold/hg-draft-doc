@@ -942,7 +942,6 @@ paths:
               required:
                 - partner
                 - partner_uid
-                - user_info
             examples:
               example-1:
                 value:
