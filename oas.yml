@@ -1225,6 +1225,9 @@ paths:
                       accepted: null
                       cancelled: null
                 properties:
+                  id:
+                    type: string
+                    minLength: 1
                   type:
                     type: string
                     minLength: 1
@@ -1293,6 +1296,7 @@ paths:
                         type: string
                         nullable: true
               example:
+                id: '592fcc1bbf5897b150057000'
                 type: quote
                 action: buy
                 status: open
@@ -1380,6 +1384,9 @@ paths:
                     transition:
                       accepted: '2021-12-15T06:55:36+00:00'
                 properties:
+                  id:
+                    type: string
+                    minLength: 1
                   type:
                     type: string
                     minLength: 1
@@ -1450,6 +1457,7 @@ paths:
                         type: string
                         nullable: true
               example:
+                id: '592fcc1bbf5897b150057000'
                 type: quote
                 action: buy
                 status: accepted
@@ -1474,6 +1482,165 @@ paths:
       tags:
         - transactions
       operationId: getQuote
+    parameters: []
+  /v1/al/quotes/cancel:
+    post:
+      summary: Cancel a quote
+      description: 'Cancel an existing quote for a user. Returns the cancelled quote, or an error.'
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
+          required: true
+          description: The unique identifier of the user.
+        - schema:
+            type: string
+          in: header
+          name: quoteId
+          description: The quote ID to be deleted.
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    userid: 61bc0ec42d9daddf1247f8cc_e918f0d0-174b-4c02-a84c-ca3e6d37629f
+                    type: quote
+                    action: buy
+                    created_at: '2021-12-17T04:15:00+00:00'
+                    updated_at: '2021-12-17T04:15:21+00:00'
+                    expire_on: null
+                    status: cancelled
+                    transition:
+                      cancelled: '2021-12-17T04:15:22+00:00'
+                    details:
+                      line_items:
+                        - id: DGLD-001
+                          symbol: GLD
+                          amount: '0'
+                          value: '0'
+                          uom: g
+                      subtotal: '0'
+                      discount: '0.00'
+                      tax: '0.00'
+                      shipping: '0.00'
+                      total: '0'
+                properties:
+                  id:
+                    type: string
+                    minLength: 1
+                  type:
+                    type: string
+                    minLength: 1
+                  action:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                  created_at:
+                    type: string
+                    minLength: 1
+                  updated_at:
+                    type: string
+                    minLength: 1
+                  expire_on:
+                    type: string
+                    nullable: true
+                  details:
+                    type: object
+                    properties:
+                      line_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              minLength: 1
+                            symbol:
+                              type: string
+                              minLength: 1
+                            amount:
+                              type: string
+                              minLength: 1
+                            value:
+                              type: string
+                              minLength: 1
+                            uom:
+                              type: string
+                              minLength: 1
+                      subtotal:
+                        type: string
+                        minLength: 1
+                      discount:
+                        type: string
+                        minLength: 1
+                      tax:
+                        type: string
+                        minLength: 1
+                      shipping:
+                        type: string
+                        minLength: 1
+                      total:
+                        type: string
+                        minLength: 1
+                  transition:
+                    type: object
+                    properties:
+                      accepted:
+                        type: string
+                        nullable: true
+                      cancelled:
+                        type: string
+                        minLength: 1
+                        nullable: true
+              example:
+                id: '592fcc1bbf5897b150057000'
+                type: quote
+                action: buy
+                status: cancelled
+                created_at: '2021-12-17T04:15:00+00:00'
+                updated_at: '2021-12-17T04:15:21+00:00'
+                expire_on: null
+                details:
+                  line_items:
+                    - id: DGLD-001
+                      symbol: GLD
+                      amount: '0'
+                      value: '0'
+                      uom: g
+                  subtotal: '0'
+                  discount: '0.00'
+                  tax: '0.00'
+                  shipping: '0.00'
+                  total: '0'
+                transition:
+                  cancelled: '2021-12-17T04:15:22+00:00'
+      tags:
+        - transactions
+      operationId: cancelQuote
     parameters: []
   /v1/al/quotes/accept:
     post:
@@ -1538,6 +1705,9 @@ paths:
                     created_at: '2021-12-16T06:06:24+00:00'
                     updated_at: '2021-12-16T06:06:45+00:00'
                 properties:
+                  id:
+                    type: string
+                    minLength: 1
                   type:
                     type: string
                     minLength: 1
@@ -1644,162 +1814,6 @@ paths:
       tags:
         - transactions
       operationId: acceptQuote
-    parameters: []
-  /v1/al/quotes/cancel:
-    post:
-      summary: Cancel a quote
-      description: 'Cancel an existing quote for a user. Returns the cancelled quote, or an error.'
-      parameters:
-        - name: x-api-key
-          in: header
-          schema:
-            type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
-          required: true
-          description: The API key required for authentication.
-        - name: x-user-id
-          in: header
-          schema:
-            type: string
-          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
-          required: true
-          description: The unique identifier of the user.
-        - schema:
-            type: string
-          in: header
-          name: quoteId
-          description: The quote ID to be deleted.
-          required: true
-      responses:
-        '200':
-          description: OK
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                description: ''
-                type: object
-                x-examples:
-                  example-1:
-                    userid: 61bc0ec42d9daddf1247f8cc_e918f0d0-174b-4c02-a84c-ca3e6d37629f
-                    type: quote
-                    action: buy
-                    created_at: '2021-12-17T04:15:00+00:00'
-                    updated_at: '2021-12-17T04:15:21+00:00'
-                    expire_on: null
-                    status: cancelled
-                    transition:
-                      cancelled: '2021-12-17T04:15:22+00:00'
-                    details:
-                      line_items:
-                        - id: DGLD-001
-                          symbol: GLD
-                          amount: '0'
-                          value: '0'
-                          uom: g
-                      subtotal: '0'
-                      discount: '0.00'
-                      tax: '0.00'
-                      shipping: '0.00'
-                      total: '0'
-                properties:
-                  type:
-                    type: string
-                    minLength: 1
-                  action:
-                    type: string
-                    minLength: 1
-                  status:
-                    type: string
-                    minLength: 1
-                  created_at:
-                    type: string
-                    minLength: 1
-                  updated_at:
-                    type: string
-                    minLength: 1
-                  expire_on:
-                    type: string
-                    nullable: true
-                  details:
-                    type: object
-                    properties:
-                      line_items:
-                        type: array
-                        uniqueItems: true
-                        minItems: 1
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              minLength: 1
-                            symbol:
-                              type: string
-                              minLength: 1
-                            amount:
-                              type: string
-                              minLength: 1
-                            value:
-                              type: string
-                              minLength: 1
-                            uom:
-                              type: string
-                              minLength: 1
-                      subtotal:
-                        type: string
-                        minLength: 1
-                      discount:
-                        type: string
-                        minLength: 1
-                      tax:
-                        type: string
-                        minLength: 1
-                      shipping:
-                        type: string
-                        minLength: 1
-                      total:
-                        type: string
-                        minLength: 1
-                  transition:
-                    type: object
-                    properties:
-                      accepted:
-                        type: string
-                        nullable: true
-                      cancelled:
-                        type: string
-                        minLength: 1
-                        nullable: true
-              example:
-                userid: 61bc0ec42d9daddf1247f8cc_e918f0d0-174b-4c02-a84c-ca3e6d37629f
-                type: quote
-                action: buy
-                created_at: '2021-12-17T04:15:00+00:00'
-                updated_at: '2021-12-17T04:15:21+00:00'
-                expire_on: null
-                status: cancelled
-                transition:
-                  cancelled: '2021-12-17T04:15:22+00:00'
-                details:
-                  line_items:
-                    - id: DGLD-001
-                      symbol: GLD
-                      amount: '0'
-                      value: '0'
-                      uom: g
-                  subtotal: '0'
-                  discount: '0.00'
-                  tax: '0.00'
-                  shipping: '0.00'
-                  total: '0'
-      tags:
-        - transactions
-      operationId: cancelQuote
     parameters: []
   /v1/al/orders/create:
     post:
