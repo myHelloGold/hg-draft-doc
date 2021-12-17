@@ -1651,7 +1651,7 @@ paths:
                   description: |-
                     Checksum used for validation purposes.
 
-                    `SHA256( PARTNER_KEY + PARTNER_ID + HG_REF_ID + PARTNER_REF_ID + TOTAL.delete(.) )`
+                    `SHA256( PARTNER_KEY + PARTNER_ID + HG_REF_ID + PARTNER_REF_ID + TOTAL + "MYR" )`
                 reference:
                   type: object
                   properties:
@@ -1687,19 +1687,6 @@ paths:
       security: []
   /v1/al/accounts/balance - copy:
     parameters: []
-  /v1/al/bank-list: {}
-  /v1/al/user-kyc: {}
-  /v1/al/resend-email: {}
-  /v1/al/check-email-verification: {}
-  /v1/al/countries: {}
-  /v1/al/promo-code: {}
-  /v1/al/user-tier: {}
-  /v1/al/goals: {}
-  /v1/al/goal: {}
-  /v1/al/notifications: {}
-  /v1/al/user-policy: {}
-  /v1/al/mandate-quotation: {}
-  /v1/al/my-new-endpoint: {}
 components:
   securitySchemes:
     x-api-key:
