@@ -1043,18 +1043,18 @@ paths:
                   example-1:
                     userid: 727ab067-28d9-4938-9ba1-64acfc373e7f
                     balances:
-                      - asset: gold
-                        total_balance: '20.9896461'
-                        total_locked_balance: TODO
-                        total_available_balance: '4931.21'
-                        accrued_fees: '0.012647828005'
+                      - asset: MYR
+                        total_balance: 1792.38
+                        total_locked_balance: 0
+                        total_available_balance: 1792.38
+                        accrued_fees: 0
+                        uom: null
+                      - asset: GLD
+                        total_balance: 8.947243
+                        total_locked_balance: 7.04023835
+                        total_available_balance: 1.90700465
+                        accrued_fees: 0.75084219
                         uom: g
-                      - asset: fiat
-                        total_balance: '0.00'
-                        total_locked_balance: TODO
-                        total_available_balance: '4931.21'
-                        accrued_fees: '0.012647828005'
-                        uom: RM
                 properties:
                   userid:
                     type: string
@@ -1072,20 +1072,16 @@ paths:
                           description: The type of asset.
                           minLength: 1
                         total_balance:
-                          type: string
-                          minLength: 1
+                          type: number
                           description: 'The asset''s total balance, which includes both locked balance, and available balance.'
                         total_locked_balance:
-                          type: string
-                          minLength: 1
+                          type: number
                           description: The asset's total locked balance.
                         total_available_balance:
-                          type: string
-                          minLength: 1
+                          type: number
                           description: The asset's total available balance.
                         accrued_fees:
-                          type: string
-                          minLength: 1
+                          type: number
                           description: Total fees accrued.
                         uom:
                           type: string
@@ -1095,18 +1091,18 @@ paths:
               example:
                 userid: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 balances:
-                  - asset: gold
-                    total_balance: '20.9896461'
-                    total_locked_balance: TODO
-                    total_available_balance: '4931.21'
-                    accrued_fees: '0.012647828005'
+                  - asset: MYR
+                    total_balance: 1792.38
+                    total_locked_balance: 0
+                    total_available_balance: 1792.38
+                    accrued_fees: 0
+                    uom: null
+                  - asset: GLD
+                    total_balance: 8.947243
+                    total_locked_balance: 7.04023835
+                    total_available_balance: 1.90700465
+                    accrued_fees: 0.75084219
                     uom: g
-                  - asset: fiat
-                    total_balance: '0.00'
-                    total_locked_balance: TODO
-                    total_available_balance: '4931.21'
-                    accrued_fees: '0.012647828005'
-                    uom: RM
       operationId: getBalance
     parameters: []
   /v1/al/accounts/transactions:
