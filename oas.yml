@@ -1220,10 +1220,10 @@ paths:
                           value: '320.12'
                           uom: g
                       subtotal: '320.12'
-                      discount: '1.00'
+                      discount: '0.00'
                       tax: '0.00'
                       shipping: '0.00'
-                      total: '319.12'
+                      total: '320.12'
                 properties:
                   userid:
                     type: string
@@ -1299,21 +1299,21 @@ paths:
                   action: buy
                   status: open
                   userid: 61b991537b1f9e1e10d444e5_9a578ce0-258e-4d65-842f-f73302b4285b
+                  created_at: '2021-12-15T06:55:15+00:00'
+                  updated_at: '2021-12-15T06:55:36+00:00'
+                  expire_on: '2021-12-15T06:57:15+00:00'
                   details:
-                    tax: '0.00'
-                    total: '319.12'
-                    discount: '1.00'
-                    shipping: '0.00'
-                    subtotal: '320.12'
                     line_items:
                       - id: DGLD-001
                         uom: g
                         value: '320.12'
                         amount: '1.32100014'
                         symbol: GLD
-                  expire_on: '2021-12-15T06:57:15+00:00'
-                  created_at: '2021-12-15T06:55:15+00:00'
-                  updated_at: '2021-12-15T06:55:36+00:00'
+                    subtotal: '320.12'
+                    discount: '0.00'
+                    tax: '0.00'
+                    shipping: '0.00'
+                    total: '320.12'
       tags:
         - transactions
       operationId: createQuote
@@ -1356,23 +1356,23 @@ paths:
                     action: buy
                     status: accepted
                     userid: 61b991538bf8fd18d922b1a7_4aca60ca-a95f-4e70-a002-57a39034b942
+                    created_at: '2021-12-15T06:55:15+00:00'
+                    updated_at: '2021-12-15T06:55:36+00:00'
+                    expire_on: '2021-12-15T06:57:15+00:00'
                     details:
-                      tax: '0.00'
-                      total: '320.12'
-                      discount: '0.00'
-                      shipping: '0.00'
-                      subtotal: '320.12'
                       line_items:
                         - id: DGLD-001
                           uom: g
                           value: '320.12'
                           amount: '1.32100014'
                           symbol: GLD
-                    expire_on: '2021-12-15T06:57:15+00:00'
-                    created_at: '2021-12-15T06:55:15+00:00'
+                      subtotal: '320.12'
+                      discount: '0.00'
+                      tax: '0.00'
+                      shipping: '0.00'
+                      total: '320.12'
                     transition:
                       accepted: '2021-12-15T06:55:36+00:00'
-                    updated_at: '2021-12-15T06:55:36+00:00'
                 properties:
                   type:
                     type: string
@@ -1448,23 +1448,23 @@ paths:
                   action: buy
                   status: accepted
                   userid: 61b991537b1f9e1e10d444e5_9a578ce0-258e-4d65-842f-f73302b4285b
+                  created_at: '2021-12-15T06:55:15+00:00'
+                  updated_at: '2021-12-15T06:55:36+00:00'
+                  expire_on: '2021-12-15T06:57:15+00:00'
                   details:
-                    tax: '0.00'
-                    total: '320.12'
-                    discount: '0.00'
-                    shipping: '0.00'
-                    subtotal: '320.12'
                     line_items:
                       - id: DGLD-001
                         uom: g
                         value: '320.12'
                         amount: '1.32100014'
                         symbol: GLD
-                  expire_on: '2021-12-15T06:57:15+00:00'
-                  created_at: '2021-12-15T06:55:15+00:00'
+                    subtotal: '320.12'
+                    discount: '0.00'
+                    tax: '0.00'
+                    shipping: '0.00'
+                    total: '320.12'
                   transition:
                     accepted: '2021-12-15T06:55:36+00:00'
-                  updated_at: '2021-12-15T06:55:36+00:00'
       tags:
         - transactions
       operationId: getQuote
@@ -1514,17 +1514,17 @@ paths:
                     status: pending
                     userid: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
                     details:
-                      tax: '0.00'
-                      total: '320.12'
-                      discount: '0.00'
-                      shipping: '0.00'
-                      subtotal: '320.12'
                       line_items:
                         - id: DGLD-001
                           uom: g
                           value: '320.12'
                           amount: '1.32100014'
                           symbol: GLD
+                      subtotal: '320.12'
+                      discount: '0.00'
+                      tax: '0.00'
+                      shipping: '0.00'
+                      total: '320.12'
                     expire_on: '2021-12-16T06:08:24+00:00'
                     reference:
                       quote: 61bad7607723df2833df0ad9
@@ -1624,17 +1624,17 @@ paths:
                 updated_at: '2021-12-16T06:06:45+00:00'
                 expire_on: '2021-12-16T06:08:24+00:00'
                 details:
-                  subtotal: '320.12'
-                  tax: '0.00'
-                  discount: '0.00'
-                  shipping: '0.00'
-                  total: '320.12'
                   line_items:
                     - id: DGLD-001
                       uom: g
                       value: '320.12'
                       amount: '1.32100014'
                       symbol: GLD
+                  subtotal: '320.12'
+                  discount: '0.00'
+                  tax: '0.00'
+                  shipping: '0.00'
+                  total: '320.12'
                 reference:
                   quote: 61bad7607723df2833df0ad9
                   partner: 61bad7600814317188ad4094
