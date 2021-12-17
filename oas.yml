@@ -1337,6 +1337,12 @@ paths:
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
+        - schema:
+            type: string
+          in: header
+          name: quoteId
+          description: The quote ID to be deleted.
+          required: true
       responses:
         '200':
           description: OK
