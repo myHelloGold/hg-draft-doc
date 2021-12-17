@@ -196,6 +196,7 @@ paths:
                           type: string
                           minLength: 1
                           description: The Unit of Measurement (UOM) of the asset.
+                          nullable: true
                   recent_transactions:
                     type: array
                     uniqueItems: true
@@ -228,6 +229,7 @@ paths:
                         uom:
                           type: string
                           description: The Unit of Measurement (UOM) of the asset.
+                          nullable: true
               example:
                 userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 username: b1eba0bc-8d1c-4cc1-b9d0-02e5531c9937
@@ -248,7 +250,7 @@ paths:
                     total_locked_balance: 0
                     total_available_balance: 1792.38
                     accrued_fees: 0
-                    uom: 'null'
+                    uom: null
                   - asset: GLD
                     total_balance: 8.947243
                     total_locked_balance: 7.04023835
@@ -451,6 +453,7 @@ paths:
                           type: string
                           minLength: 1
                           description: The Unit of Measurement (UOM) of the asset.
+                          nullable: true
                   recent_transactions:
                     type: array
                     uniqueItems: true
@@ -483,6 +486,7 @@ paths:
                         uom:
                           type: string
                           description: The Unit of Measurement (UOM) of the asset.
+                          nullable: true
               example:
                 userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 username: b1eba0bc-8d1c-4cc1-b9d0-02e5531c9937
@@ -503,7 +507,7 @@ paths:
                     total_locked_balance: 0
                     total_available_balance: 1792.38
                     accrued_fees: 0
-                    uom: 'null'
+                    uom: null
                   - asset: GLD
                     total_balance: 8.947243
                     total_locked_balance: 7.04023835
