@@ -104,7 +104,7 @@ paths:
                       sell_enabled: true
                       smartsaver_enabled: true
                       transfer_enabled: false
-                      withdrwa_enabled: false
+                      withdraw_enabled: false
                     recent_transactions:
                       - type: Buy Gold
                         status: in-progress
@@ -242,7 +242,7 @@ paths:
                   sell_enabled: true
                   smartsaver_enabled: true
                   transfer_enabled: false
-                  withdrwa_enabled: false
+                  withdraw_enabled: false
                 recent_transactions:
                   - type: Buy Gold
                     status: in-progress
