@@ -1929,17 +1929,17 @@ paths:
                 updated_at: '2021-12-16T06:06:45+00:00'
                 expire_on: '2021-12-16T06:08:24+00:00'
                 details:
-                  subtotal: '320.12'
-                  tax: '0.00'
-                  discount: '0.00'
-                  shipping: '0.00'
-                  total: '320.12'
                   line_items:
                     - id: DGLD-001
                       uom: g
                       value: '320.12'
                       amount: '1.32100014'
                       symbol: GLD
+                  subtotal: '320.12'
+                  tax: '0.00'
+                  discount: '0.00'
+                  shipping: '0.00'
+                  total: '320.12'
                 reference:
                   quote: 61bad7607723df2833df0ad9
                   partner: 61bad7600814317188ad4094
