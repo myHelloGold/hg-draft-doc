@@ -1642,10 +1642,10 @@ paths:
         - transactions
       operationId: acceptQuote
     parameters: []
-  /v1/al/quotes/delete:
-    delete:
-      summary: Delete a quote
-      description: Delete an existing quote for a user.
+  /v1/al/quotes/cancel:
+    post:
+      summary: Cancel a quote
+      description: 'Cancel an existing quote for a user. Returns the cancelled quote, or an error.'
       parameters:
         - name: x-api-key
           in: header
@@ -1661,6 +1661,12 @@ paths:
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
+        - schema:
+            type: string
+          in: header
+          name: quoteId
+          description: The quote ID to be deleted.
+          required: true
       responses:
         '200':
           description: OK
@@ -1704,7 +1710,7 @@ paths:
                     spread_rate: null
       tags:
         - transactions
-      operationId: deleteQuote
+      operationId: cancelQuote
     parameters: []
   /v1/al/orders/create:
     post:
