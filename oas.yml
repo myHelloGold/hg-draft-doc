@@ -626,90 +626,6 @@ paths:
                     value: 2855.91
                     uom: g
       operationId: getAccount
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: ''
-              type: object
-              x-examples:
-                example-1:
-                  partner: 61bbf8dfdcb8e621111744ae
-                  partner_uid: d1351e8b-b546-446a-836b-56fce02d5b44
-                  language: en
-                  user_info:
-                    kyc_level: 2
-                    phone: '60171234567'
-                    email: foo@bar.com
-                    full_name: Foo Bar
-                    id_number: '991230052425'
-                    id_type: idcard
-                    nationality: MYS
-                    id_expiry: '2022-12-15'
-              properties:
-                partner:
-                  type: string
-                  minLength: 1
-                partner_uid:
-                  type: string
-                  minLength: 1
-                language:
-                  type: string
-                  minLength: 1
-                user_info:
-                  type: object
-                  required:
-                    - kyc_level
-                    - phone
-                    - email
-                    - full_name
-                    - id_number
-                    - id_type
-                    - nationality
-                    - id_expiry
-                  properties:
-                    kyc_level:
-                      type: number
-                    phone:
-                      type: string
-                      minLength: 1
-                    email:
-                      type: string
-                      minLength: 1
-                    full_name:
-                      type: string
-                      minLength: 1
-                    id_number:
-                      type: string
-                      minLength: 1
-                    id_type:
-                      type: string
-                      minLength: 1
-                    nationality:
-                      type: string
-                      minLength: 1
-                    id_expiry:
-                      type: string
-                      minLength: 1
-              required:
-                - partner
-                - partner_uid
-                - user_info
-            examples:
-              example-1:
-                value:
-                  partner: 61bbf8dfdcb8e621111744ae
-                  partner_uid: d1351e8b-b546-446a-836b-56fce02d5b44
-                  language: en
-                  user_info:
-                    kyc_level: 2
-                    phone: '60171234567'
-                    email: foo@bar.com
-                    full_name: Foo Bar
-                    id_number: '991230052425'
-                    id_type: idcard
-                    nationality: MYS
-                    id_expiry: '2022-12-15'
     parameters: []
   /v1/al/accounts/update:
     put:
@@ -879,6 +795,90 @@ paths:
                     description: Euro
                     rate_float: 43259.8254
       operationId: updateAccount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  partner: 61bbf8dfdcb8e621111744ae
+                  partner_uid: d1351e8b-b546-446a-836b-56fce02d5b44
+                  language: en
+                  user_info:
+                    kyc_level: 2
+                    phone: '60171234567'
+                    email: foo@bar.com
+                    full_name: Foo Bar
+                    id_number: '991230052425'
+                    id_type: idcard
+                    nationality: MYS
+                    id_expiry: '2022-12-15'
+              properties:
+                partner:
+                  type: string
+                  minLength: 1
+                partner_uid:
+                  type: string
+                  minLength: 1
+                language:
+                  type: string
+                  minLength: 1
+                user_info:
+                  type: object
+                  required:
+                    - kyc_level
+                    - phone
+                    - email
+                    - full_name
+                    - id_number
+                    - id_type
+                    - nationality
+                    - id_expiry
+                  properties:
+                    kyc_level:
+                      type: number
+                    phone:
+                      type: string
+                      minLength: 1
+                    email:
+                      type: string
+                      minLength: 1
+                    full_name:
+                      type: string
+                      minLength: 1
+                    id_number:
+                      type: string
+                      minLength: 1
+                    id_type:
+                      type: string
+                      minLength: 1
+                    nationality:
+                      type: string
+                      minLength: 1
+                    id_expiry:
+                      type: string
+                      minLength: 1
+              required:
+                - partner
+                - partner_uid
+                - user_info
+            examples:
+              example-1:
+                value:
+                  partner: 61bbf8dfdcb8e621111744ae
+                  partner_uid: d1351e8b-b546-446a-836b-56fce02d5b44
+                  language: en
+                  user_info:
+                    kyc_level: 2
+                    phone: '60171234567'
+                    email: foo@bar.com
+                    full_name: Foo Bar
+                    id_number: '991230052425'
+                    id_type: idcard
+                    nationality: MYS
+                    id_expiry: '2022-12-15'
     parameters: []
   /v1/al/accounts/delete:
     delete:
