@@ -1301,9 +1301,9 @@ paths:
           description: The unique identifier of the user.
         - schema:
             type: string
-          in: header
+          in: query
           name: quoteId
-          description: The quote ID to be deleted.
+          description: The quote ID to be retrieved.
           required: true
       responses:
         '200':
@@ -1459,12 +1459,6 @@ paths:
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
-        - schema:
-            type: string
-          in: header
-          name: quoteId
-          description: The quote ID to be deleted.
-          required: true
       responses:
         '200':
           description: OK
@@ -1599,6 +1593,22 @@ paths:
       tags:
         - transactions
       operationId: cancelQuote
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  quoteId: 61bad7607723df2833df0ad9
+              properties:
+                quoteId:
+                  type: string
+                  minLength: 1
+                  description: The quote ID to be deleted.
+              required:
+                - quoteId
     parameters: []
   /v1/al/quotes/accept:
     post:
@@ -1619,12 +1629,6 @@ paths:
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
-        - schema:
-            type: string
-          in: header
-          name: refId
-          description: 'The reference id of the order, used internally by the partner.'
-          required: true
       responses:
         '200':
           description: OK
@@ -1772,6 +1776,22 @@ paths:
       tags:
         - transactions
       operationId: acceptQuote
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  refId: 61bad7600814317188ad4094
+              properties:
+                refId:
+                  type: string
+                  minLength: 1
+                  description: 'The reference id of the order, used internally by the partner.'
+              required:
+                - refId
     parameters: []
   /v1/al/orders/create:
     post:
@@ -1792,12 +1812,6 @@ paths:
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
-        - schema:
-            type: string
-          in: header
-          name: refId
-          description: 'The reference id of the order, used internally by the partner.'
-          required: true
       responses:
         '200':
           description: OK
@@ -1932,6 +1946,23 @@ paths:
       tags:
         - transactions
       operationId: createOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  refId: 61bad7600814317188ad4094
+              properties:
+                refId:
+                  type: string
+                  minLength: 1
+                  description: 'The reference id of the order, used internally by the partner.'
+              required:
+                - refId
+        description: ''
     parameters: []
   /partnerCallback:
     parameters: []
