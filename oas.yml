@@ -1203,15 +1203,12 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61b991538bf8fd18d922b1a7_4aca60ca-a95f-4e70-a002-57a39034b942
                     type: quote
                     action: buy
+                    status: open
                     created_at: '2021-12-15T06:55:15+00:00'
                     updated_at: '2021-12-15T06:55:36+00:00'
                     expire_on: '2021-12-15T06:57:15+00:00'
-                    status: accepted
-                    transition:
-                      accepted: '2021-12-15T06:55:36+00:00'
                     details:
                       line_items:
                         - id: DGLD-001
@@ -1224,14 +1221,17 @@ paths:
                       tax: '0.00'
                       shipping: '0.00'
                       total: '320.12'
+                    transition:
+                      accepted: null
+                      cancelled: null
                 properties:
-                  userid:
-                    type: string
-                    minLength: 1
                   type:
                     type: string
                     minLength: 1
                   action:
+                    type: string
+                    minLength: 1
+                  status:
                     type: string
                     minLength: 1
                   created_at:
@@ -1243,15 +1243,6 @@ paths:
                   expire_on:
                     type: string
                     minLength: 1
-                  status:
-                    type: string
-                    minLength: 1
-                  transition:
-                    type: object
-                    properties:
-                      accepted:
-                        type: string
-                        minLength: 1
                   details:
                     type: object
                     properties:
@@ -1277,7 +1268,6 @@ paths:
                             uom:
                               type: string
                               minLength: 1
-                              nullable: true
                       subtotal:
                         type: string
                         minLength: 1
@@ -1293,26 +1283,37 @@ paths:
                       total:
                         type: string
                         minLength: 1
+                  transition:
+                    type: object
+                    properties:
+                      accepted:
+                        type: string
+                        nullable: true
+                      cancelled:
+                        type: string
+                        nullable: true
               example:
                 type: quote
                 action: buy
                 status: open
-                userid: 61b991537b1f9e1e10d444e5_9a578ce0-258e-4d65-842f-f73302b4285b
                 created_at: '2021-12-15T06:55:15+00:00'
                 updated_at: '2021-12-15T06:55:36+00:00'
                 expire_on: '2021-12-15T06:57:15+00:00'
                 details:
                   line_items:
                     - id: DGLD-001
-                      uom: g
-                      value: '320.12'
-                      amount: '1.32100014'
                       symbol: GLD
+                      amount: '1.32100014'
+                      value: '320.12'
+                      uom: g
                   subtotal: '320.12'
                   discount: '0.00'
                   tax: '0.00'
                   shipping: '0.00'
                   total: '320.12'
+                transition:
+                  accepted: null
+                  cancelled: null
       tags:
         - transactions
       operationId: createQuote
@@ -1382,27 +1383,18 @@ paths:
                   status:
                     type: string
                     minLength: 1
-                  userid:
+                  created_at:
+                    type: string
+                    minLength: 1
+                  updated_at:
+                    type: string
+                    minLength: 1
+                  expire_on:
                     type: string
                     minLength: 1
                   details:
                     type: object
                     properties:
-                      tax:
-                        type: string
-                        minLength: 1
-                      total:
-                        type: string
-                        minLength: 1
-                      discount:
-                        type: string
-                        minLength: 1
-                      shipping:
-                        type: string
-                        minLength: 1
-                      subtotal:
-                        type: string
-                        minLength: 1
                       line_items:
                         type: array
                         uniqueItems: true
@@ -1413,49 +1405,58 @@ paths:
                             id:
                               type: string
                               minLength: 1
-                            uom:
-                              type: string
-                              minLength: 1
-                              nullable: true
-                            value:
+                            symbol:
                               type: string
                               minLength: 1
                             amount:
                               type: string
                               minLength: 1
-                            symbol:
+                            value:
                               type: string
                               minLength: 1
-                  expire_on:
-                    type: string
-                    minLength: 1
-                  created_at:
-                    type: string
-                    minLength: 1
+                            uom:
+                              type: string
+                              minLength: 1
+                              nullable: true
+                      subtotal:
+                        type: string
+                        minLength: 1
+                      discount:
+                        type: string
+                        minLength: 1
+                      tax:
+                        type: string
+                        minLength: 1
+                      shipping:
+                        type: string
+                        minLength: 1
+                      total:
+                        type: string
+                        minLength: 1
                   transition:
                     type: object
                     properties:
                       accepted:
                         type: string
                         minLength: 1
-                  updated_at:
-                    type: string
-                    minLength: 1
+                        nullable: true
+                      cancelled:
+                        type: string
+                        nullable: true
               example:
                 type: quote
                 action: buy
                 status: accepted
-                userid: 61b991537b1f9e1e10d444e5_9a578ce0-258e-4d65-842f-f73302b4285b
                 created_at: '2021-12-15T06:55:15+00:00'
                 updated_at: '2021-12-15T06:55:36+00:00'
                 expire_on: '2021-12-15T06:57:15+00:00'
                 details:
                   line_items:
                     - id: DGLD-001
-                      uom: g
-                      value: '320.12'
-                      amount: '1.32100014'
                       symbol: GLD
+                      amount: '1.32100014'
+                      value: '320.12'
+                      uom: g
                   subtotal: '320.12'
                   discount: '0.00'
                   tax: '0.00'
@@ -1463,6 +1464,7 @@ paths:
                   total: '320.12'
                 transition:
                   accepted: '2021-12-15T06:55:36+00:00'
+                  cancelled: null
       tags:
         - transactions
       operationId: getQuote
@@ -1530,9 +1532,6 @@ paths:
                     created_at: '2021-12-16T06:06:24+00:00'
                     updated_at: '2021-12-16T06:06:45+00:00'
                 properties:
-                  userid:
-                    type: string
-                    minLength: 1
                   type:
                     type: string
                     minLength: 1
@@ -1553,14 +1552,35 @@ paths:
                     minLength: 1
                   details:
                     type: object
-                    required:
-                      - tax
-                      - total
-                      - discount
-                      - shipping
-                      - subtotal
-                      - line_items
                     properties:
+                      line_items:
+                        type: array
+                        uniqueItems: true
+                        minItems: 1
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              minLength: 1
+                            symbol:
+                              type: string
+                              minLength: 1
+                            amount:
+                              type: string
+                              minLength: 1
+                            value:
+                              type: string
+                              minLength: 1
+                            uom:
+                              type: string
+                              minLength: 1
+                          required:
+                            - id
+                            - symbol
+                            - amount
+                            - value
+                            - uom
                       tax:
                         type: string
                         minLength: 1
@@ -1576,34 +1596,13 @@ paths:
                       subtotal:
                         type: string
                         minLength: 1
-                      line_items:
-                        type: array
-                        uniqueItems: true
-                        minItems: 1
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              minLength: 1
-                            uom:
-                              type: string
-                              minLength: 1
-                            value:
-                              type: string
-                              minLength: 1
-                            amount:
-                              type: string
-                              minLength: 1
-                            symbol:
-                              type: string
-                              minLength: 1
-                          required:
-                            - id
-                            - uom
-                            - value
-                            - amount
-                            - symbol
+                    required:
+                      - line_items
+                      - tax
+                      - total
+                      - discount
+                      - shipping
+                      - subtotal
                   reference:
                     type: object
                     properties:
@@ -1702,9 +1701,6 @@ paths:
                       shipping: '0.00'
                       total: '0'
                 properties:
-                  userid:
-                    type: string
-                    minLength: 1
                   type:
                     type: string
                     minLength: 1
@@ -1723,14 +1719,6 @@ paths:
                   expire_on:
                     type: string
                     nullable: true
-                  transition:
-                    type: object
-                    required:
-                      - cancelled
-                    properties:
-                      cancelled:
-                        type: string
-                        minLength: 1
                   details:
                     type: object
                     properties:
@@ -1771,6 +1759,16 @@ paths:
                       total:
                         type: string
                         minLength: 1
+                  transition:
+                    type: object
+                    properties:
+                      accepted:
+                        type: string
+                        nullable: true
+                      cancelled:
+                        type: string
+                        minLength: 1
+                        nullable: true
               example:
                 userid: 61bc0ec42d9daddf1247f8cc_e918f0d0-174b-4c02-a84c-ca3e6d37629f
                 type: quote
