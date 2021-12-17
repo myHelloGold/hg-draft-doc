@@ -925,9 +925,6 @@ paths:
                       type: string
                       minLength: 1
                       description: The expiry date of the document used for KYC. Format should be in 'YYYY-MM-DD'.
-              required:
-                - partner
-                - partner_uid
             examples:
               example-1:
                 value:
