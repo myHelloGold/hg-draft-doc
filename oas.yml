@@ -1358,8 +1358,8 @@ paths:
                     userid: 61b991538bf8fd18d922b1a7_4aca60ca-a95f-4e70-a002-57a39034b942
                     details:
                       tax: '0.00'
-                      total: '319.12'
-                      discount: '1.00'
+                      total: '320.12'
+                      discount: '0.00'
                       shipping: '0.00'
                       subtotal: '320.12'
                       line_items:
@@ -1450,8 +1450,8 @@ paths:
                   userid: 61b991537b1f9e1e10d444e5_9a578ce0-258e-4d65-842f-f73302b4285b
                   details:
                     tax: '0.00'
-                    total: '319.12'
-                    discount: '1.00'
+                    total: '320.12'
+                    discount: '0.00'
                     shipping: '0.00'
                     subtotal: '320.12'
                     line_items:
