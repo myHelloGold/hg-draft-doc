@@ -86,15 +86,6 @@ paths:
                   minLength: 1
                 user_info:
                   type: object
-                  required:
-                    - kyc_level
-                    - phone
-                    - email
-                    - full_name
-                    - id_number
-                    - id_type
-                    - nationality
-                    - id_expiry
                   properties:
                     kyc_level:
                       type: number
@@ -119,10 +110,6 @@ paths:
                     id_expiry:
                       type: string
                       minLength: 1
-              required:
-                - partner
-                - partner_uid
-                - user_info
             examples:
               example-1:
                 value:
@@ -263,16 +250,16 @@ paths:
                           minLength: 1
                           description: The type of asset.
                         total_balance:
-                          type: number
+                          type: string
                           description: 'The asset''s total balance, which includes both locked balance, and available balance'
                         total_locked_balance:
-                          type: number
+                          type: string
                           description: The asset's total locked balance.
                         total_available_balance:
-                          type: number
+                          type: string
                           description: The asset's total available balance.
                         accrued_fees:
-                          type: number
+                          type: string
                           description: Total fees accrued.
                         uom:
                           type: string
@@ -303,10 +290,10 @@ paths:
                           minLength: 1
                           description: Timestamp of when the transaction was created.
                         amount:
-                          type: number
+                          type: string
                           description: The transaction amount of an asset.
                         value:
-                          type: number
+                          type: string
                           description: 'The transaction value, in fiat.'
                         uom:
                           type: string
@@ -520,16 +507,16 @@ paths:
                           minLength: 1
                           description: The type of asset.
                         total_balance:
-                          type: number
+                          type: string
                           description: 'The asset''s total balance, which includes both locked balance, and available balance'
                         total_locked_balance:
-                          type: number
+                          type: string
                           description: The asset's total locked balance.
                         total_available_balance:
-                          type: number
+                          type: string
                           description: The asset's total available balance.
                         accrued_fees:
-                          type: number
+                          type: string
                           description: Total fees accrued.
                         uom:
                           type: string
@@ -560,10 +547,10 @@ paths:
                           minLength: 1
                           description: Timestamp of when the transaction was created.
                         amount:
-                          type: number
+                          type: string
                           description: The transaction amount of an asset.
                         value:
-                          type: number
+                          type: string
                           description: 'The transaction value, in fiat.'
                         uom:
                           type: string
@@ -661,115 +648,6 @@ paths:
               schema:
                 description: ''
                 type: object
-                properties:
-                  userid:
-                    type: string
-                    minLength: 1
-                  username:
-                    type: string
-                    minLength: 1
-                  status:
-                    type: string
-                    minLength: 1
-                  referral_code:
-                    type: string
-                    minLength: 1
-                  created_at:
-                    type: string
-                    minLength: 1
-                  updated_at:
-                    type: string
-                    minLength: 1
-                  deleted_at: {}
-                  configuration:
-                    type: object
-                    properties:
-                      buy_enabled:
-                        type: boolean
-                      sell_enabled:
-                        type: boolean
-                      smartsaver_enabled:
-                        type: boolean
-                      transfer_enabled:
-                        type: boolean
-                      withdraw_enabled:
-                        type: boolean
-                    required:
-                      - buy_enabled
-                      - sell_enabled
-                      - smartsaver_enabled
-                      - transfer_enabled
-                      - withdraw_enabled
-                  balances:
-                    type: array
-                    uniqueItems: true
-                    minItems: 1
-                    items:
-                      required:
-                        - asset
-                        - total_balance
-                        - total_locked_balance
-                        - total_available_balance
-                        - accrued_fees
-                        - uom
-                      properties:
-                        asset:
-                          type: string
-                          minLength: 1
-                        total_balance:
-                          type: number
-                        total_locked_balance:
-                          type: number
-                        total_available_balance:
-                          type: number
-                        accrued_fees:
-                          type: number
-                        uom:
-                          type: string
-                          minLength: 1
-                  recent_transactions:
-                    type: array
-                    uniqueItems: true
-                    minItems: 1
-                    items:
-                      required:
-                        - id
-                        - type
-                        - status
-                        - timestamp
-                        - amount
-                        - value
-                        - uom
-                      properties:
-                        id:
-                          type: string
-                          minLength: 1
-                        type:
-                          type: string
-                          minLength: 1
-                        status:
-                          type: string
-                          minLength: 1
-                        timestamp:
-                          type: string
-                          minLength: 1
-                        amount:
-                          type: number
-                        value:
-                          type: number
-                        uom:
-                          type: string
-                          minLength: 1
-                required:
-                  - userid
-                  - username
-                  - status
-                  - referral_code
-                  - created_at
-                  - updated_at
-                  - configuration
-                  - balances
-                  - recent_transactions
                 x-examples:
                   example-1:
                     userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
@@ -827,6 +705,86 @@ paths:
                         amount: '2.97335211'
                         value: '2855.91'
                         uom: g
+                properties:
+                  userid:
+                    type: string
+                    minLength: 1
+                  username:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                  referral_code:
+                    type: string
+                    minLength: 1
+                  created_at:
+                    type: string
+                    minLength: 1
+                  updated_at:
+                    type: string
+                    minLength: 1
+                  deleted_at: {}
+                  configuration:
+                    type: object
+                    properties:
+                      buy_enabled:
+                        type: boolean
+                      sell_enabled:
+                        type: boolean
+                      smartsaver_enabled:
+                        type: boolean
+                      transfer_enabled:
+                        type: boolean
+                      withdraw_enabled:
+                        type: boolean
+                  balances:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      type: object
+                      properties:
+                        asset:
+                          type: string
+                          minLength: 1
+                        total_balance:
+                          type: string
+                        total_locked_balance:
+                          type: string
+                        total_available_balance:
+                          type: string
+                        accrued_fees:
+                          type: string
+                        uom:
+                          type: string
+                          minLength: 1
+                  recent_transactions:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          minLength: 1
+                        type:
+                          type: string
+                          minLength: 1
+                        status:
+                          type: string
+                          minLength: 1
+                        timestamp:
+                          type: string
+                          minLength: 1
+                        amount:
+                          type: string
+                        value:
+                          type: string
+                        uom:
+                          type: string
+                          minLength: 1
               example:
                 userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 username: d1351e8b-b546-446a-836b-56fce02d5b44
@@ -1072,16 +1030,16 @@ paths:
                           description: The type of asset.
                           minLength: 1
                         total_balance:
-                          type: number
+                          type: string
                           description: 'The asset''s total balance, which includes both locked balance, and available balance.'
                         total_locked_balance:
-                          type: number
+                          type: string
                           description: The asset's total locked balance.
                         total_available_balance:
-                          type: number
+                          type: string
                           description: The asset's total available balance.
                         accrued_fees:
-                          type: number
+                          type: string
                           description: Total fees accrued.
                         uom:
                           type: string
