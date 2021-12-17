@@ -974,6 +974,34 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    userid: 61bc071c17707733bd309ab2_83ff228c-b789-427b-9de2-9b11fc514408
+                    username: 4ce2e6bd-596c-4b0a-9ec4-7c2887999763
+                    deleted: true
+                    deleted_at: '2021-08-25T12:25:23.028Z'
+                properties:
+                  userid:
+                    type: string
+                    minLength: 1
+                  username:
+                    type: string
+                    minLength: 1
+                  deleted:
+                    type: boolean
+                  deleted_at:
+                    type: string
+                    minLength: 1
+              example:
+                userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                username: d1351e8b-b546-446a-836b-56fce02d5b44
+                deleted: true
+                deleted_at: '2021-08-25T12:25:23.028Z'
       operationId: deleteAccount
     parameters: []
   /v1/al/accounts/balance:
