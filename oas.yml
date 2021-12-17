@@ -151,6 +151,24 @@ paths:
                     description: Timestamp of when the account was deleted.
                     minLength: 1
                     nullable: true
+                  configuration:
+                    type: object
+                    properties:
+                      buy_enabled:
+                        type: boolean
+                        description: Flag to indicate if buy is enabled for the account.
+                      sell_enabled:
+                        type: boolean
+                        description: Flag to indicate if sell is enabled for the account.
+                      smartsaver_enabled:
+                        type: boolean
+                        description: Flag to indicate if SmartSaver is enabled for the account.
+                      transfer_enabled:
+                        type: boolean
+                        description: Flag to indicate if transfer of assets is enabled for the account.
+                      withdraw_enabled:
+                        type: boolean
+                        description: Flag to indicate if withdrawal of funds is enabled for the account.
                   balances:
                     type: array
                     uniqueItems: true
@@ -178,24 +196,6 @@ paths:
                           type: string
                           minLength: 1
                           description: The Unit of Measurement (UOM) of the asset.
-                  configuration:
-                    type: object
-                    properties:
-                      buy_enabled:
-                        type: boolean
-                        description: Flag to indicate if buy is enabled for the account.
-                      sell_enabled:
-                        type: boolean
-                        description: Flag to indicate if sell is enabled for the account.
-                      smartsaver_enabled:
-                        type: boolean
-                        description: Flag to indicate if SmartSaver is enabled for the account.
-                      transfer_enabled:
-                        type: boolean
-                        description: Flag to indicate if transfer of assets is enabled for the account.
-                      withdraw_enabled:
-                        type: boolean
-                        description: Flag to indicate if withdrawal of funds is enabled for the account.
                   recent_transactions:
                     type: array
                     uniqueItems: true
@@ -204,6 +204,9 @@ paths:
                     items:
                       type: object
                       properties:
+                        id:
+                          type: string
+                          description: The transaction ID.
                         type:
                           type: string
                           minLength: 1
@@ -222,43 +225,65 @@ paths:
                         value:
                           type: number
                           description: 'The transaction value, in fiat.'
+                        uom:
+                          type: string
+                          description: The Unit of Measurement (UOM) of the asset.
               example:
-                userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
-                username: ef376fac-5d38-47e7-b348-9acf72dbc264
+                userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                username: b1eba0bc-8d1c-4cc1-b9d0-02e5531c9937
                 status: active
-                referral_code: lmnwtozuv2q
-                created_at: '2010-11-06T05:24:37.099Z'
-                updated_at: '2021-12-15T05:41:51.707Z'
+                referral_code: 1nltb89xtko
+                created_at: '2013-06-09T09:09:02.834Z'
+                updated_at: '2021-12-18T02:41:35.298Z'
                 deleted_at: null
-                balances:
-                  - asset: GLD
-                    total_balance: 9.90967941
-                    total_locked_balance: 2.00885041
-                    total_available_balance: 8.32374403
-                    accrued_fees: 0.67424463
-                    uom: g
                 configuration:
-                  buy_enabled: false
-                  sell_enabled: true
+                  buy_enabled: true
+                  sell_enabled: false
                   smartsaver_enabled: true
-                  transfer_enabled: false
+                  transfer_enabled: true
                   withdraw_enabled: false
+                balances:
+                  - asset: MYR
+                    total_balance: 1792.38
+                    total_locked_balance: 0
+                    total_available_balance: 1792.38
+                    accrued_fees: 0
+                    uom: 'null'
+                  - asset: GLD
+                    total_balance: 8.947243
+                    total_locked_balance: 7.04023835
+                    total_available_balance: 1.90700465
+                    accrued_fees: 0.75084219
+                    uom: g
                 recent_transactions:
-                  - type: Buy Gold
-                    status: in-progress
-                    timestamp: '2020-12-30T10:37:51.832Z'
-                    amount: 4.44378483
-                    value: 2522.96
-                  - type: Sell Gold
+                  - id: 91229bd6-d4b7-4a71-8671-32491e97cf5f
+                    type: Sell Gold
+                    status: completed
+                    timestamp: '2020-07-14T03:53:16.319Z'
+                    amount: 2.33233246
+                    value: 1579.88
+                    uom: g
+                  - id: a53d290b-9b9d-40c0-8c66-0d9e16d715f7
+                    type: Sell Gold
                     status: cancelled
-                    timestamp: '2020-04-18T21:41:13.616Z'
-                    amount: 2.68128136
-                    value: 4537.15
-                  - type: Buy Gold
-                    status: in-progress
-                    timestamp: '2020-04-02T02:51:58.458Z'
-                    amount: 7.04860872
-                    value: 3926.27
+                    timestamp: '2020-06-18T16:48:50.702Z'
+                    amount: 9.60745608
+                    value: 1543.11
+                    uom: g
+                  - id: 0116192e-6eab-42fb-a30e-0100267f7d26
+                    type: Buy Gold
+                    status: cancelled
+                    timestamp: '2020-07-15T07:21:59.576Z'
+                    amount: 4.06835968
+                    value: 3208.98
+                    uom: g
+                  - id: b18cbb1d-ed93-4f59-a6d6-6454e7208899
+                    type: Sell Gold
+                    status: completed
+                    timestamp: '2020-03-01T17:55:26.231Z'
+                    amount: 2.97335211
+                    value: 2855.91
+                    uom: g
         '400':
           description: Bad Request
           headers:
@@ -381,6 +406,24 @@ paths:
                     type: string
                     description: Timestamp of when the account was deleted.
                     nullable: true
+                  configuration:
+                    type: object
+                    properties:
+                      buy_enabled:
+                        type: boolean
+                        description: Flag to indicate if buy is enabled for the account.
+                      sell_enabled:
+                        type: boolean
+                        description: Flag to indicate if sell is enabled for the account.
+                      smartsaver_enabled:
+                        type: boolean
+                        description: Flag to indicate if SmartSaver is enabled for the account.
+                      transfer_enabled:
+                        type: boolean
+                        description: Flag to indicate if transfer of assets is enabled for the account.
+                      withdraw_enabled:
+                        type: boolean
+                        description: Flag to indicate if withdrawal of funds is enabled for the account.
                   balances:
                     type: array
                     uniqueItems: true
@@ -408,24 +451,6 @@ paths:
                           type: string
                           minLength: 1
                           description: The Unit of Measurement (UOM) of the asset.
-                  configuration:
-                    type: object
-                    properties:
-                      buy_enabled:
-                        type: boolean
-                        description: Flag to indicate if buy is enabled for the account.
-                      sell_enabled:
-                        type: boolean
-                        description: Flag to indicate if sell is enabled for the account.
-                      smartsaver_enabled:
-                        type: boolean
-                        description: Flag to indicate if SmartSaver is enabled for the account.
-                      transfer_enabled:
-                        type: boolean
-                        description: Flag to indicate if transfer of assets is enabled for the account.
-                      withdraw_enabled:
-                        type: boolean
-                        description: Flag to indicate if withdrawal of funds is enabled for the account.
                   recent_transactions:
                     type: array
                     uniqueItems: true
@@ -434,6 +459,9 @@ paths:
                     items:
                       type: object
                       properties:
+                        id:
+                          type: string
+                          description: The transaction ID.
                         type:
                           type: string
                           minLength: 1
@@ -452,43 +480,65 @@ paths:
                         value:
                           type: number
                           description: 'The transaction value, in fiat.'
+                        uom:
+                          type: string
+                          description: The Unit of Measurement (UOM) of the asset.
               example:
-                userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
-                username: ef376fac-5d38-47e7-b348-9acf72dbc264
+                userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                username: b1eba0bc-8d1c-4cc1-b9d0-02e5531c9937
                 status: active
-                referral_code: lmnwtozuv2q
-                created_at: '2010-11-06T05:24:37.099Z'
-                updated_at: '2021-12-15T05:41:51.707Z'
+                referral_code: 1nltb89xtko
+                created_at: '2013-06-09T09:09:02.834Z'
+                updated_at: '2021-12-18T02:41:35.298Z'
                 deleted_at: null
-                balances:
-                  - asset: GLD
-                    total_balance: 9.90967941
-                    total_locked_balance: 2.00885041
-                    total_available_balance: 8.32374403
-                    accrued_fees: 0.67424463
-                    uom: g
                 configuration:
-                  buy_enabled: false
-                  sell_enabled: true
+                  buy_enabled: true
+                  sell_enabled: false
                   smartsaver_enabled: true
-                  transfer_enabled: false
-                  withdrwa_enabled: false
+                  transfer_enabled: true
+                  withdraw_enabled: false
+                balances:
+                  - asset: MYR
+                    total_balance: 1792.38
+                    total_locked_balance: 0
+                    total_available_balance: 1792.38
+                    accrued_fees: 0
+                    uom: 'null'
+                  - asset: GLD
+                    total_balance: 8.947243
+                    total_locked_balance: 7.04023835
+                    total_available_balance: 1.90700465
+                    accrued_fees: 0.75084219
+                    uom: g
                 recent_transactions:
-                  - type: Buy Gold
-                    status: in-progress
-                    timestamp: '2020-12-30T10:37:51.832Z'
-                    amount: 4.44378483
-                    value: 2522.96
-                  - type: Sell Gold
+                  - id: 91229bd6-d4b7-4a71-8671-32491e97cf5f
+                    type: Sell Gold
+                    status: completed
+                    timestamp: '2020-07-14T03:53:16.319Z'
+                    amount: 2.33233246
+                    value: 1579.88
+                    uom: g
+                  - id: a53d290b-9b9d-40c0-8c66-0d9e16d715f7
+                    type: Sell Gold
                     status: cancelled
-                    timestamp: '2020-04-18T21:41:13.616Z'
-                    amount: 2.68128136
-                    value: 4537.15
-                  - type: Buy Gold
-                    status: in-progress
-                    timestamp: '2020-04-02T02:51:58.458Z'
-                    amount: 7.04860872
-                    value: 3926.27
+                    timestamp: '2020-06-18T16:48:50.702Z'
+                    amount: 9.60745608
+                    value: 1543.11
+                    uom: g
+                  - id: 0116192e-6eab-42fb-a30e-0100267f7d26
+                    type: Buy Gold
+                    status: cancelled
+                    timestamp: '2020-07-15T07:21:59.576Z'
+                    amount: 4.06835968
+                    value: 3208.98
+                    uom: g
+                  - id: b18cbb1d-ed93-4f59-a6d6-6454e7208899
+                    type: Sell Gold
+                    status: completed
+                    timestamp: '2020-03-01T17:55:26.231Z'
+                    amount: 2.97335211
+                    value: 2855.91
+                    uom: g
       operationId: getAccount
     parameters: []
   /v1/al/accounts/update:
