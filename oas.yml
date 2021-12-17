@@ -55,7 +55,89 @@ paths:
       summary: Create an account
       description: Create a new account for a user.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  partner: 61bbf8dfdcb8e621111744ae
+                  partner_uid: d1351e8b-b546-446a-836b-56fce02d5b44
+                  language: en
+                  user_info:
+                    kyc_level: 2
+                    phone: '60171234567'
+                    email: foo@bar.com
+                    full_name: Foo Bar
+                    id_number: '991230052425'
+                    id_type: idcard
+                    nationality: MYS
+                    id_expiry: '2022-12-15'
+              properties:
+                partner:
+                  type: string
+                  minLength: 1
+                partner_uid:
+                  type: string
+                  minLength: 1
+                language:
+                  type: string
+                  minLength: 1
+                user_info:
+                  type: object
+                  required:
+                    - kyc_level
+                    - phone
+                    - email
+                    - full_name
+                    - id_number
+                    - id_type
+                    - nationality
+                    - id_expiry
+                  properties:
+                    kyc_level:
+                      type: number
+                    phone:
+                      type: string
+                      minLength: 1
+                    email:
+                      type: string
+                      minLength: 1
+                    full_name:
+                      type: string
+                      minLength: 1
+                    id_number:
+                      type: string
+                      minLength: 1
+                    id_type:
+                      type: string
+                      minLength: 1
+                    nationality:
+                      type: string
+                      minLength: 1
+                    id_expiry:
+                      type: string
+                      minLength: 1
+              required:
+                - partner
+                - partner_uid
+                - user_info
+            examples:
+              example-1:
+                value:
+                  partner: 61bbf8dfdcb8e621111744ae
+                  partner_uid: d1351e8b-b546-446a-836b-56fce02d5b44
+                  language: en
+                  user_info:
+                    kyc_level: 2
+                    phone: '60171234567'
+                    email: foo@bar.com
+                    full_name: Foo Bar
+                    id_number: '991230052425'
+                    id_type: idcard
+                    nationality: MYS
+                    id_expiry: '2022-12-15'
       parameters:
         - name: x-api-key
           in: header
@@ -85,8 +167,8 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
-                    username: ef376fac-5d38-47e7-b348-9acf72dbc264
+                    userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    username: d1351e8b-b546-446a-836b-56fce02d5b44
                     status: active
                     referral_code: lmnwtozuv2q
                     created_at: '2010-11-06T05:24:37.099Z'
@@ -232,7 +314,7 @@ paths:
                           nullable: true
               example:
                 userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
-                username: b1eba0bc-8d1c-4cc1-b9d0-02e5531c9937
+                username: d1351e8b-b546-446a-836b-56fce02d5b44
                 status: active
                 referral_code: 1nltb89xtko
                 created_at: '2013-06-09T09:09:02.834Z'
@@ -343,8 +425,8 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61b82e9fb140b387ee385d47_964d7c3b-9e9d-4f45-8e00-9f92fef76225
-                    username: ef376fac-5d38-47e7-b348-9acf72dbc264
+                    userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    username: d1351e8b-b546-446a-836b-56fce02d5b44
                     status: active
                     referral_code: lmnwtozuv2q
                     created_at: '2010-11-06T05:24:37.099Z'
@@ -489,7 +571,7 @@ paths:
                           nullable: true
               example:
                 userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
-                username: b1eba0bc-8d1c-4cc1-b9d0-02e5531c9937
+                username: d1351e8b-b546-446a-836b-56fce02d5b44
                 status: active
                 referral_code: 1nltb89xtko
                 created_at: '2013-06-09T09:09:02.834Z'
@@ -544,6 +626,90 @@ paths:
                     value: 2855.91
                     uom: g
       operationId: getAccount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  partner: 61bbf8dfdcb8e621111744ae
+                  partner_uid: d1351e8b-b546-446a-836b-56fce02d5b44
+                  language: en
+                  user_info:
+                    kyc_level: 2
+                    phone: '60171234567'
+                    email: foo@bar.com
+                    full_name: Foo Bar
+                    id_number: '991230052425'
+                    id_type: idcard
+                    nationality: MYS
+                    id_expiry: '2022-12-15'
+              properties:
+                partner:
+                  type: string
+                  minLength: 1
+                partner_uid:
+                  type: string
+                  minLength: 1
+                language:
+                  type: string
+                  minLength: 1
+                user_info:
+                  type: object
+                  required:
+                    - kyc_level
+                    - phone
+                    - email
+                    - full_name
+                    - id_number
+                    - id_type
+                    - nationality
+                    - id_expiry
+                  properties:
+                    kyc_level:
+                      type: number
+                    phone:
+                      type: string
+                      minLength: 1
+                    email:
+                      type: string
+                      minLength: 1
+                    full_name:
+                      type: string
+                      minLength: 1
+                    id_number:
+                      type: string
+                      minLength: 1
+                    id_type:
+                      type: string
+                      minLength: 1
+                    nationality:
+                      type: string
+                      minLength: 1
+                    id_expiry:
+                      type: string
+                      minLength: 1
+              required:
+                - partner
+                - partner_uid
+                - user_info
+            examples:
+              example-1:
+                value:
+                  partner: 61bbf8dfdcb8e621111744ae
+                  partner_uid: d1351e8b-b546-446a-836b-56fce02d5b44
+                  language: en
+                  user_info:
+                    kyc_level: 2
+                    phone: '60171234567'
+                    email: foo@bar.com
+                    full_name: Foo Bar
+                    id_number: '991230052425'
+                    id_type: idcard
+                    nationality: MYS
+                    id_expiry: '2022-12-15'
     parameters: []
   /v1/al/accounts/update:
     put:
