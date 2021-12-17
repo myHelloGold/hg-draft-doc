@@ -1470,7 +1470,7 @@ paths:
       operationId: getQuote
     parameters: []
   /v1/al/quotes/accept:
-    get:
+    post:
       summary: Accept a quote
       description: Accept an existing quote for a user.
       parameters:
