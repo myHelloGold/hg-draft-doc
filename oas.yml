@@ -1197,7 +1197,10 @@ paths:
   /v1/al/quotes/create:
     post:
       summary: Create a quote
-      description: Create a new quote for a user.
+      description: |-
+        Create a new quote for a user.
+
+        Quote will automatically expier after 2 minutes.
       parameters:
         - name: x-api-key
           in: header
@@ -1253,24 +1256,31 @@ paths:
                   id:
                     type: string
                     minLength: 1
+                    description: The transaction identifier.
                   type:
                     type: string
                     minLength: 1
+                    description: The type of transaction
                   action:
                     type: string
                     minLength: 1
+                    description: The action of the transaction.
                   status:
                     type: string
                     minLength: 1
+                    description: The status of the transaction.
                   created_at:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction was created.
                   updated_at:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction was last updated.
                   expire_on:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction will expire.
                   details:
                     type: object
                     properties:
@@ -1284,41 +1294,53 @@ paths:
                             id:
                               type: string
                               minLength: 1
+                              description: The product identifier.
                             symbol:
                               type: string
                               minLength: 1
+                              description: The symbol of the asset.
                             amount:
                               type: string
                               minLength: 1
+                              description: The amount transacted for the asset.
                             value:
                               type: string
                               minLength: 1
+                              description: 'The value of the product amount, in fiat.'
                             uom:
                               type: string
                               minLength: 1
+                              description: The Unit of Measurement (UOM) of the asset.
                       subtotal:
                         type: string
                         minLength: 1
+                        description: The subtotal amount for the transaction.
                       discount:
                         type: string
                         minLength: 1
+                        description: The discount amount for the transaction.
                       tax:
                         type: string
                         minLength: 1
+                        description: The tax amount for the transaction.
                       shipping:
                         type: string
                         minLength: 1
+                        description: The shipping amount for the transaction.
                       total:
                         type: string
                         minLength: 1
+                        description: The total amount for the transaction.
                   transition:
                     type: object
                     properties:
                       accepted:
                         type: string
+                        description: Timestamp of when the transaction was accepted.
                         nullable: true
                       cancelled:
                         type: string
+                        description: Timestamp of when the transaction was cancelled.
                         nullable: true
               example:
                 id: 592fcc1bbf5897b150057000
@@ -1412,24 +1434,31 @@ paths:
                   id:
                     type: string
                     minLength: 1
+                    description: The transaction identifier.
                   type:
                     type: string
                     minLength: 1
+                    description: The type of transaction
                   action:
                     type: string
                     minLength: 1
+                    description: The action of the transaction.
                   status:
                     type: string
                     minLength: 1
+                    description: The status of the transaction.
                   created_at:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction was created.
                   updated_at:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction was last updated.
                   expire_on:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction will expire.
                   details:
                     type: object
                     properties:
@@ -1443,42 +1472,54 @@ paths:
                             id:
                               type: string
                               minLength: 1
+                              description: The product identifier.
                             symbol:
                               type: string
                               minLength: 1
+                              description: The symbol of the asset.
                             amount:
                               type: string
                               minLength: 1
+                              description: The amount transacted for the asset.
                             value:
                               type: string
                               minLength: 1
+                              description: 'The value of the product amount, in fiat.'
                             uom:
                               type: string
                               minLength: 1
+                              description: The Unit of Measurement (UOM) of the asset.
                               nullable: true
                       subtotal:
                         type: string
                         minLength: 1
+                        description: The subtotal amount for the transaction.
                       discount:
                         type: string
                         minLength: 1
+                        description: The discount amount for the transaction.
                       tax:
                         type: string
                         minLength: 1
+                        description: The tax amount for the transaction.
                       shipping:
                         type: string
                         minLength: 1
+                        description: The shipping amount for the transaction.
                       total:
                         type: string
                         minLength: 1
+                        description: The total amount for the transaction.
                   transition:
                     type: object
                     properties:
                       accepted:
                         type: string
+                        description: Timestamp of when the transaction was accepted.
                         nullable: true
                       cancelled:
                         type: string
+                        description: Timestamp of when the transaction was cancelled.
                         nullable: true
               example:
                 id: 592fcc1bbf5897b150057000
@@ -1567,23 +1608,30 @@ paths:
                   id:
                     type: string
                     minLength: 1
+                    description: The transaction identifier.
                   type:
                     type: string
                     minLength: 1
+                    description: The type of transaction
                   action:
                     type: string
                     minLength: 1
+                    description: The action of the transaction.
                   status:
                     type: string
                     minLength: 1
+                    description: The status of the transaction.
                   created_at:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction was created.
                   updated_at:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction was last updated.
                   expire_on:
                     type: string
+                    description: Timestamp of when the transaction will expire.
                     nullable: true
                   details:
                     type: object
@@ -1598,41 +1646,53 @@ paths:
                             id:
                               type: string
                               minLength: 1
+                              description: The product identifier.
                             symbol:
                               type: string
                               minLength: 1
+                              description: The symbol of the asset.
                             amount:
                               type: string
                               minLength: 1
+                              description: The amount transacted for the asset.
                             value:
                               type: string
                               minLength: 1
+                              description: 'The value of the product amount, in fiat.'
                             uom:
                               type: string
                               minLength: 1
+                              description: The Unit of Measurement (UOM) of the asset.
                       subtotal:
                         type: string
                         minLength: 1
+                        description: The subtotal amount for the transaction.
                       discount:
                         type: string
                         minLength: 1
+                        description: The discount amount for the transaction.
                       tax:
                         type: string
                         minLength: 1
+                        description: The tax amount for the transaction.
                       shipping:
                         type: string
                         minLength: 1
+                        description: The shipping amount for the transaction.
                       total:
                         type: string
                         minLength: 1
+                        description: The total amount for the transaction.
                   transition:
                     type: object
                     properties:
                       accepted:
                         type: string
+                        description: Timestamp of when the transaction was accepted.
                         nullable: true
                       cancelled:
                         type: string
+                        description: Timestamp of when the transaction was cancelled.
                         nullable: true
               example:
                 id: 592fcc1bbf5897b150057000
@@ -1714,7 +1774,7 @@ paths:
                     type: order
                     action: buy
                     status: pending
-                    userid: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
+                    id: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
                     details:
                       line_items:
                         - id: DGLD-001
@@ -1737,24 +1797,31 @@ paths:
                   id:
                     type: string
                     minLength: 1
+                    description: The transaction identifier.
                   type:
                     type: string
                     minLength: 1
+                    description: The type of transaction
                   action:
                     type: string
                     minLength: 1
+                    description: The action of the transaction.
                   status:
                     type: string
                     minLength: 1
+                    description: The status of the transaction.
                   created_at:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction was created.
                   updated_at:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction was last updated.
                   expire_on:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction will expire.
                   details:
                     type: object
                     properties:
@@ -1768,60 +1835,63 @@ paths:
                             id:
                               type: string
                               minLength: 1
+                              description: The product identifier.
                             symbol:
                               type: string
                               minLength: 1
+                              description: The symbol of the asset.
                             amount:
                               type: string
                               minLength: 1
+                              description: The amount transacted for the asset.
                             value:
                               type: string
                               minLength: 1
+                              description: 'The value of the product amount, in fiat.'
                             uom:
                               type: string
                               minLength: 1
-                          required:
-                            - id
-                            - symbol
-                            - amount
-                            - value
-                            - uom
-                      tax:
-                        type: string
-                        minLength: 1
-                      total:
-                        type: string
-                        minLength: 1
-                      discount:
-                        type: string
-                        minLength: 1
-                      shipping:
-                        type: string
-                        minLength: 1
+                              description: The Unit of Measurement (UOM) of the asset.
                       subtotal:
                         type: string
                         minLength: 1
-                    required:
-                      - line_items
-                      - tax
-                      - total
-                      - discount
-                      - shipping
-                      - subtotal
+                        description: The subtotal amount for the transaction.
+                      discount:
+                        type: string
+                        minLength: 1
+                        description: The discount amount for the transaction.
+                      tax:
+                        type: string
+                        minLength: 1
+                        description: The tax amount for the transaction.
+                      shipping:
+                        type: string
+                        minLength: 1
+                        description: The shipping amount for the transaction.
+                      total:
+                        type: string
+                        minLength: 1
+                        description: The total amount for the transaction.
                   reference:
                     type: object
                     properties:
                       quote:
                         type: string
                         minLength: 1
+                        description: The quote identifier that triggered the order.
+                      hg:
+                        type: string
+                        description: The HelloGold reference ID the transaction.
+                        minLength: 1
                       partner:
                         type: string
                         minLength: 1
+                        description: The partner reference ID of the transaction.
               example:
+                id: 592fcc1bbf5897b150057000
                 type: order
                 action: buy
                 status: pending
-                userid: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
                 created_at: '2021-12-16T06:06:24+00:00'
                 updated_at: '2021-12-16T06:06:45+00:00'
                 expire_on: '2021-12-16T06:08:24+00:00'
@@ -1894,7 +1964,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
+                    id: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
                     type: order
                     action: buy
                     created_at: '2021-12-16T06:06:24+00:00'
@@ -1917,27 +1987,34 @@ paths:
                       quote: 61bad7607723df2833df0ad9
                       partner: 61bad7600814317188ad4094
                 properties:
-                  userid:
+                  id:
                     type: string
                     minLength: 1
+                    description: The transaction identifier.
                   type:
                     type: string
                     minLength: 1
+                    description: The type of transaction
                   action:
                     type: string
                     minLength: 1
+                    description: The action of the transaction.
                   status:
                     type: string
                     minLength: 1
+                    description: The status of the transaction.
                   created_at:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction was created.
                   updated_at:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction was last updated.
                   expire_on:
                     type: string
                     minLength: 1
+                    description: Timestamp of when the transaction will expire.
                   details:
                     type: object
                     properties:
@@ -1951,47 +2028,63 @@ paths:
                             id:
                               type: string
                               minLength: 1
+                              description: The product identifier.
                             symbol:
                               type: string
                               minLength: 1
+                              description: The symbol of the asset.
                             amount:
                               type: string
                               minLength: 1
+                              description: The amount transacted for the asset.
                             value:
                               type: string
                               minLength: 1
+                              description: 'The value of the product amount, in fiat.'
                             uom:
                               type: string
                               minLength: 1
+                              description: The Unit of Measurement (UOM) of the asset.
                       subtotal:
                         type: string
                         minLength: 1
+                        description: The subtotal amount for the transaction.
                       discount:
                         type: string
                         minLength: 1
+                        description: The discount amount for the transaction.
                       tax:
                         type: string
                         minLength: 1
+                        description: The tax amount for the transaction.
                       shipping:
                         type: string
                         minLength: 1
+                        description: The shipping amount for the transaction.
                       total:
                         type: string
                         minLength: 1
+                        description: The total amount for the transaction.
                   reference:
                     type: object
                     properties:
                       quote:
                         type: string
                         minLength: 1
+                        description: The quote identifier that triggered the order.
+                      hg:
+                        type: string
+                        minLength: 1
+                        description: The HelloGold reference ID the transaction.
                       partner:
                         type: string
                         minLength: 1
+                        description: The partner reference ID of the transaction.
               example:
+                id: 592fcc1bbf5897b150057000
                 type: order
                 action: buy
                 status: pending
-                userid: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
                 created_at: '2021-12-16T06:06:24+00:00'
                 updated_at: '2021-12-16T06:06:45+00:00'
                 expire_on: '2021-12-16T06:08:24+00:00'
@@ -2078,12 +2171,12 @@ paths:
               type: object
               x-examples:
                 example-1:
+                  id: 592fcc1bbf5897b150057000
                   type: order
-                  total: '320.12'
                   action: buy
-                  remark: veniam cillum eu
                   status: completed
-                  userid: 61badd45b881e46b9081c00f_e6f6035a-6902-4134-b249-985d74963b10
+                  total: '320.12'
+                  remark: veniam cillum eu
                   checksum: F5C6398E6EF2F2695F045Df5c27b7e80
                   reference:
                     hg: 61badd454c7c033061e18f20
@@ -2091,29 +2184,33 @@ paths:
                     partner: 61badd453944e8df8a8b7602
                   created_at: '2021-12-16T06:31:54+00:00'
               properties:
+                id:
+                  type: string
+                  minLength: 1
+                  description: The unique identifier for the account.
                 type:
                   type: string
                   minLength: 1
                   description: The type of the transaction.
-                total:
-                  type: string
-                  minLength: 1
-                  description: The total value of the transaction.
                 action:
                   type: string
                   minLength: 1
                   description: The transaction's action type.
-                remark:
-                  type: string
-                  minLength: 0
                 status:
                   type: string
                   minLength: 1
                   description: The status of the transaction.
-                userid:
+                total:
                   type: string
                   minLength: 1
-                  description: The unique identifier for the account.
+                  description: The total value of the transaction.
+                created_at:
+                  type: string
+                  minLength: 1
+                  description: Timestamp of when the transaction was created.
+                remark:
+                  type: string
+                  minLength: 0
                 checksum:
                   type: string
                   minLength: 1
@@ -2124,29 +2221,27 @@ paths:
                 reference:
                   type: object
                   properties:
-                    hg:
-                      type: string
-                      minLength: 1
-                      description: 'The reference ID of the transaction, used internally by HelloGold.'
                     quote:
                       type: string
                       minLength: 1
                       description: The reference ID of the quote that triggered the order.
+                    hg:
+                      type: string
+                      minLength: 1
+                      description: 'The reference ID of the transaction, used internally by HelloGold.'
                     partner:
                       type: string
                       minLength: 1
                       description: 'The reference ID of the transaction, provided by the partner.'
-                created_at:
-                  type: string
-                  minLength: 1
-                  description: Timestamp of when the transaction was created.
+                    '':
+                      type: string
             example:
+              id: 592fcc1bbf5897b150057000
               type: order
-              total: '320.12'
               action: buy
-              remark: ''
               status: completed
-              userid: 61badd45b881e46b9081c00f_e6f6035a-6902-4134-b249-985d74963b10
+              total: '320.12'
+              remark: ''
               checksum: F5C6398E6EF2F2695F045Df5c27b7e80
               reference:
                 hg: 61badd454c7c033061e18f20
