@@ -1994,10 +1994,35 @@ paths:
     post:
       summary: Order callback notification
       operationId: partnerCallback
-      description: |-
+      description: |
         HelloGold will post a notification request to partner's callback URL when an order is either successful, failed or cancelled. Partners are encourage to acknowledge this transaction.
 
         Partner do not need to test this endpoint as this is an endpoint that will be triggered from HelloGold to the partner's server.
+
+        ### Checksum example
+        Assuming the following information:
+        ```
+        PARTNER_KEY: 'iLCdY1bvOsgsRkOPFJxoCCGlGfO94PdFRNYrPU31'
+        PARTNER_ID: '48200001'
+        HG_REF_ID: '1639667902-DNQDR'
+        PARTNER_REF_ID: '100000989'
+        TOTAL: '50000' (RM 500.00)
+        ```
+
+        First, construct the source string based on the following formula.
+        ```
+        PARTNER_KEY + PARTNER_ID + HG_REF_ID + PARTNER_REF_ID + TOTAL.delete(.) + "MYR"
+        ```
+
+        Using the formula above, the constructed source string based on the example data should be:
+        ```
+        iLCdY1bvOsgsRkOPFJxoCCGlGfO94PdFRNYrPU31482000011639667902-DNQDR10000098950000MYR
+        ```
+
+        Once source string is available, convert the constructed source string above using SHA256. Example of the final output that should be passed as part of the value for the `checksum` key:
+        ```
+        337a39515202a9cff10955f7d0f7efb1257328c0739a75c4944e02bc263dae50
+        ```
       tags:
         - transactions
       responses:
@@ -2053,7 +2078,7 @@ paths:
                   description: |-
                     Checksum used for validation purposes.
 
-                    `SHA256( PARTNER_KEY + PARTNER_ID + HG_REF_ID + PARTNER_REF_ID + TOTAL + "MYR" )`
+                    `SHA256( PARTNER_KEY + PARTNER_ID + HG_REF_ID + PARTNER_REF_ID + TOTAL.delete(.) + "MYR" )`
                 reference:
                   type: object
                   properties:
