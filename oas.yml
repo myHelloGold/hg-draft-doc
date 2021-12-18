@@ -2009,19 +2009,19 @@ paths:
         TOTAL: '50000' (RM 500.00)
         ```
 
-        First, construct the source string based on the following formula.
+        First, construct the source string based on the following formula, while making sure that each data is separated by the character ':'.
         ```
-        PARTNER_KEY + PARTNER_ID + HG_REF_ID + PARTNER_REF_ID + TOTAL.delete(.) + "MYR"
+        PARTNER_KEY + ':' + PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL.delete(.) + ':' + "MYR"
         ```
 
         Using the formula above, the constructed source string based on the example data should be:
         ```
-        iLCdY1bvOsgsRkOPFJxoCCGlGfO94PdFRNYrPU31482000011639667902-DNQDR10000098950000MYR
+        iLCdY1bvOsgsRkOPFJxoCCGlGfO94PdFRNYrPU31:48200001:1639667902-DNQDR:100000989:50000:MYR
         ```
 
-        Once source string is available, convert the constructed source string above using SHA256. Example of the final output that should be passed as part of the value for the `checksum` key:
+        Once source string is available, convert the constructed source string above using HMAC_SHA256. Example of the final output that should be passed as part of the value for the `checksum` key, using `abcde12345` as the secret key:
         ```
-        337a39515202a9cff10955f7d0f7efb1257328c0739a75c4944e02bc263dae50
+        c8496fb9281f1027b72957d0d8fa2a0e2ea5f21518577d2245da30d9e1a310b4
         ```
       tags:
         - transactions
@@ -2078,7 +2078,7 @@ paths:
                   description: |-
                     Checksum used for validation purposes.
 
-                    `SHA256( PARTNER_KEY + PARTNER_ID + HG_REF_ID + PARTNER_REF_ID + TOTAL.delete(.) + "MYR" )`
+                    `SHA256( PARTNER_KEY + ':' + PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL.delete(.) + ':' + "MYR" )`
                 reference:
                   type: object
                   properties:
