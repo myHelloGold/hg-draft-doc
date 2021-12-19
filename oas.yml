@@ -2137,7 +2137,6 @@ paths:
         ### How to generate checksum value
         Assuming the following information:
         ```
-        PARTNER_KEY: 'iLCdY1bvOsgsRkOPFJxoCCGlGfO94PdFRNYrPU31'
         PARTNER_ID: '48200001'
         HG_REF_ID: '1639667902-DNQDR'
         PARTNER_REF_ID: '100000989'
@@ -2146,7 +2145,7 @@ paths:
 
         First, construct the source string based on the following formula, while making sure that each data is separated by the character ':'.
         ```
-        PARTNER_KEY + ':' + PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL.delete(.) + ':' + "MYR"
+        PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL.delete(.) + ':' + "MYR"
         ```
 
         Using the formula above, the constructed source string based on the example data should be:
@@ -2217,7 +2216,7 @@ paths:
                   description: |-
                     Checksum used for validation purposes.
 
-                    `SHA256( PARTNER_KEY + ':' + PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL.delete(.) + ':' + "MYR" )`
+                    `SHA256( PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL.delete(.) + ':' + "MYR" )`
                 reference:
                   type: object
                   properties:
