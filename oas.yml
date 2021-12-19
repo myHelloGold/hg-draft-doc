@@ -2137,10 +2137,10 @@ paths:
         ### How to generate checksum value
         Assuming the following information:
         ```
-        PARTNER_ID: '48200001'
-        HG_REF_ID: '1639667902-DNQDR'
-        PARTNER_REF_ID: '100000989'
-        TOTAL: '50000' (RM 500.00)
+        PARTNER_ID: '61bbf8dfdcb8e621111744ae'
+        HG_REF_ID: '592fcc1bbf5897b150057000'
+        PARTNER_REF_ID: '61badd453944e8df8a8b7602'
+        TOTAL: '32012' (RM 320.12)
         ```
 
         First, construct the source string based on the following formula, while making sure that each data is separated by the character ':'.
@@ -2150,12 +2150,12 @@ paths:
 
         Using the formula above, the constructed source string based on the example data should be:
         ```
-        48200001:1639667902-DNQDR:100000989:50000:MYR
+        61bbf8dfdcb8e621111744ae:592fcc1bbf5897b150057000:61badd453944e8df8a8b7602:32012:MYR
         ```
 
         Once source string is available, convert the constructed source string above using HMAC_SHA256. Example of the final output that should be passed as part of the value for the `checksum` key, using `abcde12345` as the secret key:
         ```
-        f3c5cc59996362a5b1f073d19dc9b95958c6b854af2b278749660a6329757b3f
+        dfb79a5cb00a99a77d15037daf33fc081620ca59ac17336570b50af3c6933348
         ```
       tags:
         - transactions
@@ -2243,7 +2243,7 @@ paths:
               remark: ''
               checksum: F5C6398E6EF2F2695F045Df5c27b7e80
               reference:
-                hg: 61badd454c7c033061e18f20
+                hg: 592fcc1bbf5897b150057000
                 quote: 61badd459e29a1d268cc9bcc
                 partner: 61badd453944e8df8a8b7602
               created_at: '2021-12-16T06:31:54+00:00'
