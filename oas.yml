@@ -2241,7 +2241,7 @@ paths:
               status: completed
               total: '320.12'
               remark: ''
-              checksum: F5C6398E6EF2F2695F045Df5c27b7e80
+              checksum: dfb79a5cb00a99a77d15037daf33fc081620ca59ac17336570b50af3c6933348
               reference:
                 hg: 592fcc1bbf5897b150057000
                 quote: 61badd459e29a1d268cc9bcc
