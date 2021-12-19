@@ -2150,12 +2150,12 @@ paths:
 
         Using the formula above, the constructed source string based on the example data should be:
         ```
-        iLCdY1bvOsgsRkOPFJxoCCGlGfO94PdFRNYrPU31:48200001:1639667902-DNQDR:100000989:50000:MYR
+        48200001:1639667902-DNQDR:100000989:50000:MYR
         ```
 
         Once source string is available, convert the constructed source string above using HMAC_SHA256. Example of the final output that should be passed as part of the value for the `checksum` key, using `abcde12345` as the secret key:
         ```
-        c8496fb9281f1027b72957d0d8fa2a0e2ea5f21518577d2245da30d9e1a310b4
+        f3c5cc59996362a5b1f073d19dc9b95958c6b854af2b278749660a6329757b3f
         ```
       tags:
         - transactions
