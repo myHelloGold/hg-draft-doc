@@ -1132,7 +1132,7 @@ paths:
     parameters: []
   /v1/al/accounts/transactions:
     get:
-      summary: Get transactions for an account
+      summary: Get transactions history for an account
       description: Get a list of past transactions tied to a user's account.
       parameters:
         - name: x-api-key
@@ -1149,6 +1149,21 @@ paths:
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
+        - schema:
+            type: string
+          in: query
+          name: limit
+          description: 'Set the limit on the number of objects that may be returned, from 1 to 100. Defaults to 10.'
+        - schema:
+            type: string
+          in: query
+          name: before
+          description: A cursor used for pagination. Results in returning objects before the provided cursor.
+        - schema:
+            type: string
+          in: query
+          name: after
+          description: A cursor used for pagination. Results in returning objects after the provided cursor.
       responses:
         '200':
           description: OK
@@ -1160,36 +1175,232 @@ paths:
           content:
             application/json:
               schema:
+                description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    userid: 61bf3533e361fb3054c3affe_3d1b06ea-2bcb-4ea6-9ea0-89d6000c0305
+                    transactions:
+                      - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
+                        type: Buy Gold
+                        status: completed
+                        timestamp: '2020-12-22T07:29:46.373Z'
+                        amount: 9.89163656
+                        value: 2040.71
+                        uom: g
+                      - id: b4ce71db-b2b8-467f-9690-98784622e9b7
+                        type: Buy Gold
+                        status: cancelled
+                        timestamp: '2020-12-01T15:49:27.374Z'
+                        amount: 8.38309314
+                        value: 4166.93
+                        uom: g
+                      - id: 75979b52-84dd-4b09-bd76-685a755271ab
+                        type: Sell Gold
+                        status: completed
+                        timestamp: '2020-09-03T01:28:36.375Z'
+                        amount: 8.10909599
+                        value: 3313.03
+                        uom: g
+                      - id: d50a38ee-ba7f-41a1-9368-4db3ce12e403
+                        type: Buy Gold
+                        status: completed
+                        timestamp: '2020-09-01T20:59:31.154Z'
+                        amount: 6.72619045
+                        value: 884.57
+                        uom: g
+                      - id: efb326e5-68dc-4f49-a3ba-460e44d38747
+                        type: Sell Gold
+                        status: completed
+                        timestamp: '2020-08-04T00:49:55.098Z'
+                        amount: 8.89249831
+                        value: 1349.71
+                        uom: g
+                      - id: ae0f67eb-eaeb-4d42-952c-0908e4b71512
+                        type: Sell Gold
+                        status: completed
+                        timestamp: '2020-08-03T16:43:19.729Z'
+                        amount: 5.10451429
+                        value: 3897.73
+                        uom: g
+                      - id: 4cd01492-e419-41a1-9c00-773d52f6ae01
+                        type: Buy Gold
+                        status: cancelled
+                        timestamp: '2020-02-29T19:19:16.171Z'
+                        amount: 6.26706273
+                        value: 4711.76
+                        uom: g
+                      - id: 95b17f54-ebfa-454c-8886-c3ad93b41107
+                        type: Buy Gold
+                        status: cancelled
+                        timestamp: '2020-02-04T04:16:09.171Z'
+                        amount: 7.25148182
+                        value: 616.66
+                        uom: g
+                      - id: 1e28094f-df35-4ad8-b26f-ceb6d43197b6
+                        type: Buy Gold
+                        status: completed
+                        timestamp: '2020-01-28T05:15:35.844Z'
+                        amount: 8.08194329
+                        value: 3022.24
+                        uom: g
+                      - id: fb2b1979-770c-4feb-8a78-1f6262ba5066
+                        type: Sell Gold
+                        status: completed
+                        timestamp: '2020-01-08T11:24:40.738Z'
+                        amount: 4.11746301
+                        value: 1405.46
+                        uom: g
+                    pagination:
+                      cursors:
+                        after: bbo9ceupuzi
+                        before: anch1ggyns8
+                      next: 'https://stage-api.hellogold.com/accounts/transactions?after=bbo9ceupuzi'
+                      previous: 'https://stage-api.hellogold.com/accounts/transactions?before=anch1ggyns8'
+                properties:
+                  userid:
+                    type: string
+                    minLength: 1
+                    description: The unique identifier for the account.
+                  transactions:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          minLength: 1
+                          description: The transaction identifier.
+                        type:
+                          type: string
+                          minLength: 1
+                          description: The type of the transaction.
+                        status:
+                          type: string
+                          minLength: 1
+                          description: The status of the transaction.
+                        timestamp:
+                          type: string
+                          minLength: 1
+                          description: Timestamp of when the transaction was created.
+                        amount:
+                          type: string
+                          description: The transaction amount of an asset.
+                        value:
+                          type: string
+                          description: 'The transaction value, in fiat.'
+                        uom:
+                          type: string
+                          minLength: 1
+                          description: The Unit of Measurement (UOM) of the asset.
+                          nullable: true
+                  pagination:
+                    type: object
+                    properties:
+                      cursors:
+                        type: object
+                        properties:
+                          after:
+                            type: string
+                            minLength: 1
+                            description: Cursor identifier for the last object in the current response.
+                            nullable: true
+                          before:
+                            type: string
+                            minLength: 1
+                            description: Cursor identifier for the first object in the current response.
+                            nullable: true
+                      next:
+                        type: string
+                        minLength: 1
+                        description: 'Continuation path to the next set of data, if available.'
+                        nullable: true
+                      previous:
+                        type: string
+                        minLength: 1
+                        description: 'Continuation path to the previous set of data, if available.'
+                        nullable: true
               example:
-                records:
-                  - id: '134052'
-                    created_at: '2021-11-30T16:36:15Z'
-                    currency: GLD
-                    txtype: management_fee
-                    amount: '0.01035'
-                    start_date: '2021-11-21T16:22:38Z'
-                    end_date: '2021-11-29T16:22:12Z'
-                  - id: '13046'
-                    created_at: '2021-11-22T05:50:17Z'
-                    txtype: cash_to_gold_topup
-                    currency: MYR
-                    spot_price: null
-                    amount: '20.00'
-                    fee: null
-                    spread: null
-                    fee_rate: null
-                    spread_rate: null
-                  - id: '13045'
-                    created_at: '2021-11-22T05:45:25Z'
-                    txtype: cash_to_gold_topup
-                    currency: MYR
-                    spot_price: null
-                    amount: '20.00'
-                    fee: null
-                    spread: null
-                    fee_rate: null
-                    spread_rate: null
+                userid: 61bf3533e361fb3054c3affe_3d1b06ea-2bcb-4ea6-9ea0-89d6000c0305
+                transactions:
+                  - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
+                    type: Buy Gold
+                    status: completed
+                    timestamp: '2020-12-22T07:29:46.373Z'
+                    amount: '9.89163656'
+                    value: '2040.71'
+                    uom: g
+                  - id: b4ce71db-b2b8-467f-9690-98784622e9b7
+                    type: Buy Gold
+                    status: cancelled
+                    timestamp: '2020-12-01T15:49:27.374Z'
+                    amount: '8.38309314'
+                    value: '4166.93'
+                    uom: g
+                  - id: 75979b52-84dd-4b09-bd76-685a755271ab
+                    type: Sell Gold
+                    status: completed
+                    timestamp: '2020-09-03T01:28:36.375Z'
+                    amount: '8.10909599'
+                    value: '3313.03'
+                    uom: g
+                  - id: d50a38ee-ba7f-41a1-9368-4db3ce12e403
+                    type: Buy Gold
+                    status: completed
+                    timestamp: '2020-09-01T20:59:31.154Z'
+                    amount: '6.72619045'
+                    value: '884.57'
+                    uom: g
+                  - id: efb326e5-68dc-4f49-a3ba-460e44d38747
+                    type: Sell Gold
+                    status: completed
+                    timestamp: '2020-08-04T00:49:55.098Z'
+                    amount: '8.89249831'
+                    value: '1349.71'
+                    uom: g
+                  - id: ae0f67eb-eaeb-4d42-952c-0908e4b71512
+                    type: Sell Gold
+                    status: completed
+                    timestamp: '2020-08-03T16:43:19.729Z'
+                    amount: '5.10451429'
+                    value: '3897.73'
+                    uom: g
+                  - id: 4cd01492-e419-41a1-9c00-773d52f6ae01
+                    type: Buy Gold
+                    status: cancelled
+                    timestamp: '2020-02-29T19:19:16.171Z'
+                    amount: '6.26706273'
+                    value: '4711.76'
+                    uom: g
+                  - id: 95b17f54-ebfa-454c-8886-c3ad93b41107
+                    type: Buy Gold
+                    status: cancelled
+                    timestamp: '2020-02-04T04:16:09.171Z'
+                    amount: '7.25148182'
+                    value: '616.66'
+                    uom: g
+                  - id: 1e28094f-df35-4ad8-b26f-ceb6d43197b6
+                    type: Buy Gold
+                    status: completed
+                    timestamp: '2020-01-28T05:15:35.844Z'
+                    amount: '8.08194329'
+                    value: '3022.24'
+                    uom: g
+                  - id: fb2b1979-770c-4feb-8a78-1f6262ba5066
+                    type: Sell Gold
+                    status: completed
+                    timestamp: '2020-01-08T11:24:40.738Z'
+                    amount: '4.11746301'
+                    value: '1405.46'
+                    uom: g
+                pagination:
+                  cursors:
+                    after: bbo9ceupuzi
+                    before: anch1ggyns8
+                  next: 'https://stage-api.hellogold.com/accounts/transactions?after=bbo9ceupuzi'
+                  previous: 'https://stage-api.hellogold.com/accounts/transactions?before=anch1ggyns8'
       tags:
         - accounts
       operationId: getTransactions
