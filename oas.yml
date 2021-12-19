@@ -16,6 +16,13 @@ info:
     # Introduction
     Welcome to HelloGold API, which is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
 
+    ## Getting started
+
+    In order to get started, please ensure that you have received the following information from HelloGold:
+
+    - 'partner_client_id'
+    - 'partner_client_secret'
+
     ## Versioning
 
     The current API version is v1. The version is specified in the URL.
