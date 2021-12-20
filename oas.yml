@@ -971,7 +971,7 @@ paths:
                 userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 deleted: true
                 deleted_at: '2021-12-15T06:55:15+00:00'
-                
+
       operationId: deleteAccount
     parameters: []
   /v1/al/accounts/balance:
@@ -2386,7 +2386,7 @@ paths:
                   type: string
                   minLength: 1
                   description: |-
-                    Checksum used for validation purposes.
+                    Signature used for validation purposes.
 
                     `BASE64( HMAC_SHA256(SECPARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + CURRENCY) )`
                 reference:
