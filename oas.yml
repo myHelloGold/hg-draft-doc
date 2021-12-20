@@ -16,13 +16,6 @@ info:
     # Introduction
     Welcome to HelloGold API, which is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
 
-    ## Getting started
-
-    In order to get started, please ensure that you have received the following information from HelloGold:
-
-    - 'partner_client_id'
-    - 'partner_client_secret'
-
     ## Versioning
 
     The current API version is v1. The version is specified in the URL.
@@ -1262,8 +1255,8 @@ paths:
                       cursors:
                         after: bbo9ceupuzi
                         before: anch1ggyns8
-                      next: 'https://stage-api.hellogold.com/v1/al/accounts/transactions?after=bbo9ceupuzi'
-                      previous: 'https://stage-api.hellogold.com/v1/al/accounts/transactions?before=anch1ggyns8'
+                      next: 'https://stage-api.hellogold.com/accounts/transactions?after=bbo9ceupuzi'
+                      previous: 'https://stage-api.hellogold.com/accounts/transactions?before=anch1ggyns8'
                 properties:
                   userid:
                     type: string
@@ -2366,12 +2359,20 @@ paths:
         PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL.delete(.) + ':' + "MYR"
         ```
 
-        Using the formula above, the constructed source string based on the example data should be:
+        Using the formula above, sign the constructed source string based on the example data should be:
         ```
         61bbf8dfdcb8e621111744ae:592fcc1bbf5897b150057000:61badd453944e8df8a8b7602:32012:MYR
         ```
 
-        Once source string is available, convert the constructed source string above using HMAC_SHA256. Example of the final output that should be passed as part of the value for the `checksum` key, using `abcde12345` as the secret key:
+        Once source string is available, sign the constructed source string above using HMAC_SHA256 and the secret key. Full example can be seen below:
+
+        ```
+        require('crypto').createHmac('SHA256', clientSecret)
+          .update(PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL.delete(.) + ':' + "MYR")
+          .digest('base64')
+        ```
+
+        Example of the final output that should be passed as part of the value for the `checksum` key, using `abcde12345` as the secret key:
         ```
         dfb79a5cb00a99a77d15037daf33fc081620ca59ac17336570b50af3c6933348
         ```
