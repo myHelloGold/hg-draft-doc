@@ -38,14 +38,14 @@ info:
 
     Example:
     ```
-    # APIKEY = 0912535a-5d76-4c6e-8f30-c0bc54f78074
-    # USERID = 727ab067-28d9-4938-9ba1-64acfc373e7f
+    API_KEY=0912535a-5d76-4c6e-8f30-c0bc54f78074
+    USER_ID=cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
 
     curl --request GET \
-      --url https://stage-api.hellogold.com/v1/al/placeholder \
+      --url 'https://stage-api.hellogold.com/v1/al/placeholder?rspId=1' \
       --header 'Content-Type: application/json' \
-      --header "x-api-key": "'"$APIKEY"'", \
-      --header "x-user-id": "'"$USERID"'",
+      --header "x-api-key: ${API_KEY}" \
+      --header "x-user-id: ${USER_ID}"
     ```
 servers:
   - url: 'https://stage-api.hellogold.com'
@@ -2443,7 +2443,7 @@ paths:
                   description: |-
                     Checksum used for validation purposes.
 
-                    `BASE64( HMAC_SHA256(SECRET, PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + CURRENCY) )`
+                    `BASE64( HMAC_SHA256(SECPARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + CURRENCY) )`
                 reference:
                   type: object
                   properties:
