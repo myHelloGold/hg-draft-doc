@@ -2403,7 +2403,7 @@ paths:
                   status: completed
                   total: '320.12'
                   remark: veniam cillum eu
-                  checksum: AupzywB3lKwv34uxgPWmNE8GpW2RHyeTqaAKH9GeZqQ=
+                  signature: AupzywB3lKwv34uxgPWmNE8GpW2RHyeTqaAKH9GeZqQ=
                   reference:
                     hg: 61badd454c7c033061e18f20
                     quote: 61badd459e29a1d268cc9bcc
@@ -2441,9 +2441,9 @@ paths:
                   type: string
                   minLength: 1
                   description: |-
-                    Checksum used for validation purposes.
+                    Signature used for validation purposes.
 
-                    `SHA256( PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + "MYR" )`
+                    `SHA256( PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + CURRENCY )`
                 reference:
                   type: object
                   properties:
@@ -2459,8 +2459,6 @@ paths:
                       type: string
                       minLength: 1
                       description: 'The reference ID of the transaction, provided by the partner.'
-                    '':
-                      type: string
             example:
               id: 592fcc1bbf5897b150057000
               type: order
