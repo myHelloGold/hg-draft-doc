@@ -39,10 +39,10 @@ info:
     Example:
     ```
     API_KEY=0912535a-5d76-4c6e-8f30-c0bc54f78074
-    USER_ID=cvh1l4o8vhd8vgoqi8r4rea4i_iiiiiiiiiiiiiiiooooooooi
+    USER_ID=727ab067-28d9-4938-9ba1-64acfc373e7f
 
     curl --request GET \
-      --url 'https://stage-api.hellogold.com/v1/al/placeholder?rspId=1' \
+      --url 'https://stage-api.hellogold.com/v1/al/placeholder' \
       --header 'Content-Type: application/json' \
       --header "x-api-key: ${API_KEY}" \
       --header "x-user-id: ${USER_ID}"
