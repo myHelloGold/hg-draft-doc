@@ -2345,7 +2345,7 @@ paths:
 
         Partner do not need to test this endpoint as this is an endpoint that will be triggered from HelloGold to the partner's server.
 
-        ### How to generate checksum value
+        ### Generating the signature
         Assuming the following information:
         ```
         PARTNER_SECRET='abcde12345'
