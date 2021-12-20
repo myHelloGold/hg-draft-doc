@@ -2364,17 +2364,22 @@ paths:
         61bbf8dfdcb8e621111744ae:592fcc1bbf5897b150057000:61badd453944e8df8a8b7602:320.12:MYR
         ```
 
-        Once source string is available, sign the constructed source string above using HMAC_SHA256 and the secret key. Full example can be seen below:
+        Once source string is available, sign the constructed source string above using HMAC_SHA256 and the secret key. 
 
+        The Base64 encoded output that should then be passed as part of the value for the `checksum` key, using `abcde12345` as the secret key:
         ```
-        require('crypto').createHmac('SHA256', clientSecret)
-          .update(PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + "MYR")
-          .digest('base64')
+        I8RaMLTgqMftPcXk8RaVeqpQeXLpuMpB4B38FlAQ9vQ=
         ```
 
-        Example of the Base64 encoded output that should be passed as part of the value for the `checksum` key, using `abcde12345` as the secret key:
+        Full example on generating the checksum value for reference, is as per below:
         ```
-        AupzywB3lKwv34uxgPWmNE8GpW2RHyeTqaAKH9GeZqQ=
+        PARTNER_SECRET='abcde12345'
+        PARTNER_ID='61bbf8dfdcb8e621111744ae'
+        HG_REF_ID='592fcc1bbf5897b150057000'
+        PARTNER_REF_ID='61badd453944e8df8a8b7602'
+        TOTAL='320.12'
+
+        echo -n "${PARTNER_ID}:${HG_REF_ID}:${PARTNER_REF_ID}:${TOTAL}" | openssl dgst -sha256 -hmac "$PARTNER_SECRET" -binary | base64
         ```
       tags:
         - transactions
@@ -2460,7 +2465,7 @@ paths:
               status: completed
               total: '320.12'
               remark: ''
-              checksum: AupzywB3lKwv34uxgPWmNE8GpW2RHyeTqaAKH9GeZqQ=
+              checksum: I8RaMLTgqMftPcXk8RaVeqpQeXLpuMpB4B38FlAQ9vQ=
               reference:
                 hg: 592fcc1bbf5897b150057000
                 quote: 61badd459e29a1d268cc9bcc
