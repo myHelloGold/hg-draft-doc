@@ -2313,7 +2313,7 @@ paths:
 
         Once source string is available, sign the constructed source string above using HMAC_SHA256 and the secret key. 
 
-        The Base64 encoded output that should then be passed as part of the value for the `signature` key, using `abcde12345` as the secret key:
+        The Base64 encoded output that should then be passed as the value for the `signature` key, using `abcde12345` as the secret key:
         ```
         AupzywB3lKwv34uxgPWmNE8GpW2RHyeTqaAKH9GeZqQ=
         ```
