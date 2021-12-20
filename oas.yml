@@ -1027,7 +1027,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 727ab067-28d9-4938-9ba1-64acfc373e7f
+                    userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                     balances:
                       - asset: MYR
                         total_balance: '1792.38'
@@ -1075,7 +1075,7 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
-                userid: 727ab067-28d9-4938-9ba1-64acfc373e7f
+                userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 balances:
                   - asset: MYR
                     total_balance: '1792.38'
