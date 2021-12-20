@@ -170,17 +170,17 @@ paths:
                     recent_transactions:
                       - type: Buy Gold
                         status: in-progress
-                        timestamp: '2020-12-30T10:37:51.832Z'
+                        timestamp: '2020-12-30T10:37:51+00:00'
                         amount: '4.44378483'
                         value: '2522.96'
                       - type: Sell Gold
                         status: cancelled
-                        timestamp: '2020-04-18T21:41:13.616Z'
+                        timestamp: '2020-04-18T21:41:13+00:00'
                         amount: '2.68128136'
                         value: '4537.15'
                       - type: Buy Gold
                         status: in-progress
-                        timestamp: '2020-04-02T02:51:58.458Z'
+                        timestamp: '2020-04-02T02:51:58+00:00'
                         amount: '7.04860872'
                         value: '3926.27'
                 properties:
@@ -322,28 +322,28 @@ paths:
                   - id: 91229bd6-d4b7-4a71-8671-32491e97cf5f
                     type: Sell Gold
                     status: completed
-                    timestamp: '2020-07-14T03:53:16.319Z'
+                    timestamp: '2020-07-14T03:53:16+00:00'
                     amount: '2.33233246'
                     value: '1579.88'
                     uom: g
                   - id: a53d290b-9b9d-40c0-8c66-0d9e16d715f7
                     type: Sell Gold
                     status: cancelled
-                    timestamp: '2020-06-18T16:48:50.702Z'
+                    timestamp: '2020-06-18T16:48:50+00:00'
                     amount: '9.60745608'
                     value: '1543.11'
                     uom: g
                   - id: 0116192e-6eab-42fb-a30e-0100267f7d26
                     type: Buy Gold
                     status: cancelled
-                    timestamp: '2020-07-15T07:21:59.576Z'
+                    timestamp: '2020-07-15T07:21:59+00:00'
                     amount: '4.06835968'
                     value: '3208.98'
                     uom: g
                   - id: b18cbb1d-ed93-4f59-a6d6-6454e7208899
                     type: Sell Gold
                     status: completed
-                    timestamp: '2020-03-01T17:55:26.231Z'
+                    timestamp: '2020-03-01T17:55:26+00:00'
                     amount: '2.97335211'
                     value: '2855.91'
                     uom: g
@@ -426,17 +426,17 @@ paths:
                     recent_transactions:
                       - type: Buy Gold
                         status: in-progress
-                        timestamp: '2020-12-30T10:37:51.832Z'
+                        timestamp: '2020-12-30T10:37:51+00:00'
                         amount: '4.44378483'
                         value: '2522.96'
                       - type: Sell Gold
                         status: cancelled
-                        timestamp: '2020-04-18T21:41:13.616Z'
+                        timestamp: '2020-04-18T21:41:13+00:00'
                         amount: '2.68128136'
                         value: '4537.15'
                       - type: Buy Gold
                         status: in-progress
-                        timestamp: '2020-04-02T02:51:58.458Z'
+                        timestamp: '2020-04-02T02:51:58+00:00'
                         amount: '7.04860872'
                         value: '3926.27'
                 properties:
@@ -577,28 +577,28 @@ paths:
                   - id: 91229bd6-d4b7-4a71-8671-32491e97cf5f
                     type: Sell Gold
                     status: completed
-                    timestamp: '2020-07-14T03:53:16.319Z'
+                    timestamp: '2020-07-14T03:53:16+00:00'
                     amount: '2.33233246'
                     value: '1579.88'
                     uom: g
                   - id: a53d290b-9b9d-40c0-8c66-0d9e16d715f7
                     type: Sell Gold
                     status: cancelled
-                    timestamp: '2020-06-18T16:48:50.702Z'
+                    timestamp: '2020-06-18T16:48:50+00:00'
                     amount: '9.60745608'
                     value: '1543.11'
                     uom: g
                   - id: 0116192e-6eab-42fb-a30e-0100267f7d26
                     type: Buy Gold
                     status: cancelled
-                    timestamp: '2020-07-15T07:21:59.576Z'
+                    timestamp: '2020-07-15T07:21:59+00:00'
                     amount: '4.06835968'
                     value: '3208.98'
                     uom: g
                   - id: b18cbb1d-ed93-4f59-a6d6-6454e7208899
                     type: Sell Gold
                     status: completed
-                    timestamp: '2020-03-01T17:55:26.231Z'
+                    timestamp: '2020-03-01T17:55:26+00:00'
                     amount: '2.97335211'
                     value: '2855.91'
                     uom: g
@@ -669,28 +669,28 @@ paths:
                       - id: 91229bd6-d4b7-4a71-8671-32491e97cf5f
                         type: Sell Gold
                         status: completed
-                        timestamp: '2020-07-14T03:53:16.319Z'
+                        timestamp: '2020-07-14T03:53:16+00:00'
                         amount: '2.33233246'
                         value: '1579.88'
                         uom: g
                       - id: a53d290b-9b9d-40c0-8c66-0d9e16d715f7
                         type: Sell Gold
                         status: cancelled
-                        timestamp: '2020-06-18T16:48:50.702Z'
+                        timestamp: '2020-06-18T16:48:50+00:00'
                         amount: '9.60745608'
                         value: '1543.11'
                         uom: g
                       - id: 0116192e-6eab-42fb-a30e-0100267f7d26
                         type: Buy Gold
                         status: cancelled
-                        timestamp: '2020-07-15T07:21:59.576Z'
+                        timestamp: '2020-07-15T07:21:59+00:00'
                         amount: '4.06835968'
                         value: '3208.98'
                         uom: g
                       - id: b18cbb1d-ed93-4f59-a6d6-6454e7208899
                         type: Sell Gold
                         status: completed
-                        timestamp: '2020-03-01T17:55:26.231Z'
+                        timestamp: '2020-03-01T17:55:26+00:00'
                         amount: '2.97335211'
                         value: '2855.91'
                         uom: g
@@ -832,28 +832,28 @@ paths:
                   - id: 91229bd6-d4b7-4a71-8671-32491e97cf5f
                     type: Sell Gold
                     status: completed
-                    timestamp: '2020-07-14T03:53:16.319Z'
+                    timestamp: '2020-07-14T03:53:16+00:00'
                     amount: '2.33233246'
                     value: '1579.88'
                     uom: g
                   - id: a53d290b-9b9d-40c0-8c66-0d9e16d715f7
                     type: Sell Gold
                     status: cancelled
-                    timestamp: '2020-06-18T16:48:50.702Z'
+                    timestamp: '2020-06-18T16:48:50+00:00'
                     amount: '9.60745608'
                     value: '1543.11'
                     uom: g
                   - id: 0116192e-6eab-42fb-a30e-0100267f7d26
                     type: Buy Gold
                     status: cancelled
-                    timestamp: '2020-07-15T07:21:59.576Z'
+                    timestamp: '2020-07-15T07:21:59+00:00'
                     amount: '4.06835968'
                     value: '3208.98'
                     uom: g
                   - id: b18cbb1d-ed93-4f59-a6d6-6454e7208899
                     type: Sell Gold
                     status: completed
-                    timestamp: '2020-03-01T17:55:26.231Z'
+                    timestamp: '2020-03-01T17:55:26+00:00'
                     amount: '2.97335211'
                     value: '2855.91'
                     uom: g
@@ -950,7 +950,7 @@ paths:
                     userid: 61bc071c17707733bd309ab2_83ff228c-b789-427b-9de2-9b11fc514408
                     username: 4ce2e6bd-596c-4b0a-9ec4-7c2887999763
                     deleted: true
-                    deleted_at: '2021-08-25T12:25:23.028Z'
+                    deleted_at: '2021-12-15T06:55:15+00:00'
                 properties:
                   userid:
                     type: string
@@ -970,7 +970,8 @@ paths:
               example:
                 userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 deleted: true
-                deleted_at: '2021-08-25T12:25:23.028Z'
+                deleted_at: '2021-12-15T06:55:15+00:00'
+                
       operationId: deleteAccount
     parameters: []
   /v1/al/accounts/balance:
@@ -1128,70 +1129,70 @@ paths:
                       - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
                         type: Buy Gold
                         status: completed
-                        timestamp: '2020-12-22T07:29:46.373Z'
+                        timestamp: '2020-12-22T07:29:46+00:00'
                         amount: 9.89163656
                         value: 2040.71
                         uom: g
                       - id: b4ce71db-b2b8-467f-9690-98784622e9b7
                         type: Buy Gold
                         status: cancelled
-                        timestamp: '2020-12-01T15:49:27.374Z'
+                        timestamp: '2020-12-01T15:49:27+00:00'
                         amount: 8.38309314
                         value: 4166.93
                         uom: g
                       - id: 75979b52-84dd-4b09-bd76-685a755271ab
                         type: Sell Gold
                         status: completed
-                        timestamp: '2020-09-03T01:28:36.375Z'
+                        timestamp: '2020-09-03T01:28:36+00:00'
                         amount: 8.10909599
                         value: 3313.03
                         uom: g
                       - id: d50a38ee-ba7f-41a1-9368-4db3ce12e403
                         type: Buy Gold
                         status: completed
-                        timestamp: '2020-09-01T20:59:31.154Z'
+                        timestamp: '2020-09-01T20:59:31+00:00'
                         amount: 6.72619045
                         value: 884.57
                         uom: g
                       - id: efb326e5-68dc-4f49-a3ba-460e44d38747
                         type: Sell Gold
                         status: completed
-                        timestamp: '2020-08-04T00:49:55.098Z'
+                        timestamp: '2020-08-04T00:49:55+00:00'
                         amount: 8.89249831
                         value: 1349.71
                         uom: g
                       - id: ae0f67eb-eaeb-4d42-952c-0908e4b71512
                         type: Sell Gold
                         status: completed
-                        timestamp: '2020-08-03T16:43:19.729Z'
+                        timestamp: '2020-08-03T16:43:19+00:00'
                         amount: 5.10451429
                         value: 3897.73
                         uom: g
                       - id: 4cd01492-e419-41a1-9c00-773d52f6ae01
                         type: Buy Gold
                         status: cancelled
-                        timestamp: '2020-02-29T19:19:16.171Z'
+                        timestamp: '2020-02-29T19:19:16+00:00'
                         amount: 6.26706273
                         value: 4711.76
                         uom: g
                       - id: 95b17f54-ebfa-454c-8886-c3ad93b41107
                         type: Buy Gold
                         status: cancelled
-                        timestamp: '2020-02-04T04:16:09.171Z'
+                        timestamp: '2020-02-04T04:16:09+00:00'
                         amount: 7.25148182
                         value: 616.66
                         uom: g
                       - id: 1e28094f-df35-4ad8-b26f-ceb6d43197b6
                         type: Buy Gold
                         status: completed
-                        timestamp: '2020-01-28T05:15:35.844Z'
+                        timestamp: '2020-01-28T05:15:35+00:00'
                         amount: 8.08194329
                         value: 3022.24
                         uom: g
                       - id: fb2b1979-770c-4feb-8a78-1f6262ba5066
                         type: Sell Gold
                         status: completed
-                        timestamp: '2020-01-08T11:24:40.738Z'
+                        timestamp: '2020-01-08T11:24:40+00:00'
                         amount: 4.11746301
                         value: 1405.46
                         uom: g
@@ -1272,70 +1273,70 @@ paths:
                   - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
                     type: Buy Gold
                     status: completed
-                    timestamp: '2020-12-22T07:29:46.373Z'
+                    timestamp: '2020-12-22T07:29:46+00:00'
                     amount: '9.89163656'
                     value: '2040.71'
                     uom: g
                   - id: b4ce71db-b2b8-467f-9690-98784622e9b7
                     type: Buy Gold
                     status: cancelled
-                    timestamp: '2020-12-01T15:49:27.374Z'
+                    timestamp: '2020-12-01T15:49:27+00:00'
                     amount: '8.38309314'
                     value: '4166.93'
                     uom: g
                   - id: 75979b52-84dd-4b09-bd76-685a755271ab
                     type: Sell Gold
                     status: completed
-                    timestamp: '2020-09-03T01:28:36.375Z'
+                    timestamp: '2020-09-03T01:28:36+00:00'
                     amount: '8.10909599'
                     value: '3313.03'
                     uom: g
                   - id: d50a38ee-ba7f-41a1-9368-4db3ce12e403
                     type: Buy Gold
                     status: completed
-                    timestamp: '2020-09-01T20:59:31.154Z'
+                    timestamp: '2020-09-01T20:59:31+00:00'
                     amount: '6.72619045'
                     value: '884.57'
                     uom: g
                   - id: efb326e5-68dc-4f49-a3ba-460e44d38747
                     type: Sell Gold
                     status: completed
-                    timestamp: '2020-08-04T00:49:55.098Z'
+                    timestamp: '2020-08-04T00:49:55+00:00'
                     amount: '8.89249831'
                     value: '1349.71'
                     uom: g
                   - id: ae0f67eb-eaeb-4d42-952c-0908e4b71512
                     type: Sell Gold
                     status: completed
-                    timestamp: '2020-08-03T16:43:19.729Z'
+                    timestamp: '2020-08-03T16:43:19+00:00'
                     amount: '5.10451429'
                     value: '3897.73'
                     uom: g
                   - id: 4cd01492-e419-41a1-9c00-773d52f6ae01
                     type: Buy Gold
                     status: cancelled
-                    timestamp: '2020-02-29T19:19:16.171Z'
+                    timestamp: '2020-02-29T19:19:16+00:00'
                     amount: '6.26706273'
                     value: '4711.76'
                     uom: g
                   - id: 95b17f54-ebfa-454c-8886-c3ad93b41107
                     type: Buy Gold
                     status: cancelled
-                    timestamp: '2020-02-04T04:16:09.171Z'
+                    timestamp: '2020-02-04T04:16:09+00:00'
                     amount: '7.25148182'
                     value: '616.66'
                     uom: g
                   - id: 1e28094f-df35-4ad8-b26f-ceb6d43197b6
                     type: Buy Gold
                     status: completed
-                    timestamp: '2020-01-28T05:15:35.844Z'
+                    timestamp: '2020-01-28T05:15:35+00:00'
                     amount: '8.08194329'
                     value: '3022.24'
                     uom: g
                   - id: fb2b1979-770c-4feb-8a78-1f6262ba5066
                     type: Sell Gold
                     status: completed
-                    timestamp: '2020-01-08T11:24:40.738Z'
+                    timestamp: '2020-01-08T11:24:40+00:00'
                     amount: '4.11746301'
                     value: '1405.46'
                     uom: g
