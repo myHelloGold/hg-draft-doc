@@ -2359,7 +2359,7 @@ paths:
         PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + "MYR"
         ```
 
-        Using the formula above, sign the constructed source string based on the example data should be:
+        Using the formula above, the constructed source string based on the example data should be:
         ```
         61bbf8dfdcb8e621111744ae:592fcc1bbf5897b150057000:61badd453944e8df8a8b7602:320.12:MYR
         ```
