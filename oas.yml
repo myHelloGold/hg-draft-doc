@@ -1130,7 +1130,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61bf3533e361fb3054c3affe_3d1b06ea-2bcb-4ea6-9ea0-89d6000c0305
+                    userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                     transactions:
                       - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
                         type: Buy Gold
@@ -1274,7 +1274,7 @@ paths:
                         description: 'Continuation path to the previous set of data, if available.'
                         nullable: true
               example:
-                userid: 61bf3533e361fb3054c3affe_3d1b06ea-2bcb-4ea6-9ea0-89d6000c0305
+                userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 transactions:
                   - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
                     type: Buy Gold
