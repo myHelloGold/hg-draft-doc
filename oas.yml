@@ -2348,15 +2348,17 @@ paths:
         ### How to generate checksum value
         Assuming the following information:
         ```
+        PARTNER_SECRET='abcde12345'
         PARTNER_ID: '61bbf8dfdcb8e621111744ae'
         HG_REF_ID: '592fcc1bbf5897b150057000'
         PARTNER_REF_ID: '61badd453944e8df8a8b7602'
         TOTAL: '320.12'
+        CURRENCY='MYR'
         ```
 
         First, construct the source string based on the following formula, while making sure that each data is separated by the character ':'.
         ```
-        PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + "MYR"
+        PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + CURRENCY
         ```
 
         Using the formula above, the constructed source string based on the example data should be:
@@ -2401,7 +2403,7 @@ paths:
                   status: completed
                   total: '320.12'
                   remark: veniam cillum eu
-                  signature: AupzywB3lKwv34uxgPWmNE8GpW2RHyeTqaAKH9GeZqQ=
+                  checksum: AupzywB3lKwv34uxgPWmNE8GpW2RHyeTqaAKH9GeZqQ=
                   reference:
                     hg: 61badd454c7c033061e18f20
                     quote: 61badd459e29a1d268cc9bcc
@@ -2439,7 +2441,7 @@ paths:
                   type: string
                   minLength: 1
                   description: |-
-                    Signature used for validation purposes.
+                    Checksum used for validation purposes.
 
                     `SHA256( PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + "MYR" )`
                 reference:
