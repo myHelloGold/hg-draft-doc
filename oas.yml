@@ -62,68 +62,63 @@ paths:
               type: object
               x-examples:
                 example-1:
-                  user_info:
-                    kyc_level: 2
-                    phone: '60171234567'
-                    email: foo@bar.com
-                    full_name: Foo Bar
-                    id_number: '991230052425'
-                    id_type: idcard
-                    nationality: MYS
-                    id_expiry: '2022-12-15'
+                  kyc_level: 2
+                  phone: '60171234567'
+                  email: foo@bar.com
+                  full_name: Foo Bar
+                  id_number: '991230052425'
+                  id_type: idcard
+                  nationality: MYS
+                  id_expiry: '2022-12-15'
               properties:
-                user_info:
-                  type: object
-                  properties:
-                    kyc_level:
-                      type: number
-                      description: |-
-                        The user's KYC level.
+                kyc_level:
+                  type: number
+                  description: |-
+                    The user's KYC level.
 
-                        Use `0` for non KYCed users, `1` for partially KYCed and `2` for fully KYCed
-                    phone:
-                      type: string
-                      minLength: 1
-                      description: The user's mobile phone number.
-                    email:
-                      type: string
-                      minLength: 1
-                      description: The user's email address.
-                    full_name:
-                      type: string
-                      minLength: 1
-                      description: 'The user''s full name, as per their ID.'
-                    id_number:
-                      type: string
-                      minLength: 1
-                      description: The number of the document used for KYC.
-                    id_type:
-                      type: string
-                      minLength: 1
-                      description: |-
-                        The type of documents used for KYC.
+                    Use `0` for non KYCed users, `1` for partially KYCed and `2` for fully KYCed
+                phone:
+                  type: string
+                  minLength: 1
+                  description: The user's mobile phone number.
+                email:
+                  type: string
+                  minLength: 1
+                  description: The user's email address.
+                full_name:
+                  type: string
+                  minLength: 1
+                  description: 'The user''s full name, as per their ID.'
+                id_number:
+                  type: string
+                  minLength: 1
+                  description: The number of the document used for KYC.
+                id_type:
+                  type: string
+                  minLength: 1
+                  description: |-
+                    The type of documents used for KYC.
 
-                        Current supported values are `idcard` for identity document issued by a country's government for the purpose of identifying a citizen, or `passport`.
-                    nationality:
-                      type: string
-                      minLength: 1
-                      description: 'The user''s nationality, based on the document used for KYC. Values should be in ISO 3166-1 alpha-3 country codes.'
-                    id_expiry:
-                      type: string
-                      minLength: 1
-                      description: The expiry date of the document used for KYC. Format should be in `YYYY-MM-DD`.
+                    Current supported values are `idcard` for identity document issued by a country's government for the purpose of identifying a citizen, or `passport`.
+                nationality:
+                  type: string
+                  minLength: 1
+                  description: 'The user''s nationality, based on the document used for KYC. Values should be in ISO 3166-1 alpha-3 country codes.'
+                id_expiry:
+                  type: string
+                  minLength: 1
+                  description: The expiry date of the document used for KYC. Format should be in `YYYY-MM-DD`.
             examples:
               example-1:
                 value:
-                  user_info:
-                    kyc_level: 2
-                    phone: '60171234567'
-                    email: foo@bar.com
-                    full_name: Foo Bar
-                    id_number: '991230052425'
-                    id_type: idcard
-                    nationality: MYS
-                    id_expiry: '2022-12-15'
+                  kyc_level: 2
+                  phone: '60171234567'
+                  email: foo@bar.com
+                  full_name: Foo Bar
+                  id_number: '991230052425'
+                  id_type: idcard
+                  nationality: MYS
+                  id_expiry: '2022-12-15'
       parameters:
         - name: x-api-key
           in: header
@@ -877,60 +872,55 @@ paths:
               type: object
               x-examples:
                 example-1:
-                  user_info:
-                    phone: '60121234567'
-                    email: foo@bar.com
-                    full_name: Foo Bar
-                    id_number: '991230052425'
-                    id_type: idcard
-                    nationality: MYS
-                    id_expiry: '2022-12-15'
+                  phone: '60121234567'
+                  email: foo@bar.com
+                  full_name: Foo Bar
+                  id_number: '991230052425'
+                  id_type: idcard
+                  nationality: MYS
+                  id_expiry: '2022-12-15'
               properties:
-                user_info:
-                  type: object
-                  properties:
-                    kyc_level:
-                      type: number
-                      description: |-
-                        The user's KYC level.
+                kyc_level:
+                  type: number
+                  description: |-
+                    The user's KYC level.
 
-                        Use '0' for non KYCed users, '1' for partially KYCed and '2' for fully KYCed.
-                    phone:
-                      type: string
-                      minLength: 1
-                      description: The user's mobile phone number.
-                    email:
-                      type: string
-                      minLength: 1
-                      description: The user's email address.
-                    full_name:
-                      type: string
-                      minLength: 1
-                      description: 'The user''s full name, as per their ID.'
-                    id_number:
-                      type: string
-                      minLength: 1
-                      description: The number of the document used for KYC.
-                    id_type:
-                      type: string
-                      minLength: 1
-                      description: |-
-                        The type of documents used for KYC.
+                    Use '0' for non KYCed users, '1' for partially KYCed and '2' for fully KYCed.
+                phone:
+                  type: string
+                  minLength: 1
+                  description: The user's mobile phone number.
+                email:
+                  type: string
+                  minLength: 1
+                  description: The user's email address.
+                full_name:
+                  type: string
+                  minLength: 1
+                  description: 'The user''s full name, as per their ID.'
+                id_number:
+                  type: string
+                  minLength: 1
+                  description: The number of the document used for KYC.
+                id_type:
+                  type: string
+                  minLength: 1
+                  description: |-
+                    The type of documents used for KYC.
 
-                        Current supported values are 'idcard' for identity document issued by a country's government for the purpose of identifying a citizen, or 'passport'.
-                    nationality:
-                      type: string
-                      minLength: 1
-                      description: 'The user''s nationality, based on the document used for KYC. Values should be in ISO 3166-1 alpha-3 country codes.'
-                    id_expiry:
-                      type: string
-                      minLength: 1
-                      description: The expiry date of the document used for KYC. Format should be in 'YYYY-MM-DD'.
+                    Current supported values are 'idcard' for identity document issued by a country's government for the purpose of identifying a citizen, or 'passport'.
+                nationality:
+                  type: string
+                  minLength: 1
+                  description: 'The user''s nationality, based on the document used for KYC. Values should be in ISO 3166-1 alpha-3 country codes.'
+                id_expiry:
+                  type: string
+                  minLength: 1
+                  description: The expiry date of the document used for KYC. Format should be in 'YYYY-MM-DD'.
             examples:
               example-1:
                 value:
-                  user_info:
-                    phone: '60121234567'
+                  phone: '60121234567'
     parameters: []
   /v1/al/accounts/delete:
     delete:
