@@ -38,8 +38,8 @@ info:
 
     Example:
     ```
-    API_KEY=1e6d7c24-6ef9-46a9-be38-2a6fe4775031
-    USER_ID=727ab067-28d9-4938-9ba1-64acfc373e7f
+    API_KEY='1e6d7c24-6ef9-46a9-be38-2a6fe4775031'
+    USER_ID='727ab067-28d9-4938-9ba1-64acfc373e7f'
 
     curl --request GET \
       --url 'https://stage-api.hellogold.com/v1/al/placeholder' \
