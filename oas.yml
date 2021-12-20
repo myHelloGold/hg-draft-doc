@@ -2351,30 +2351,30 @@ paths:
         PARTNER_ID: '61bbf8dfdcb8e621111744ae'
         HG_REF_ID: '592fcc1bbf5897b150057000'
         PARTNER_REF_ID: '61badd453944e8df8a8b7602'
-        TOTAL: '32012' (RM 320.12)
+        TOTAL: '320.12'
         ```
 
         First, construct the source string based on the following formula, while making sure that each data is separated by the character ':'.
         ```
-        PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL.delete(.) + ':' + "MYR"
+        PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + "MYR"
         ```
 
         Using the formula above, sign the constructed source string based on the example data should be:
         ```
-        61bbf8dfdcb8e621111744ae:592fcc1bbf5897b150057000:61badd453944e8df8a8b7602:32012:MYR
+        61bbf8dfdcb8e621111744ae:592fcc1bbf5897b150057000:61badd453944e8df8a8b7602:320.12:MYR
         ```
 
         Once source string is available, sign the constructed source string above using HMAC_SHA256 and the secret key. Full example can be seen below:
 
         ```
         require('crypto').createHmac('SHA256', clientSecret)
-          .update(PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL.delete(.) + ':' + "MYR")
+          .update(PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + "MYR")
           .digest('base64')
         ```
 
-        Example of the final output that should be passed as part of the value for the `checksum` key, using `abcde12345` as the secret key:
+        Example of the Base64 encoded output that should be passed as part of the value for the `checksum` key, using `abcde12345` as the secret key:
         ```
-        dfb79a5cb00a99a77d15037daf33fc081620ca59ac17336570b50af3c6933348
+        AupzywB3lKwv34uxgPWmNE8GpW2RHyeTqaAKH9GeZqQ=
         ```
       tags:
         - transactions
