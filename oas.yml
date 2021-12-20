@@ -62,9 +62,6 @@ paths:
               type: object
               x-examples:
                 example-1:
-                  partner: 61bbf8dfdcb8e621111744ae
-                  partner_uid: d1351e8b-b546-446a-836b-56fce02d5b44
-                  language: en
                   user_info:
                     kyc_level: 2
                     phone: '60171234567'
@@ -75,17 +72,6 @@ paths:
                     nationality: MYS
                     id_expiry: '2022-12-15'
               properties:
-                partner:
-                  type: string
-                  minLength: 1
-                  description: The unique identifier of the partner.
-                partner_uid:
-                  type: string
-                  minLength: 1
-                  description: The unique identifier of the user.
-                language:
-                  type: string
-                  minLength: 1
                 user_info:
                   type: object
                   properties:
@@ -126,15 +112,9 @@ paths:
                       type: string
                       minLength: 1
                       description: The expiry date of the document used for KYC. Format should be in `YYYY-MM-DD`.
-              required:
-                - partner
-                - partner_uid
             examples:
               example-1:
                 value:
-                  partner: 61bbf8dfdcb8e621111744ae
-                  partner_uid: d1351e8b-b546-446a-836b-56fce02d5b44
-                  language: en
                   user_info:
                     kyc_level: 2
                     phone: '60171234567'
