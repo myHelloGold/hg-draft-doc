@@ -1262,8 +1262,8 @@ paths:
                       cursors:
                         after: bbo9ceupuzi
                         before: anch1ggyns8
-                      next: 'https://stage-api.hellogold.com/accounts/transactions?after=bbo9ceupuzi'
-                      previous: 'https://stage-api.hellogold.com/accounts/transactions?before=anch1ggyns8'
+                      next: 'https://stage-api.hellogold.com/v1/al/accounts/transactions?after=bbo9ceupuzi'
+                      previous: 'https://stage-api.hellogold.com/v1/al/accounts/transactions?before=anch1ggyns8'
                 properties:
                   userid:
                     type: string
