@@ -38,7 +38,7 @@ info:
 
     Example:
     ```
-    API_KEY=0912535a-5d76-4c6e-8f30-c0bc54f78074
+    API_KEY=1e6d7c24-6ef9-46a9-be38-2a6fe4775031
     USER_ID=727ab067-28d9-4938-9ba1-64acfc373e7f
 
     curl --request GET \
@@ -149,7 +149,7 @@ paths:
           in: header
           schema:
             type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
           required: true
           description: The API key required for authentication.
         - name: x-user-id
@@ -406,7 +406,7 @@ paths:
           in: header
           schema:
             type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
           required: true
           description: The API key required for authentication.
         - name: x-user-id
@@ -644,7 +644,7 @@ paths:
           in: header
           schema:
             type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
           required: true
           description: The API key required for authentication.
         - name: x-user-id
@@ -982,7 +982,7 @@ paths:
           in: header
           schema:
             type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
           required: true
           description: The API key required for authentication.
         - name: x-user-id
@@ -1040,7 +1040,7 @@ paths:
           in: header
           schema:
             type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
           required: true
           description: The API key required for authentication.
         - name: x-user-id
@@ -1139,7 +1139,7 @@ paths:
           in: header
           schema:
             type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
           required: true
           description: The API key required for authentication.
         - name: x-user-id
@@ -1417,7 +1417,7 @@ paths:
           in: header
           schema:
             type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
           required: true
           description: The API key required for authentication.
         - name: x-user-id
@@ -1589,7 +1589,7 @@ paths:
           in: header
           schema:
             type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
           required: true
           description: The API key required for authentication.
         - name: x-user-id
@@ -1768,7 +1768,7 @@ paths:
           in: header
           schema:
             type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
           required: true
           description: The API key required for authentication.
         - name: x-user-id
@@ -1957,7 +1957,7 @@ paths:
           in: header
           schema:
             type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
           required: true
           description: The API key required for authentication.
         - name: x-user-id
@@ -2150,7 +2150,7 @@ paths:
           in: header
           schema:
             type: string
-          example: 0912535a-5d76-4c6e-8f30-c0bc54f78074
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
           required: true
           description: The API key required for authentication.
         - name: x-user-id
