@@ -2441,9 +2441,9 @@ paths:
                   type: string
                   minLength: 1
                   description: |-
-                    Signature used for validation purposes.
+                    Checksum used for validation purposes.
 
-                    `SHA256( PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + CURRENCY )`
+                    `BASE64( HMAC_SHA256(SECRET, PARTNER_ID + ':' + HG_REF_ID + ':' + PARTNER_REF_ID + ':' + TOTAL + ':' + CURRENCY) )`
                 reference:
                   type: object
                   properties:
