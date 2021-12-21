@@ -1396,8 +1396,8 @@ paths:
                       line_items:
                         - id: DGLD-001
                           symbol: GLD
-                          amount: '1.32100014'
-                          value: '320.12'
+                          quantity: '1.28320038'
+                          price: '249.47'
                           uom: g
                       subtotal: '320.12'
                       discount: '0.00'
@@ -1509,8 +1509,8 @@ paths:
                   line_items:
                     - id: DGLD-001
                       symbol: GLD
-                      amount: '1.32100014'
-                      value: '320.12'
+                      quantity: '1.28320038'
+                      price: '249.47'
                       uom: g
                   subtotal: '320.12'
                   discount: '0.00'
@@ -1608,8 +1608,8 @@ paths:
                       line_items:
                         - id: DGLD-001
                           uom: g
-                          value: '320.12'
-                          amount: '1.32100014'
+                          quantity: '1.28320038'
+                          price: '249.47'
                           symbol: GLD
                       subtotal: '320.12'
                       discount: '0.00'
@@ -1721,8 +1721,8 @@ paths:
                   line_items:
                     - id: DGLD-001
                       symbol: GLD
-                      amount: '1.32100014'
-                      value: '320.12'
+                      quantity: '1.28320038'
+                      price: '249.47'
                       uom: g
                   subtotal: '320.12'
                   discount: '0.00'
@@ -1781,8 +1781,8 @@ paths:
                       line_items:
                         - id: DGLD-001
                           symbol: GLD
-                          amount: '0'
-                          value: '0'
+                          quantity: '0'
+                          price: '0'
                           uom: g
                       subtotal: '0'
                       discount: '0.00'
@@ -1894,8 +1894,8 @@ paths:
                   line_items:
                     - id: DGLD-001
                       symbol: GLD
-                      amount: '0'
-                      value: '0'
+                      quantity: '0'
+                      price: '0'
                       uom: g
                   subtotal: '0'
                   discount: '0.00'
@@ -1967,8 +1967,8 @@ paths:
                       line_items:
                         - id: DGLD-001
                           uom: g
-                          value: '320.12'
-                          amount: '1.32100014'
+                          quantity: '1.28320038'
+                          price: '249.47'
                           symbol: GLD
                       subtotal: '320.12'
                       discount: '0.00'
@@ -2087,8 +2087,8 @@ paths:
                   line_items:
                     - id: DGLD-001
                       uom: g
-                      value: '320.12'
-                      amount: '1.32100014'
+                      quantity: '1.28320038'
+                      price: '249.47'
                       symbol: GLD
                   subtotal: '320.12'
                   discount: '0.00'
@@ -2168,8 +2168,8 @@ paths:
                       line_items:
                         - id: DGLD-001
                           symbol: GLD
-                          amount: '1.32100014'
-                          value: '320.12'
+                          quantity: '1.28320038'
+                          price: '249.47'
                           uom: g
                       subtotal: '320.12'
                       discount: '0.00'
@@ -2285,8 +2285,8 @@ paths:
                   line_items:
                     - id: DGLD-001
                       uom: g
-                      value: '320.12'
-                      amount: '1.32100014'
+                      quantity: '1.28320038'
+                      price: '249.47'
                       symbol: GLD
                   subtotal: '320.12'
                   tax: '0.00'
