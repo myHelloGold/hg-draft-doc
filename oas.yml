@@ -971,7 +971,6 @@ paths:
                 userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 deleted: true
                 deleted_at: '2021-12-15T06:55:15+00:00'
-
       operationId: deleteAccount
     parameters: []
   /v1/al/accounts/balance:
@@ -1455,14 +1454,14 @@ paths:
                               type: string
                               minLength: 1
                               description: The symbol of the asset.
-                            amount:
+                            price:
                               type: string
                               minLength: 1
-                              description: The amount transacted for the asset.
-                            value:
+                              description: The price of the asset.
+                            quantity:
                               type: string
                               minLength: 1
-                              description: 'The value of the product amount, in fiat.'
+                              description: The quantity of the trade.
                             uom:
                               type: string
                               minLength: 1
@@ -1524,6 +1523,39 @@ paths:
       tags:
         - transactions
       operationId: createQuote
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  action: buy
+                  quantity: '0.502'
+                  uom: g
+              properties:
+                action:
+                  type: string
+                  minLength: 1
+                  description: The action of the transaction.
+                symbol:
+                  type: string
+                  description: The symbol of the asset.
+                  minLength: 1
+                quantity:
+                  type: string
+                  minLength: 1
+                  description: The quantity of the trade.
+                uom:
+                  type: string
+                  minLength: 1
+                  description: The Unit of Measurement (UOM) of the asset.
+              required:
+                - action
+                - symbol
+                - quantity
+                - uom
     parameters: []
   /v1/al/quotes/retrieve:
     get:
@@ -1548,7 +1580,7 @@ paths:
             type: string
           in: query
           name: quoteId
-          description: The quote ID to be retrieved.
+          description: The quote unique identifier.
           required: true
       responses:
         '200':
@@ -1633,14 +1665,14 @@ paths:
                               type: string
                               minLength: 1
                               description: The symbol of the asset.
-                            amount:
+                            price:
                               type: string
                               minLength: 1
-                              description: The amount transacted for the asset.
-                            value:
+                              description: The price of the asset.
+                            quantity:
                               type: string
                               minLength: 1
-                              description: 'The value of the product amount, in fiat.'
+                              description: The quantity of the trade.
                             uom:
                               type: string
                               minLength: 1
@@ -1807,14 +1839,14 @@ paths:
                               type: string
                               minLength: 1
                               description: The symbol of the asset.
-                            amount:
+                            price:
                               type: string
                               minLength: 1
-                              description: The amount transacted for the asset.
-                            value:
+                              description: The price of the asset.
+                            quantity:
                               type: string
                               minLength: 1
-                              description: 'The value of the product amount, in fiat.'
+                              description: The quantity of the trade.
                             uom:
                               type: string
                               minLength: 1
@@ -1889,7 +1921,7 @@ paths:
                 quoteId:
                   type: string
                   minLength: 1
-                  description: The quote ID to be deleted.
+                  description: The quote unique identifier.
               required:
                 - quoteId
     parameters: []
@@ -1996,14 +2028,14 @@ paths:
                               type: string
                               minLength: 1
                               description: The symbol of the asset.
-                            amount:
+                            price:
                               type: string
                               minLength: 1
-                              description: The amount transacted for the asset.
-                            value:
+                              description: The price of the asset.
+                            quantity:
                               type: string
                               minLength: 1
-                              description: 'The value of the product amount, in fiat.'
+                              description: The quantity of the trade.
                             uom:
                               type: string
                               minLength: 1
@@ -2083,8 +2115,13 @@ paths:
                   type: string
                   minLength: 1
                   description: 'The reference id of the order, used internally by the partner.'
+                quoteId:
+                  type: string
+                  minLength: 1
+                  description: The quote unique identifier.
               required:
                 - refId
+                - quoteId
     parameters: []
   /v1/al/orders/create:
     post:
@@ -2189,14 +2226,14 @@ paths:
                               type: string
                               minLength: 1
                               description: The symbol of the asset.
-                            amount:
+                            price:
                               type: string
                               minLength: 1
-                              description: The amount transacted for the asset.
-                            value:
+                              description: The price of the asset.
+                            quantity:
                               type: string
                               minLength: 1
-                              description: 'The value of the product amount, in fiat.'
+                              description: The quantity of the trade.
                             uom:
                               type: string
                               minLength: 1
