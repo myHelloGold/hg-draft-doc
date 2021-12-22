@@ -296,7 +296,7 @@ paths:
                     items:
                       type: object
                       properties:
-                        asset:
+                        type:
                           type: string
                           minLength: 1
                           description: The type of asset.
@@ -551,7 +551,7 @@ paths:
                     items:
                       type: object
                       properties:
-                        asset:
+                        type:
                           type: string
                           minLength: 1
                           description: The type of asset.
@@ -806,7 +806,7 @@ paths:
                     items:
                       type: object
                       properties:
-                        asset:
+                        type:
                           type: string
                           minLength: 1
                           description: The type of asset.
@@ -1094,7 +1094,7 @@ paths:
                     items:
                       type: object
                       properties:
-                        asset:
+                        type:
                           type: string
                           description: The type of asset.
                           minLength: 1
