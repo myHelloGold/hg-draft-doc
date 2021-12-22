@@ -213,7 +213,7 @@ paths:
                     updated_at: '2021-12-15T06:55:36+00:00'
                     deleted_at: null
                     balances:
-                      - symbol: XAUMYR
+                      - type: XAU
                         total_balance: '9.90967941'
                         total_locked_balance: '2.00885041'
                         total_available_balance: '8.32374403'
@@ -364,13 +364,13 @@ paths:
                   transfer_enabled: true
                   withdraw_enabled: false
                 balances:
-                  - asset: MYR
+                  - type: MYR
                     total_balance: '1792.38'
                     total_locked_balance: '0.00'
                     total_available_balance: '1792.38'
                     accrued_fees: '0.00'
                     uom: null
-                  - symbol: XAUMYR
+                  - type: XAU
                     total_balance: '8.947243'
                     total_locked_balance: '7.04023835'
                     total_available_balance: '1.90700465'
@@ -469,7 +469,7 @@ paths:
                     updated_at: '2021-12-15T06:55:36+00:00'
                     deleted_at: null
                     balances:
-                      - symbol: XAUMYR
+                      - type: XAU
                         total_balance: '9.90967941'
                         total_locked_balance: '2.00885041'
                         total_available_balance: '8.32374403'
@@ -619,13 +619,13 @@ paths:
                   transfer_enabled: true
                   withdraw_enabled: false
                 balances:
-                  - asset: MYR
+                  - type: MYR
                     total_balance: '1792.38'
                     total_locked_balance: '0.00'
                     total_available_balance: '1792.38'
                     accrued_fees: '0.00'
                     uom: null
-                  - symbol: XAUMYR
+                  - type: XAU
                     total_balance: '8.947243'
                     total_locked_balance: '7.04023835'
                     total_available_balance: '1.90700465'
@@ -711,13 +711,13 @@ paths:
                       transfer_enabled: true
                       withdraw_enabled: false
                     balances:
-                      - asset: MYR
+                      - type: MYR
                         total_balance: '1792.38'
                         total_locked_balance: '0.00'
                         total_available_balance: '1792.38'
                         accrued_fees: '0.00'
                         uom: 'null'
-                      - symbol: XAUMYR
+                      - type: XAU
                         total_balance: '8.947243'
                         total_locked_balance: '7.04023835'
                         total_available_balance: '1.90700465'
@@ -874,13 +874,13 @@ paths:
                   transfer_enabled: true
                   withdraw_enabled: false
                 balances:
-                  - asset: MYR
+                  - type: MYR
                     total_balance: '1792.38'
                     total_locked_balance: '0.00'
                     total_available_balance: '1792.38'
                     accrued_fees: '0.00'
                     uom: 'null'
-                  - symbol: XAUMYR
+                  - type: XAU
                     total_balance: '8.947243'
                     total_locked_balance: '7.04023835'
                     total_available_balance: '1.90700465'
@@ -1070,13 +1070,13 @@ paths:
                   example-1:
                     userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                     balances:
-                      - asset: MYR
+                      - type: MYR
                         total_balance: '1792.38'
                         total_locked_balance: '0.00'
                         total_available_balance: '1792.38'
                         accrued_fees: '0.00'
                         uom: null
-                      - symbol: XAUMYR
+                      - type: XAU
                         total_balance: '8.947243'
                         total_locked_balance: '7.04023835'
                         total_available_balance: '1.90700465'
@@ -1118,13 +1118,13 @@ paths:
               example:
                 userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 balances:
-                  - asset: MYR
+                  - type: MYR
                     total_balance: '1792.38'
                     total_locked_balance: '0.00'
                     total_available_balance: '1792.38'
                     accrued_fees: '0.00'
                     uom: null
-                  - symbol: XAUMYR
+                  - type: XAU
                     total_balance: '8.947243'
                     total_locked_balance: '7.04023835'
                     total_available_balance: '1.90700465'
