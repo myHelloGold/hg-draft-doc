@@ -102,7 +102,7 @@ paths:
           required: true
         - schema:
             type: string
-            example: GLDMYR
+            example: XAUMYR
           in: query
           name: symbol
           description: The symbol of the asset.
@@ -213,7 +213,7 @@ paths:
                     updated_at: '2021-12-15T06:55:36+00:00'
                     deleted_at: null
                     balances:
-                      - asset: GLD
+                      - symbol: XAUMYR
                         total_balance: '9.90967941'
                         total_locked_balance: '2.00885041'
                         total_available_balance: '8.32374403'
@@ -370,7 +370,7 @@ paths:
                     total_available_balance: '1792.38'
                     accrued_fees: '0.00'
                     uom: null
-                  - asset: GLD
+                  - symbol: XAUMYR
                     total_balance: '8.947243'
                     total_locked_balance: '7.04023835'
                     total_available_balance: '1.90700465'
@@ -469,7 +469,7 @@ paths:
                     updated_at: '2021-12-15T06:55:36+00:00'
                     deleted_at: null
                     balances:
-                      - asset: GLD
+                      - symbol: XAUMYR
                         total_balance: '9.90967941'
                         total_locked_balance: '2.00885041'
                         total_available_balance: '8.32374403'
@@ -625,7 +625,7 @@ paths:
                     total_available_balance: '1792.38'
                     accrued_fees: '0.00'
                     uom: null
-                  - asset: GLD
+                  - symbol: XAUMYR
                     total_balance: '8.947243'
                     total_locked_balance: '7.04023835'
                     total_available_balance: '1.90700465'
@@ -717,7 +717,7 @@ paths:
                         total_available_balance: '1792.38'
                         accrued_fees: '0.00'
                         uom: 'null'
-                      - asset: GLD
+                      - symbol: XAUMYR
                         total_balance: '8.947243'
                         total_locked_balance: '7.04023835'
                         total_available_balance: '1.90700465'
@@ -880,7 +880,7 @@ paths:
                     total_available_balance: '1792.38'
                     accrued_fees: '0.00'
                     uom: 'null'
-                  - asset: GLD
+                  - symbol: XAUMYR
                     total_balance: '8.947243'
                     total_locked_balance: '7.04023835'
                     total_available_balance: '1.90700465'
@@ -1076,7 +1076,7 @@ paths:
                         total_available_balance: '1792.38'
                         accrued_fees: '0.00'
                         uom: null
-                      - asset: GLD
+                      - symbol: XAUMYR
                         total_balance: '8.947243'
                         total_locked_balance: '7.04023835'
                         total_available_balance: '1.90700465'
@@ -1124,7 +1124,7 @@ paths:
                     total_available_balance: '1792.38'
                     accrued_fees: '0.00'
                     uom: null
-                  - asset: GLD
+                  - symbol: XAUMYR
                     total_balance: '8.947243'
                     total_locked_balance: '7.04023835'
                     total_available_balance: '1.90700465'
@@ -1452,8 +1452,8 @@ paths:
                     expire_on: '2021-12-15T06:57:15+00:00'
                     details:
                       line_items:
-                        - id: DGLD-001
-                          symbol: GLD
+                        - id: DXAU-001
+                          symbol: XAUMYR
                           quantity: '1.28320038'
                           price: '249.47'
                           uom: g
@@ -1565,8 +1565,8 @@ paths:
                 expire_on: '2021-12-15T06:57:15+00:00'
                 details:
                   line_items:
-                    - id: DGLD-001
-                      symbol: GLD
+                    - id: DXAU-001
+                      symbol: XAUMYR
                       quantity: '1.28320038'
                       price: '249.47'
                       uom: g
@@ -1664,11 +1664,11 @@ paths:
                     expire_on: '2021-12-15T06:57:15+00:00'
                     details:
                       line_items:
-                        - id: DGLD-001
+                        - id: DXAU-001
                           uom: g
                           quantity: '1.28320038'
                           price: '249.47'
-                          symbol: GLD
+                          symbol: XAUMYR
                       subtotal: '320.12'
                       discount: '0.00'
                       tax: '0.00'
@@ -1777,8 +1777,8 @@ paths:
                 expire_on: '2021-12-15T06:57:15+00:00'
                 details:
                   line_items:
-                    - id: DGLD-001
-                      symbol: GLD
+                    - id: DXAU-001
+                      symbol: XAUMYR
                       quantity: '1.28320038'
                       price: '249.47'
                       uom: g
@@ -1837,8 +1837,8 @@ paths:
                     expire_on: null
                     details:
                       line_items:
-                        - id: DGLD-001
-                          symbol: GLD
+                        - id: DXAU-001
+                          symbol: XAUMYR
                           quantity: '0'
                           price: '0'
                           uom: g
@@ -1950,8 +1950,8 @@ paths:
                 expire_on: null
                 details:
                   line_items:
-                    - id: DGLD-001
-                      symbol: GLD
+                    - id: DXAU-001
+                      symbol: XAUMYR
                       quantity: '0'
                       price: '0'
                       uom: g
@@ -2023,11 +2023,11 @@ paths:
                     id: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
                     details:
                       line_items:
-                        - id: DGLD-001
+                        - id: DXAU-001
                           uom: g
                           quantity: '1.28320038'
                           price: '249.47'
-                          symbol: GLD
+                          symbol: XAUMYR
                       subtotal: '320.12'
                       discount: '0.00'
                       tax: '0.00'
@@ -2143,11 +2143,11 @@ paths:
                 expire_on: '2021-12-16T06:08:24+00:00'
                 details:
                   line_items:
-                    - id: DGLD-001
+                    - id: DXAU-001
                       uom: g
                       quantity: '1.28320038'
                       price: '249.47'
-                      symbol: GLD
+                      symbol: XAUMYR
                   subtotal: '320.12'
                   discount: '0.00'
                   tax: '0.00'
@@ -2224,8 +2224,8 @@ paths:
                     status: pending
                     details:
                       line_items:
-                        - id: DGLD-001
-                          symbol: GLD
+                        - id: DXAU-001
+                          symbol: XAUMYR
                           quantity: '1.28320038'
                           price: '249.47'
                           uom: g
@@ -2341,11 +2341,11 @@ paths:
                 expire_on: '2021-12-16T06:08:24+00:00'
                 details:
                   line_items:
-                    - id: DGLD-001
+                    - id: DXAU-001
                       uom: g
                       quantity: '1.28320038'
                       price: '249.47'
-                      symbol: GLD
+                      symbol: XAUMYR
                   subtotal: '320.12'
                   tax: '0.00'
                   discount: '0.00'
