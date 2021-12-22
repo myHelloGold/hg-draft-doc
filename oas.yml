@@ -106,6 +106,8 @@ paths:
           in: query
           name: symbol
           description: The symbol of the asset.
+      tags:
+        - ticker
   /v1/al/accounts/create:
     post:
       summary: Create an account
