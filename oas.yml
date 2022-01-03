@@ -1457,11 +1457,11 @@ paths:
                           quantity: '1.28320038'
                           price: '249.47'
                           uom: g
-                      subtotal: '320.12'
+                      subtotal: '249.47'
                       discount: '0.00'
                       tax: '0.00'
                       shipping: '0.00'
-                      total: '320.12'
+                      total: '249.47'
                     transition:
                       accepted: null
                       cancelled: null
@@ -1570,11 +1570,11 @@ paths:
                       quantity: '1.28320038'
                       price: '249.47'
                       uom: g
-                  subtotal: '320.12'
+                  subtotal: '249.47'
                   discount: '0.00'
                   tax: '0.00'
                   shipping: '0.00'
-                  total: '320.12'
+                  total: '249.47'
                 transition:
                   accepted: null
                   cancelled: null
@@ -1669,11 +1669,11 @@ paths:
                           quantity: '1.28320038'
                           price: '249.47'
                           symbol: XAUMYR
-                      subtotal: '320.12'
+                      subtotal: '249.47'
                       discount: '0.00'
                       tax: '0.00'
                       shipping: '0.00'
-                      total: '320.12'
+                      total: '249.47'
                     transition:
                       accepted: '2021-12-15T06:55:36+00:00'
                 properties:
@@ -1782,11 +1782,11 @@ paths:
                       quantity: '1.28320038'
                       price: '249.47'
                       uom: g
-                  subtotal: '320.12'
+                  subtotal: '249.47'
                   discount: '0.00'
                   tax: '0.00'
                   shipping: '0.00'
-                  total: '320.12'
+                  total: '249.47'
                 transition:
                   accepted: '2021-12-15T06:55:36+00:00'
                   cancelled: null
@@ -2028,11 +2028,11 @@ paths:
                           quantity: '1.28320038'
                           price: '249.47'
                           symbol: XAUMYR
-                      subtotal: '320.12'
+                      subtotal: '249.47'
                       discount: '0.00'
                       tax: '0.00'
                       shipping: '0.00'
-                      total: '320.12'
+                      total: '249.47'
                     expire_on: '2021-12-16T06:08:24+00:00'
                     reference:
                       quote: 61bad7607723df2833df0ad9
@@ -2148,11 +2148,11 @@ paths:
                       quantity: '1.28320038'
                       price: '249.47'
                       symbol: XAUMYR
-                  subtotal: '320.12'
+                  subtotal: '249.47'
                   discount: '0.00'
                   tax: '0.00'
                   shipping: '0.00'
-                  total: '320.12'
+                  total: '249.47'
                 reference:
                   quote: 61bad7607723df2833df0ad9
                   partner: 61bad7600814317188ad4094
@@ -2229,11 +2229,11 @@ paths:
                           quantity: '1.28320038'
                           price: '249.47'
                           uom: g
-                      subtotal: '320.12'
+                      subtotal: '249.47'
                       discount: '0.00'
                       tax: '0.00'
                       shipping: '0.00'
-                      total: '320.12'
+                      total: '249.47'
                     reference:
                       quote: 61bad7607723df2833df0ad9
                       partner: 61bad7600814317188ad4094
@@ -2346,11 +2346,11 @@ paths:
                       quantity: '1.28320038'
                       price: '249.47'
                       symbol: XAUMYR
-                  subtotal: '320.12'
+                  subtotal: '249.47'
                   tax: '0.00'
                   discount: '0.00'
                   shipping: '0.00'
-                  total: '320.12'
+                  total: '249.47'
                 reference:
                   quote: 61bad7607723df2833df0ad9
                   partner: 61bad7600814317188ad4094
@@ -2441,7 +2441,7 @@ paths:
                   type: order
                   action: buy
                   status: completed
-                  total: '320.12'
+                  total: '249.47'
                   remark: veniam cillum eu
                   signature: AupzywB3lKwv34uxgPWmNE8GpW2RHyeTqaAKH9GeZqQ=
                   reference:
@@ -2504,7 +2504,7 @@ paths:
               type: order
               action: buy
               status: completed
-              total: '320.12'
+              total: '249.47'
               remark: ''
               signature: AupzywB3lKwv34uxgPWmNE8GpW2RHyeTqaAKH9GeZqQ=
               reference:
