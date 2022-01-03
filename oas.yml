@@ -1840,13 +1840,13 @@ paths:
                         - id: DXAU-001
                           symbol: XAUMYR
                           quantity: '0'
-                          price: '0'
+                          price: '0.00'
                           uom: g
-                      subtotal: '0'
+                      subtotal: '0.00'
                       discount: '0.00'
                       tax: '0.00'
                       shipping: '0.00'
-                      total: '0'
+                      total: '0.00'
                     transition:
                       accepted: null
                       cancelled: '2021-12-17T04:15:22+00:00'
@@ -1953,13 +1953,13 @@ paths:
                     - id: DXAU-001
                       symbol: XAUMYR
                       quantity: '0'
-                      price: '0'
+                      price: '0.00'
                       uom: g
-                  subtotal: '0'
+                  subtotal: '0.00'
                   discount: '0.00'
                   tax: '0.00'
                   shipping: '0.00'
-                  total: '0'
+                  total: '0.00'
                 transition:
                   accepted: null
                   cancelled: '2021-12-17T04:15:22+00:00'
@@ -2594,28 +2594,28 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    id: 592fcc1bbf5897b150057000
+                    id: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
                     type: order
                     action: buy
-                    status: cancelled
-                    created_at: '2021-12-17T04:15:00+00:00'
-                    updated_at: '2021-12-17T04:15:21+00:00'
+                    created_at: '2021-12-16T06:06:24+00:00'
+                    updated_at: '2021-12-16T06:06:45+00:00'
                     expire_on: null
+                    status: cancelled
                     details:
                       line_items:
                         - id: DXAU-001
                           symbol: XAUMYR
                           quantity: '0'
-                          price: '0'
+                          price: '0.00'
                           uom: g
-                      subtotal: '0'
+                      subtotal: '0.00'
                       discount: '0.00'
                       tax: '0.00'
                       shipping: '0.00'
-                      total: '0'
-                    transition:
-                      accepted: null
-                      cancelled: '2021-12-17T04:15:22+00:00'
+                      total: '0.00'
+                    reference:
+                      quote: 61bad7607723df2833df0ad9
+                      partner: 61bad7600814317188ad4094
                 properties:
                   id:
                     type: string
@@ -2643,6 +2643,7 @@ paths:
                     description: Timestamp of when the transaction was last updated.
                   expire_on:
                     type: string
+                    minLength: 1
                     description: Timestamp of when the transaction will expire.
                     nullable: true
                   details:
@@ -2695,40 +2696,44 @@ paths:
                         type: string
                         minLength: 1
                         description: The total amount for the transaction.
-                  transition:
+                  reference:
                     type: object
                     properties:
-                      accepted:
+                      quote:
                         type: string
-                        description: Timestamp of when the transaction was accepted.
-                        nullable: true
-                      cancelled:
+                        minLength: 1
+                        description: The quote identifier that triggered the order.
+                      hg:
                         type: string
-                        description: Timestamp of when the transaction was cancelled.
-                        nullable: true
+                        minLength: 1
+                        description: The HelloGold reference ID the transaction.
+                      partner:
+                        type: string
+                        minLength: 1
+                        description: The partner reference ID of the transaction.
               example:
                 id: 592fcc1bbf5897b150057000
                 type: order
                 action: buy
                 status: cancelled
-                created_at: '2021-12-17T04:15:00+00:00'
-                updated_at: '2021-12-17T04:15:21+00:00'
+                created_at: '2021-12-16T06:06:24+00:00'
+                updated_at: '2021-12-16T06:06:45+00:00'
                 expire_on: null
                 details:
                   line_items:
                     - id: DXAU-001
-                      symbol: XAUMYR
-                      quantity: '0'
-                      price: '0'
                       uom: g
-                  subtotal: '0'
-                  discount: '0.00'
+                      quantity: '0'
+                      price: '0.00'
+                      symbol: XAUMYR
+                  subtotal: '0.00'
                   tax: '0.00'
+                  discount: '0.00'
                   shipping: '0.00'
-                  total: '0'
-                transition:
-                  accepted: null
-                  cancelled: '2021-12-17T04:15:22+00:00'
+                  total: '0.00'
+                reference:
+                  quote: 61bad7607723df2833df0ad9
+                  partner: 61bad7600814317188ad4094
       tags:
         - transactions
       operationId: cancelOrder
