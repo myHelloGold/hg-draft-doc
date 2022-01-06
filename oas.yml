@@ -1570,7 +1570,7 @@ paths:
                   id:
                     type: string
                     minLength: 1
-                    description: The transaction identifier.
+                    description: The quote identifier.
                   type:
                     type: string
                     minLength: 1
@@ -1781,7 +1781,7 @@ paths:
                   id:
                     type: string
                     minLength: 1
-                    description: The transaction identifier.
+                    description: The quote identifier.
                   type:
                     type: string
                     minLength: 1
@@ -1955,7 +1955,7 @@ paths:
                   id:
                     type: string
                     minLength: 1
-                    description: The transaction identifier.
+                    description: The quote identifier.
                   type:
                     type: string
                     minLength: 1
@@ -2144,7 +2144,7 @@ paths:
                   id:
                     type: string
                     minLength: 1
-                    description: The transaction identifier.
+                    description: The order identifier.
                   type:
                     type: string
                     minLength: 1
@@ -2342,7 +2342,7 @@ paths:
                   id:
                     type: string
                     minLength: 1
-                    description: The transaction identifier.
+                    description: The order identifier.
                   type:
                     type: string
                     minLength: 1
@@ -2543,7 +2543,7 @@ paths:
                   id:
                     type: string
                     minLength: 1
-                    description: The transaction identifier.
+                    description: The order identifier.
                   type:
                     type: string
                     minLength: 1
@@ -2721,7 +2721,7 @@ paths:
                   id:
                     type: string
                     minLength: 1
-                    description: The transaction identifier.
+                    description: The order identifier.
                   type:
                     type: string
                     minLength: 1
