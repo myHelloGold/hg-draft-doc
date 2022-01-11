@@ -1680,7 +1680,7 @@ paths:
                   accepted: null
                   cancelled: null
       tags:
-        - transactions
+        - quotes
       operationId: createQuote
       requestBody:
         content:
@@ -1891,9 +1891,9 @@ paths:
                 transition:
                   accepted: '2021-12-15T06:55:36+00:00'
                   cancelled: null
-      tags:
-        - transactions
       operationId: getQuote
+      tags:
+        - quotes
     parameters: []
   /v1/al/quotes/cancel:
     post:
@@ -2064,8 +2064,6 @@ paths:
                 transition:
                   accepted: null
                   cancelled: '2021-12-17T04:15:22+00:00'
-      tags:
-        - transactions
       operationId: cancelQuote
       requestBody:
         content:
@@ -2083,6 +2081,8 @@ paths:
                   description: The quote unique identifier.
               required:
                 - quoteId
+      tags:
+        - quotes
     parameters: []
   /v1/al/quotes/accept:
     post:
@@ -2257,8 +2257,6 @@ paths:
                 reference:
                   quote: 61bad7607723df2833df0ad9
                   partner: 61bad7600814317188ad4094
-      tags:
-        - transactions
       operationId: acceptQuote
       requestBody:
         content:
@@ -2286,6 +2284,8 @@ paths:
                 value:
                   refId: 61bad7600814317188ad4094
                   quoteId: 61bad7607723df2833df0ad9
+      tags:
+        - quotes
     parameters: []
   /v1/al/orders/create:
     post:
@@ -2461,8 +2461,6 @@ paths:
                 reference:
                   quote: 61bad7607723df2833df0ad9
                   partner: 61bad7600814317188ad4094
-      tags:
-        - transactions
       operationId: createOrder
       requestBody:
         content:
@@ -2491,6 +2489,8 @@ paths:
                   refId: 61bad7600814317188ad4094
                   quoteId: 61bad7607723df2833df0ad9
         description: ''
+      tags:
+        - orders
     parameters: []
   /v1/al/orders/get:
     get:
@@ -2672,9 +2672,9 @@ paths:
                 reference:
                   quote: 61bad7607723df2833df0ad9
                   partner: 61bad7600814317188ad4094
-      tags:
-        - transactions
       operationId: getOrder
+      tags:
+        - orders
     parameters: []
   /v1/al/orders/cancel:
     post:
@@ -2850,8 +2850,6 @@ paths:
                 reference:
                   quote: 61bad7607723df2833df0ad9
                   partner: 61bad7600814317188ad4094
-      tags:
-        - transactions
       operationId: cancelOrder
       requestBody:
         content:
@@ -2869,6 +2867,8 @@ paths:
                   description: The quote unique identifier.
               required:
                 - orderId
+      tags:
+        - orders
     parameters: []
   /partnerCallback:
     parameters: []
@@ -2919,8 +2919,6 @@ paths:
 
         echo -n "${PARTNER_ID}:${HG_REF_ID}:${PARTNER_REF_ID}:${TOTAL}:${CURRENCY}" | openssl dgst -sha256 -hmac "$PARTNER_SECRET" -binary | base64
         ```
-      tags:
-        - transactions
       responses:
         '200':
           description: OK
@@ -3008,6 +3006,8 @@ paths:
                 partner: 61badd453944e8df8a8b7602
               created_at: '2021-12-16T06:31:54+00:00'
       security: []
+      tags:
+        - orders
 components:
   securitySchemes:
     x-api-key:
