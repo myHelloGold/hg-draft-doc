@@ -2473,8 +2473,13 @@ paths:
                   type: string
                   minLength: 1
                   description: 'The reference id of the order, used internally by the partner.'
+                quoteId:
+                  type: string
+                  description: The quote unique identifier.
+                  minLength: 1
               required:
                 - refId
+                - quoteId
         description: ''
     parameters: []
   /v1/al/orders/retrieve:
