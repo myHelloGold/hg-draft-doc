@@ -2281,6 +2281,11 @@ paths:
               required:
                 - refId
                 - quoteId
+            examples:
+              example-1:
+                value:
+                  refId: 61bad7600814317188ad4094
+                  quoteId: 61bad7607723df2833df0ad9
     parameters: []
   /v1/al/orders/create:
     post:
@@ -2449,8 +2454,8 @@ paths:
                       price: '249.47'
                       symbol: XAUMYR
                   subtotal: '249.47'
-                  tax: '0.00'
                   discount: '0.00'
+                  tax: '0.00'
                   shipping: '0.00'
                   total: '249.47'
                 reference:
@@ -2480,6 +2485,11 @@ paths:
               required:
                 - refId
                 - quoteId
+            examples:
+              example-1:
+                value:
+                  refId: 61bad7600814317188ad4094
+                  quoteId: 61bad7607723df2833df0ad9
         description: ''
     parameters: []
   /v1/al/orders/retrieve:
