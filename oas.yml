@@ -466,7 +466,7 @@ paths:
         - accounts
       operationId: createAccount
     parameters: []
-  /v1/al/accounts/retrieve:
+  /v1/al/accounts/get:
     get:
       tags:
         - accounts
@@ -1716,7 +1716,7 @@ paths:
                 - quantity
                 - uom
     parameters: []
-  /v1/al/quotes/retrieve:
+  /v1/al/quotes/get:
     get:
       summary: Get a quote
       description: Get information about a specific quote.
@@ -2492,7 +2492,7 @@ paths:
                   quoteId: 61bad7607723df2833df0ad9
         description: ''
     parameters: []
-  /v1/al/orders/retrieve:
+  /v1/al/orders/get:
     get:
       summary: Get an order
       description: Get information about a specific order.
