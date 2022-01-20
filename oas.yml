@@ -24,6 +24,10 @@ info:
 
     HelloGold API will return HTTP status codes. Most of the response also includes JSON as part of the response bodies.
 
+    ## Responses
+
+    HelloGold API will return HTTP status codes. Most of the response also includes JSON as part of the response bodies.
+
     ### HTTP status codes
 
     HelloGold API will return HTTP '2XX' status codes for any successful requests. For failed requests, HelloGold API will return either HTTP '4XX' status codes when there's an error with the requests, or HTTP '5XX' status codes when there's an issue on our side.
@@ -134,6 +138,9 @@ paths:
           required: true
         - schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           in: header
           name: x-user-id
           description: The unique identifier of the user.
@@ -227,6 +234,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -507,6 +517,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -768,6 +781,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -1092,6 +1108,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -1149,6 +1168,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -1248,6 +1270,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -1550,6 +1575,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -1755,6 +1783,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -1934,6 +1965,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -2123,6 +2157,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -2330,6 +2367,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -2535,6 +2575,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
@@ -2719,6 +2762,9 @@ paths:
           in: header
           schema:
             type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
           example: 727ab067-28d9-4938-9ba1-64acfc373e7f
           required: true
           description: The unique identifier of the user.
