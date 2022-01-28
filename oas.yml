@@ -42,6 +42,16 @@ info:
     ## Contact us
     Need help? Feel free to get in touch with our team by sending an email to us at hello@hellogold.com
 
+    # Environment
+
+    The domain name for each environment are listed below:
+
+    | Type               | Domain name                     |
+    | ------------------ | ------------------------------- |
+    | Staging            | https://stage-api.hellogold.com |
+    | Production         | https://connect.hellogold.com   |
+
+
     # Authentication
     HelloGold API uses API keys to authenticate requests. At the moment, API keys will only be provided to selected partners, manually.
 
