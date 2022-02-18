@@ -1433,19 +1433,6 @@ paths:
                   pagination:
                     type: object
                     properties:
-                      cursors:
-                        type: object
-                        properties:
-                          after:
-                            type: string
-                            minLength: 1
-                            description: Cursor identifier for the last object in the current response.
-                            nullable: true
-                          before:
-                            type: string
-                            minLength: 1
-                            description: Cursor identifier for the first object in the current response.
-                            nullable: true
                       next:
                         type: string
                         minLength: 1
