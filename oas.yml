@@ -5,7 +5,7 @@ info:
   contact:
     name: HelloGold
     email: tech@hellogold.com
-    url: 'https://www.hellogold.com'
+    url: 'https://hellogold.com'
   x-logo:
     url: 'https://hg-web-app-assets.s3.ap-southeast-1.amazonaws.com/201129_hg_logo_rgb_white_stacked.png'
     altText: HelloGold logo
