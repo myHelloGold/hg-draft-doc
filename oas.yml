@@ -48,7 +48,7 @@ info:
 
     | Type               | Domain name                     |
     | ------------------ | ------------------------------- |
-    | Staging            | https://stage-api.hellogold.com |
+    | Staging            | https://stage-connect.hellogold.com |
     | Production         | https://connect.hellogold.com   |
 
 
@@ -70,13 +70,13 @@ info:
     USER_ID='727ab067-28d9-4938-9ba1-64acfc373e7f'
 
     curl --request GET \
-      --url 'https://stage-api.hellogold.com/v1/al/placeholder' \
+      --url 'https://stage-connect.hellogold.com/v1/al/placeholder' \
       --header 'Content-Type: application/json' \
       --header "x-api-key: ${API_KEY}" \
       --header "x-user-id: ${USER_ID}"
     ```
 servers:
-  - url: 'https://stage-api.hellogold.com'
+  - url: 'https://stage-connect.hellogold.com'
 paths:
   /v1/al/ticker/price:
     parameters: []
