@@ -1832,8 +1832,6 @@ paths:
                     before: anch1ggyns8
                   next: 'https://stage-api.hellogold.com/accounts/transactions?after=bbo9ceupuzi'
                   previous: 'https://stage-api.hellogold.com/accounts/transactions?before=anch1ggyns8'
-      tags:
-        - accounts
       operationId: futureGetTransactions
       x-internal: true
     parameters: []
