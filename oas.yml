@@ -23,8 +23,8 @@ info:
     HelloGold API will return HTTP status codes. Most of the response also includes JSON as part of the response bodies.
 
     ### HTTP status codes
-    HelloGold API will return HTTP '2XX' status codes for any successful requests. For failed requests, HelloGold API will return either HTTP '4XX' status codes when there's an error with the requests, or HTTP '5XX' status codes when there's an issue on our side.
-
+    HelloGold API will return HTTP `2XX` status codes for any successful requests. For failed requests, HelloGold API will return either HTTP `4XX` status codes when there's an error with the requests, or HTTP `5XX` status codes when there's an issue on our side.
+    
     Error responses usually includes JSON document in the response body which will contain information about the error.
 
     | Status Code               | Description                | Possible causes and solutions |
