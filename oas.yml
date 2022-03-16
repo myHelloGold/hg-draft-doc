@@ -38,7 +38,6 @@ info:
     | 500 Internal Server Error | INTERNAL_SERVER_ERROR. An internal server error has occurred. | System or application level error has occured. The client provides a correct request, but something unexpected has happened on the server. |
     | 503 Service Unavailable   | SERVICE_UNAVAILABLE. Service unavailable. | The server is not ready to handle the request, due to the server being down for maintenance or being overloaded. |
 
-
     ## Contact us
     Need help? Feel free to get in touch with our team by sending an email to us at hello@hellogold.com
 
@@ -51,6 +50,14 @@ info:
     | Staging            | https://stage-connect.hellogold.com |
     | Production         | https://connect.hellogold.com   |
 
+    # Types
+
+    ## Timestamp
+    Unless explicitly specified, all timestamps from HelloGold Connect are returned in ISO 8601 with microseconds. Example as follows:
+
+    ```
+    2021-04-13T07:22:02.609Z
+    ```
 
     # Authentication
     HelloGold API uses API keys to authenticate requests. At the moment, API keys will only be provided to selected partners, manually.
