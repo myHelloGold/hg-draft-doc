@@ -5,7 +5,7 @@ info:
   contact:
     name: HelloGold
     email: tech@hellogold.com
-    url: 'https://hellogold.com'
+    url: 'https://www.hellogold.com'
   x-logo:
     url: 'https://hg-web-app-assets.s3.ap-southeast-1.amazonaws.com/201129_hg_logo_rgb_white_stacked.png'
     altText: HelloGold logo
@@ -23,8 +23,8 @@ info:
     HelloGold API will return HTTP status codes. Most of the response also includes JSON as part of the response bodies.
 
     ### HTTP status codes
-    HelloGold API will return HTTP `2XX` status codes for any successful requests. For failed requests, HelloGold API will return either HTTP `4XX` status codes when there's an error with the requests, or HTTP `5XX` status codes when there's an issue on our side.
-    
+    HelloGold API will return HTTP '2XX' status codes for any successful requests. For failed requests, HelloGold API will return either HTTP '4XX' status codes when there's an error with the requests, or HTTP '5XX' status codes when there's an issue on our side.
+
     Error responses usually includes JSON document in the response body which will contain information about the error.
 
     | Status Code               | Description                | Possible causes and solutions |
@@ -255,7 +255,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                     status: active
                     referral_code: lmnwtozuv2q
                     created_at: '2021-12-15T06:55:15+00:00'
@@ -308,7 +308,7 @@ paths:
                         value: '2855.91'
                         uom: g
                 properties:
-                  userid:
+                  user_id:
                     type: string
                     minLength: 1
                     description: The unique identifier for the account.
@@ -421,7 +421,7 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
-                userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 status: active
                 referral_code: 1nltb89xtko
                 created_at: '2021-12-15T06:55:15+00:00'
@@ -539,7 +539,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                     status: active
                     referral_code: lmnwtozuv2q
                     created_at: '2021-12-15T06:55:15+00:00'
@@ -592,7 +592,7 @@ paths:
                         value: '2855.91'
                         uom: g
                 properties:
-                  userid:
+                  user_id:
                     type: string
                     minLength: 1
                     description: The unique identifier for the account.
@@ -704,7 +704,7 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
-                userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 status: active
                 referral_code: 1nltb89xtko
                 created_at: '2021-12-15T06:55:15+00:00'
@@ -803,7 +803,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                     status: active
                     referral_code: 1nltb89xtko
                     created_at: '2021-12-15T06:55:15+00:00'
@@ -862,7 +862,7 @@ paths:
                         value: '2855.91'
                         uom: g
                 properties:
-                  userid:
+                  user_id:
                     type: string
                     minLength: 1
                     description: The unique identifier for the account.
@@ -974,7 +974,7 @@ paths:
                           minLength: 1
                           description: The Unit of Measurement (UOM) of the asset.
               example:
-                userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 status: active
                 referral_code: 1nltb89xtko
                 created_at: '2021-12-15T06:55:15+00:00'
@@ -1125,12 +1125,12 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61bc071c17707733bd309ab2_83ff228c-b789-427b-9de2-9b11fc514408
+                    user_id: 61bc071c17707733bd309ab2_83ff228c-b789-427b-9de2-9b11fc514408
                     username: 4ce2e6bd-596c-4b0a-9ec4-7c2887999763
                     deleted: true
                     deleted_at: '2021-12-15T06:55:15+00:00'
                 properties:
-                  userid:
+                  user_id:
                     type: string
                     minLength: 1
                     description: The unique identifier for the account.
@@ -1146,7 +1146,7 @@ paths:
                     minLength: 1
                     description: Timestamp of when the account was deleted.
               example:
-                userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 deleted: true
                 deleted_at: '2021-12-15T06:55:15+00:00'
       operationId: deleteAccount
@@ -1191,7 +1191,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                     balances:
                       - type: MYR
                         total_balance: '1792.38'
@@ -1206,7 +1206,7 @@ paths:
                         accrued_fees: '0.75084219'
                         uom: g
                 properties:
-                  userid:
+                  user_id:
                     type: string
                     minLength: 1
                     description: The unique identifier of the user.
@@ -1239,7 +1239,7 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
-                userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 balances:
                   - type: MYR
                     total_balance: '1792.38'
@@ -1302,7 +1302,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                     transactions:
                       - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
                         type: buy_gold
@@ -1388,7 +1388,7 @@ paths:
                       next: 'https://stage-api.hellogold.com/accounts/transactions?offset=30'
                       previous: 'https://stage-api.hellogold.com/accounts/transactions?offset=10'
                 properties:
-                  userid:
+                  user_id:
                     type: string
                     minLength: 1
                     description: The unique identifier for the account.
@@ -1444,7 +1444,7 @@ paths:
                         description: 'Continuation path to the previous set of data, if available.'
                         nullable: true
               example:
-                userid: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
                 transactions:
                   - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
                     type: buy_gold
@@ -1792,7 +1792,7 @@ paths:
                     type: quote
                     action: buy
                     status: accepted
-                    userid: 61b991538bf8fd18d922b1a7_4aca60ca-a95f-4e70-a002-57a39034b942
+                    user_id: 61b991538bf8fd18d922b1a7_4aca60ca-a95f-4e70-a002-57a39034b942
                     created_at: '2021-12-15T06:55:15+00:00'
                     updated_at: '2021-12-15T06:55:36+00:00'
                     expire_on: '2021-12-15T06:57:15+00:00'
