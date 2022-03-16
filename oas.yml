@@ -55,7 +55,7 @@ info:
     ## Timestamp
     Unless explicitly specified, all timestamps from HelloGold Connect are returned in ISO 8601 with microseconds. Example as follows:
 
-    ```
+    ```bash
     2021-04-13T07:22:02.609Z
     ```
 
