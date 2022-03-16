@@ -255,7 +255,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                     status: active
                     referral_code: lmnwtozuv2q
                     created_at: '2021-12-15T06:55:15+00:00'
@@ -421,7 +421,7 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
-                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                 status: active
                 referral_code: 1nltb89xtko
                 created_at: '2021-12-15T06:55:15+00:00'
@@ -539,7 +539,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                     status: active
                     referral_code: lmnwtozuv2q
                     created_at: '2021-12-15T06:55:15+00:00'
@@ -704,7 +704,7 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
-                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                 status: active
                 referral_code: 1nltb89xtko
                 created_at: '2021-12-15T06:55:15+00:00'
@@ -803,7 +803,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                     status: active
                     referral_code: 1nltb89xtko
                     created_at: '2021-12-15T06:55:15+00:00'
@@ -974,7 +974,7 @@ paths:
                           minLength: 1
                           description: The Unit of Measurement (UOM) of the asset.
               example:
-                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                 status: active
                 referral_code: 1nltb89xtko
                 created_at: '2021-12-15T06:55:15+00:00'
@@ -1146,7 +1146,7 @@ paths:
                     minLength: 1
                     description: Timestamp of when the account was deleted.
               example:
-                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                 deleted: true
                 deleted_at: '2021-12-15T06:55:15+00:00'
       operationId: deleteAccount
@@ -1191,7 +1191,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                     balances:
                       - type: MYR
                         total_balance: '1792.38'
@@ -1239,7 +1239,7 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
-                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                 balances:
                   - type: MYR
                     total_balance: '1792.38'
@@ -1302,7 +1302,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                     transactions:
                       - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
                         type: buy_gold
@@ -1444,7 +1444,7 @@ paths:
                         description: 'Continuation path to the previous set of data, if available.'
                         nullable: true
               example:
-                user_id: 61bbf8dfdcb8e621111744ae_d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                 transactions:
                   - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
                     type: buy_gold
@@ -1792,7 +1792,7 @@ paths:
                     type: quote
                     tx_type: buy
                     status: accepted
-                    user_id: 61b991538bf8fd18d922b1a7_4aca60ca-a95f-4e70-a002-57a39034b942
+                    user_id: 727ab067-28d9-4938-9ba1-64acfc373e7ff
                     created_at: '2021-12-15T06:55:15+00:00'
                     updated_at: '2021-12-15T06:55:36+00:00'
                     expire_on: '2021-12-15T06:57:15+00:00'
