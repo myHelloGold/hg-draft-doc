@@ -765,7 +765,7 @@ paths:
       operationId: getAccount
     parameters: []
   /v1/al/accounts/update:
-    put:
+    patch:
       tags:
         - accounts
       summary: Update an account
