@@ -27,16 +27,16 @@ info:
 
     Error responses usually includes JSON document in the response body which will contain information about the error.
 
-    | Status Code               | Description                | Possible causes and solutions |
-    |---------------------------|----------------------------|-------------------------------|
-    | 200 OK                    | The request is successful. | N/A                           |
-    | 400 Bad Request           | INVALID_REQUEST. The request is not well-formed, syntactically incorrect, or violates the schema. |  |
-    | 401 Unauthorized          | INVALID_CLIENT. The client is not authorized to access the resource.  INVALID_TOKEN. The provided token is invalid due to either being expired, revoked, malformed or invalid. |  |
-    | 403 Forbidden             | NOT_AUTHORIZED. The user does not have the permission to perform the operation. |  |
-    | 404 Not Found             | NOT_FOUND. The requested resource does not exists. |  |
-    | 422 Unprocessable Entity  | UNPROCESSABLE_ENTITY. The system cannon complete the action specified in the request due to the request action is semantically incorrect, or fails business validation. |  |
-    | 500 Internal Server Error | INTERNAL_SERVER_ERROR. An internal server error has occurred. | System or application level error has occured. The client provides a correct request, but something unexpected has happened on the server. |
-    | 503 Service Unavailable   | SERVICE_UNAVAILABLE. Service unavailable. | The server is not ready to handle the request, due to the server being down for maintenance or being overloaded. |
+    | Status Code               | Description                |
+    |---------------------------|----------------------------|
+    | 200 OK                    | The request is successful. |
+    | 400 Bad Request           | INVALID_REQUEST. The request is not well-formed, syntactically incorrect, or violates the schema. |
+    | 401 Unauthorized          | INVALID_CLIENT. The client is not authorized to access the resource.  INVALID_TOKEN. The provided token is invalid due to either being expired, revoked, malformed or invalid. |
+    | 403 Forbidden             | NOT_AUTHORIZED. The user does not have the permission to perform the operation. |
+    | 404 Not Found             | NOT_FOUND. The requested resource does not exists. |
+    | 422 Unprocessable Entity  | UNPROCESSABLE_ENTITY. The system cannon complete the action specified in the request due to the request action is semantically incorrect, or fails business validation. |
+    | 500 Internal Server Error | INTERNAL_SERVER_ERROR. An internal server error has occurred. |
+    | 503 Service Unavailable   | SERVICE_UNAVAILABLE. Service unavailable. |
 
     ## Contact us
     Need help? Feel free to get in touch with our team by sending an email to us at hello@hellogold.com
