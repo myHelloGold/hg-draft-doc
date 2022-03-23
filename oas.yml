@@ -102,7 +102,7 @@ paths:
                 uniqueItems: true
                 x-examples:
                   example-1:
-                    - timestamp: '2021-12-22T02:56:09+00:00'
+                    - timestamp: '2021-12-22T02:56:09.123Z'
                       symbol: XAUMYR
                       buy_price: '248.15'
                       sell_price: '236.20'
@@ -131,7 +131,7 @@ paths:
                       minLength: 1
                       description: The mid price of the asset.
               example:
-                - timestamp: '2020-03-19T08:00:00+00:00'
+                - timestamp: '2020-03-19T08:00:00.123Z'
                   symbol: XAUMYR
                   buy_price: '211.78'
                   sell_price: '204.42'
@@ -265,8 +265,8 @@ paths:
                     user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                     status: active
                     referral_code: lmnwtozuv2q
-                    created_at: '2021-12-15T06:55:15+00:00'
-                    updated_at: '2021-12-15T06:55:36+00:00'
+                    created_at: '2021-12-15T06:55:15.123Z'
+                    updated_at: '2021-12-15T06:55:36.123Z'
                     deleted_at: null
                     balances:
                       - type: XAU
@@ -286,7 +286,7 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-07-14T03:53:16+00:00'
+                        timestamp: '2020-07-14T03:53:16.123Z'
                         amount: '2.33233246'
                         value: '1579.88'
                         uom: g
@@ -294,7 +294,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: completed
-                        timestamp: '2020-06-18T16:48:50+00:00'
+                        timestamp: '2020-06-18T16:48:50.123Z'
                         amount: '9.60745608'
                         value: '1543.11'
                         uom: g
@@ -302,7 +302,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: cancelled
-                        timestamp: '2020-07-15T07:21:59+00:00'
+                        timestamp: '2020-07-15T07:21:59.123Z'
                         amount: '4.06835968'
                         value: '3208.98'
                         uom: g
@@ -310,7 +310,7 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-03-01T17:55:26+00:00'
+                        timestamp: '2020-03-01T17:55:26.123Z'
                         amount: '2.97335211'
                         value: '2855.91'
                         uom: g
@@ -431,8 +431,8 @@ paths:
                 user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                 status: active
                 referral_code: 1nltb89xtko
-                created_at: '2021-12-15T06:55:15+00:00'
-                updated_at: '2021-12-15T06:55:36+00:00'
+                created_at: '2021-12-15T06:55:15.123Z'
+                updated_at: '2021-12-15T06:55:36.123Z'
                 deleted_at: null
                 configuration:
                   buy_enabled: true
@@ -458,7 +458,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-07-14T03:53:16+00:00'
+                    timestamp: '2020-07-14T03:53:16.123Z'
                     amount: '2.33233246'
                     value: '1579.88'
                     uom: g
@@ -466,7 +466,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: completed
-                    timestamp: '2020-06-18T16:48:50+00:00'
+                    timestamp: '2020-06-18T16:48:50.123Z'
                     amount: '9.60745608'
                     value: '1543.11'
                     uom: g
@@ -474,7 +474,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: cancelled
-                    timestamp: '2020-07-15T07:21:59+00:00'
+                    timestamp: '2020-07-15T07:21:59.123Z'
                     amount: '4.06835968'
                     value: '3208.98'
                     uom: g
@@ -482,7 +482,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-03-01T17:55:26+00:00'
+                    timestamp: '2020-03-01T17:55:26.123Z'
                     amount: '2.97335211'
                     value: '2855.91'
                     uom: g
@@ -549,8 +549,8 @@ paths:
                     user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                     status: active
                     referral_code: lmnwtozuv2q
-                    created_at: '2021-12-15T06:55:15+00:00'
-                    updated_at: '2021-12-15T06:55:36+00:00'
+                    created_at: '2021-12-15T06:55:15.123Z'
+                    updated_at: '2021-12-15T06:55:36.123Z'
                     deleted_at: null
                     balances:
                       - type: XAU
@@ -570,7 +570,7 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-07-14T03:53:16+00:00'
+                        timestamp: '2020-07-14T03:53:16.123Z'
                         amount: '2.33233246'
                         value: '1579.88'
                         uom: g
@@ -578,7 +578,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: completed
-                        timestamp: '2020-06-18T16:48:50+00:00'
+                        timestamp: '2020-06-18T16:48:50.123Z'
                         amount: '9.60745608'
                         value: '1543.11'
                         uom: g
@@ -586,7 +586,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: cancelled
-                        timestamp: '2020-07-15T07:21:59+00:00'
+                        timestamp: '2020-07-15T07:21:59.123Z'
                         amount: '4.06835968'
                         value: '3208.98'
                         uom: g
@@ -594,7 +594,7 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-03-01T17:55:26+00:00'
+                        timestamp: '2020-03-01T17:55:26.123Z'
                         amount: '2.97335211'
                         value: '2855.91'
                         uom: g
@@ -714,8 +714,8 @@ paths:
                 user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                 status: active
                 referral_code: 1nltb89xtko
-                created_at: '2021-12-15T06:55:15+00:00'
-                updated_at: '2021-12-15T06:55:36+00:00'
+                created_at: '2021-12-15T06:55:15.123Z'
+                updated_at: '2021-12-15T06:55:36.123Z'
                 deleted_at: null
                 configuration:
                   buy_enabled: true
@@ -741,7 +741,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-07-14T03:53:16+00:00'
+                    timestamp: '2020-07-14T03:53:16.123Z'
                     amount: '2.33233246'
                     value: '1579.88'
                     uom: g
@@ -749,7 +749,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: completed
-                    timestamp: '2020-06-18T16:48:50+00:00'
+                    timestamp: '2020-06-18T16:48:50.123Z'
                     amount: '9.60745608'
                     value: '1543.11'
                     uom: g
@@ -757,7 +757,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: cancelled
-                    timestamp: '2020-07-15T07:21:59+00:00'
+                    timestamp: '2020-07-15T07:21:59.123Z'
                     amount: '4.06835968'
                     value: '3208.98'
                     uom: g
@@ -765,7 +765,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-03-01T17:55:26+00:00'
+                    timestamp: '2020-03-01T17:55:26.123Z'
                     amount: '2.97335211'
                     value: '2855.91'
                     uom: g
@@ -813,8 +813,8 @@ paths:
                     user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                     status: active
                     referral_code: 1nltb89xtko
-                    created_at: '2021-12-15T06:55:15+00:00'
-                    updated_at: '2021-12-15T06:55:36+00:00'
+                    created_at: '2021-12-15T06:55:15.123Z'
+                    updated_at: '2021-12-15T06:55:36.123Z'
                     deleted_at: null
                     configuration:
                       buy_enabled: true
@@ -840,7 +840,7 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-07-14T03:53:16+00:00'
+                        timestamp: '2020-07-14T03:53:16.123Z'
                         amount: '2.33233246'
                         value: '1579.88'
                         uom: g
@@ -848,7 +848,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: completed
-                        timestamp: '2020-06-18T16:48:50+00:00'
+                        timestamp: '2020-06-18T16:48:50.123Z'
                         amount: '9.60745608'
                         value: '1543.11'
                         uom: g
@@ -856,7 +856,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: cancelled
-                        timestamp: '2020-07-15T07:21:59+00:00'
+                        timestamp: '2020-07-15T07:21:59.123Z'
                         amount: '4.06835968'
                         value: '3208.98'
                         uom: g
@@ -864,7 +864,7 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-03-01T17:55:26+00:00'
+                        timestamp: '2020-03-01T17:55:26.123Z'
                         amount: '2.97335211'
                         value: '2855.91'
                         uom: g
@@ -984,8 +984,8 @@ paths:
                 user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                 status: active
                 referral_code: 1nltb89xtko
-                created_at: '2021-12-15T06:55:15+00:00'
-                updated_at: '2021-12-15T06:55:36+00:00'
+                created_at: '2021-12-15T06:55:15.123Z'
+                updated_at: '2021-12-15T06:55:36.123Z'
                 deleted_at: null
                 configuration:
                   buy_enabled: true
@@ -1011,7 +1011,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-07-14T03:53:16+00:00'
+                    timestamp: '2020-07-14T03:53:16.123Z'
                     amount: '2.33233246'
                     value: '1579.88'
                     uom: g
@@ -1019,7 +1019,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: completed
-                    timestamp: '2020-06-18T16:48:50+00:00'
+                    timestamp: '2020-06-18T16:48:50.123Z'
                     amount: '9.60745608'
                     value: '1543.11'
                     uom: g
@@ -1027,7 +1027,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: cancelled
-                    timestamp: '2020-07-15T07:21:59+00:00'
+                    timestamp: '2020-07-15T07:21:59.123Z'
                     amount: '4.06835968'
                     value: '3208.98'
                     uom: g
@@ -1035,7 +1035,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-03-01T17:55:26+00:00'
+                    timestamp: '2020-03-01T17:55:26.123Z'
                     amount: '2.97335211'
                     value: '2855.91'
                     uom: g
@@ -1135,7 +1135,7 @@ paths:
                     user_id: 61bc071c17707733bd309ab2_83ff228c-b789-427b-9de2-9b11fc514408
                     username: 4ce2e6bd-596c-4b0a-9ec4-7c2887999763
                     deleted: true
-                    deleted_at: '2021-12-15T06:55:15+00:00'
+                    deleted_at: '2021-12-15T06:55:15.123Z'
                 properties:
                   user_id:
                     type: string
@@ -1155,7 +1155,7 @@ paths:
               example:
                 user_id: d1351e8b-b546-446a-836b-56fce02d5b44
                 deleted: true
-                deleted_at: '2021-12-15T06:55:15+00:00'
+                deleted_at: '2021-12-15T06:55:15.123Z'
       operationId: deleteAccount
     parameters: []
   /v1/al/accounts/balance:
@@ -1315,7 +1315,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: completed
-                        timestamp: '2020-12-22T07:29:46+00:00'
+                        timestamp: '2020-12-22T07:29:46.123Z'
                         amount: '9.89163656'
                         value: '2040.71'
                         uom: g
@@ -1323,7 +1323,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: cancelled
-                        timestamp: '2020-12-01T15:49:27+00:00'
+                        timestamp: '2020-12-01T15:49:27.123Z'
                         amount: '8.38309314'
                         value: '4166.93'
                         uom: g
@@ -1331,7 +1331,7 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-09-03T01:28:36+00:00'
+                        timestamp: '2020-09-03T01:28:36.123Z'
                         amount: '8.10909599'
                         value: '3313.03'
                         uom: g
@@ -1339,7 +1339,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: completed
-                        timestamp: '2020-09-01T20:59:31+00:00'
+                        timestamp: '2020-09-01T20:59:31.123Z'
                         amount: '6.72619045'
                         value: '884.57'
                         uom: g
@@ -1347,7 +1347,7 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-08-04T00:49:55+00:00'
+                        timestamp: '2020-08-04T00:49:55.123Z'
                         amount: '8.89249831'
                         value: '1349.71'
                         uom: g
@@ -1355,7 +1355,7 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-08-03T16:43:19+00:00'
+                        timestamp: '2020-08-03T16:43:19.123Z'
                         amount: '5.10451429'
                         value: '3897.73'
                         uom: g
@@ -1363,7 +1363,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: cancelled
-                        timestamp: '2020-02-29T19:19:16+00:00'
+                        timestamp: '2020-02-29T19:19:16.123Z'
                         amount: '6.26706273'
                         value: '4711.76'
                         uom: g
@@ -1371,7 +1371,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: cancelled
-                        timestamp: '2020-02-04T04:16:09+00:00'
+                        timestamp: '2020-02-04T04:16:09.123Z'
                         amount: '7.25148182'
                         value: '616.66'
                         uom: g
@@ -1379,7 +1379,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: completed
-                        timestamp: '2020-01-28T05:15:35+00:00'
+                        timestamp: '2020-01-28T05:15:35.123Z'
                         amount: '8.08194329'
                         value: '3022.24'
                         uom: g
@@ -1387,7 +1387,7 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-01-08T11:24:40+00:00'
+                        timestamp: '2020-01-08T11:24:40.123Z'
                         amount: '4.11746301'
                         value: '1405.46'
                         uom: g
@@ -1457,7 +1457,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: completed
-                    timestamp: '2020-12-22T07:29:46+00:00'
+                    timestamp: '2020-12-22T07:29:46.123Z'
                     amount: '9.89163656'
                     value: '2040.71'
                     uom: g
@@ -1465,7 +1465,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: cancelled
-                    timestamp: '2020-12-01T15:49:27+00:00'
+                    timestamp: '2020-12-01T15:49:27.123Z'
                     amount: '8.38309314'
                     value: '4166.93'
                     uom: g
@@ -1473,7 +1473,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-09-03T01:28:36+00:00'
+                    timestamp: '2020-09-03T01:28:36.123Z'
                     amount: '8.10909599'
                     value: '3313.03'
                     uom: g
@@ -1481,7 +1481,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: completed
-                    timestamp: '2020-09-01T20:59:31+00:00'
+                    timestamp: '2020-09-01T20:59:31.123Z'
                     amount: '6.72619045'
                     value: '884.57'
                     uom: g
@@ -1489,7 +1489,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-08-04T00:49:55+00:00'
+                    timestamp: '2020-08-04T00:49:55.123Z'
                     amount: '8.89249831'
                     value: '1349.71'
                     uom: g
@@ -1497,7 +1497,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-08-03T16:43:19+00:00'
+                    timestamp: '2020-08-03T16:43:19.123Z'
                     amount: '5.10451429'
                     value: '3897.73'
                     uom: g
@@ -1505,7 +1505,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: cancelled
-                    timestamp: '2020-02-29T19:19:16+00:00'
+                    timestamp: '2020-02-29T19:19:16.123Z'
                     amount: '6.26706273'
                     value: '4711.76'
                     uom: g
@@ -1513,7 +1513,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: cancelled
-                    timestamp: '2020-02-04T04:16:09+00:00'
+                    timestamp: '2020-02-04T04:16:09.123Z'
                     amount: '7.25148182'
                     value: '616.66'
                     uom: g
@@ -1521,7 +1521,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: completed
-                    timestamp: '2020-01-28T05:15:35+00:00'
+                    timestamp: '2020-01-28T05:15:35.123Z'
                     amount: '8.08194329'
                     value: '3022.24'
                     uom: g
@@ -1529,7 +1529,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-01-08T11:24:40+00:00'
+                    timestamp: '2020-01-08T11:24:40.123Z'
                     amount: '4.11746301'
                     value: '1405.46'
                     uom: g
@@ -1585,9 +1585,9 @@ paths:
                     type: quote
                     tx_type: buy
                     status: open
-                    created_at: '2021-12-15T06:55:15+00:00'
-                    updated_at: '2021-12-15T06:55:36+00:00'
-                    expire_on: '2021-12-15T06:57:15+00:00'
+                    created_at: '2021-12-15T06:55:15.123Z'
+                    updated_at: '2021-12-15T06:55:36.123Z'
+                    expire_on: '2021-12-15T06:57:15.123Z'
                     details:
                       items:
                         - id: DXAU-001
@@ -1698,9 +1698,9 @@ paths:
                 type: quote
                 tx_type: buy
                 status: open
-                created_at: '2021-12-15T06:55:15+00:00'
-                updated_at: '2021-12-15T06:55:36+00:00'
-                expire_on: '2021-12-15T06:57:15+00:00'
+                created_at: '2021-12-15T06:55:15.123Z'
+                updated_at: '2021-12-15T06:55:36.123Z'
+                expire_on: '2021-12-15T06:57:15.123Z'
                 details:
                   items:
                     - id: DXAU-001
@@ -1800,9 +1800,9 @@ paths:
                     tx_type: buy
                     status: accepted
                     user_id: 727ab067-28d9-4938-9ba1-64acfc373e7ff
-                    created_at: '2021-12-15T06:55:15+00:00'
-                    updated_at: '2021-12-15T06:55:36+00:00'
-                    expire_on: '2021-12-15T06:57:15+00:00'
+                    created_at: '2021-12-15T06:55:15.123Z'
+                    updated_at: '2021-12-15T06:55:36.123Z'
+                    expire_on: '2021-12-15T06:57:15.123Z'
                     details:
                       items:
                         - id: DXAU-001
@@ -1816,7 +1816,7 @@ paths:
                       shipping: '0.00'
                       total: '249.47'
                     transition:
-                      accepted: '2021-12-15T06:55:36+00:00'
+                      accepted: '2021-12-15T06:55:36.123Z'
                 properties:
                   id:
                     type: string
@@ -1913,9 +1913,9 @@ paths:
                 type: quote
                 tx_type: buy
                 status: accepted
-                created_at: '2021-12-15T06:55:15+00:00'
-                updated_at: '2021-12-15T06:55:36+00:00'
-                expire_on: '2021-12-15T06:57:15+00:00'
+                created_at: '2021-12-15T06:55:15.123Z'
+                updated_at: '2021-12-15T06:55:36.123Z'
+                expire_on: '2021-12-15T06:57:15.123Z'
                 details:
                   items:
                     - id: DXAU-001
@@ -1929,7 +1929,7 @@ paths:
                   shipping: '0.00'
                   total: '249.47'
                 transition:
-                  accepted: '2021-12-15T06:55:36+00:00'
+                  accepted: '2021-12-15T06:55:36.123Z'
                   cancelled: null
       operationId: getQuote
       tags:
@@ -1976,8 +1976,8 @@ paths:
                     type: quote
                     tx_type: buy
                     status: cancelled
-                    created_at: '2021-12-17T04:15:00+00:00'
-                    updated_at: '2021-12-17T04:15:21+00:00'
+                    created_at: '2021-12-17T04:15:00.123Z'
+                    updated_at: '2021-12-17T04:15:21.123Z'
                     expire_on: null
                     details:
                       items:
@@ -1993,7 +1993,7 @@ paths:
                       total: '0.00'
                     transition:
                       accepted: null
-                      cancelled: '2021-12-17T04:15:22+00:00'
+                      cancelled: '2021-12-17T04:15:22.123Z'
                 properties:
                   id:
                     type: string
@@ -2089,8 +2089,8 @@ paths:
                 type: quote
                 tx_type: buy
                 status: cancelled
-                created_at: '2021-12-17T04:15:00+00:00'
-                updated_at: '2021-12-17T04:15:21+00:00'
+                created_at: '2021-12-17T04:15:00.123Z'
+                updated_at: '2021-12-17T04:15:21.123Z'
                 expire_on: null
                 details:
                   items:
@@ -2106,7 +2106,7 @@ paths:
                   total: '0.00'
                 transition:
                   accepted: null
-                  cancelled: '2021-12-17T04:15:22+00:00'
+                  cancelled: '2021-12-17T04:15:22.123Z'
       operationId: cancelQuote
       requestBody:
         content:
@@ -2180,12 +2180,12 @@ paths:
                       tax: '0.00'
                       shipping: '0.00'
                       total: '249.47'
-                    expire_on: '2021-12-16T06:08:24+00:00'
+                    expire_on: '2021-12-16T06:08:24.123Z'
                     reference:
                       quote: 61bad7607723df2833df0ad9
                       partner: 61bad7600814317188ad4094
-                    created_at: '2021-12-16T06:06:24+00:00'
-                    updated_at: '2021-12-16T06:06:45+00:00'
+                    created_at: '2021-12-16T06:06:24.123Z'
+                    updated_at: '2021-12-16T06:06:45.123Z'
                 properties:
                   id:
                     type: string
@@ -2285,9 +2285,9 @@ paths:
                 type: order
                 tx_type: buy
                 status: pending
-                created_at: '2021-12-16T06:06:24+00:00'
-                updated_at: '2021-12-16T06:06:45+00:00'
-                expire_on: '2021-12-16T06:08:24+00:00'
+                created_at: '2021-12-16T06:06:24.123Z'
+                updated_at: '2021-12-16T06:06:45.123Z'
+                expire_on: '2021-12-16T06:08:24.123Z'
                 details:
                   items:
                     - id: DXAU-001
@@ -2377,9 +2377,9 @@ paths:
                     id: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
                     type: order
                     tx_type: buy
-                    created_at: '2021-12-16T06:06:24+00:00'
-                    updated_at: '2021-12-16T06:06:45+00:00'
-                    expire_on: '2021-12-16T06:08:24+00:00'
+                    created_at: '2021-12-16T06:06:24.123Z'
+                    updated_at: '2021-12-16T06:06:45.123Z'
+                    expire_on: '2021-12-16T06:08:24.123Z'
                     status: pending
                     details:
                       items:
@@ -2496,9 +2496,9 @@ paths:
                 type: order
                 tx_type: buy
                 status: pending
-                created_at: '2021-12-16T06:06:24+00:00'
-                updated_at: '2021-12-16T06:06:45+00:00'
-                expire_on: '2021-12-16T06:08:24+00:00'
+                created_at: '2021-12-16T06:06:24.123Z'
+                updated_at: '2021-12-16T06:06:45.123Z'
+                expire_on: '2021-12-16T06:08:24.123Z'
                 details:
                   items:
                     - id: DXAU-001
@@ -2591,9 +2591,9 @@ paths:
                     id: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
                     type: order
                     tx_type: buy
-                    created_at: '2021-12-16T06:06:24+00:00'
-                    updated_at: '2021-12-16T06:06:45+00:00'
-                    expire_on: '2021-12-16T06:08:24+00:00'
+                    created_at: '2021-12-16T06:06:24.123Z'
+                    updated_at: '2021-12-16T06:06:45.123Z'
+                    expire_on: '2021-12-16T06:08:24.123Z'
                     status: pending
                     details:
                       items:
@@ -2710,8 +2710,8 @@ paths:
                 type: order
                 tx_type: buy
                 status: pending
-                created_at: '2021-12-16T06:06:24+00:00'
-                updated_at: '2021-12-16T06:06:45+00:00'
+                created_at: '2021-12-16T06:06:24.123Z'
+                updated_at: '2021-12-16T06:06:45.123Z'
                 expire_on: null
                 details:
                   items:
@@ -2772,8 +2772,8 @@ paths:
                     id: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
                     type: order
                     tx_type: buy
-                    created_at: '2021-12-16T06:06:24+00:00'
-                    updated_at: '2021-12-16T06:06:45+00:00'
+                    created_at: '2021-12-16T06:06:24.123Z'
+                    updated_at: '2021-12-16T06:06:45.123Z'
                     expire_on: null
                     status: cancelled
                     details:
@@ -2891,8 +2891,8 @@ paths:
                 type: order
                 tx_type: buy
                 status: cancelled
-                created_at: '2021-12-16T06:06:24+00:00'
-                updated_at: '2021-12-16T06:06:45+00:00'
+                created_at: '2021-12-16T06:06:24.123Z'
+                updated_at: '2021-12-16T06:06:45.123Z'
                 expire_on: null
                 details:
                   items:
@@ -3000,7 +3000,7 @@ paths:
                     hg: 61badd454c7c033061e18f20
                     quote: 61badd459e29a1d268cc9bcc
                     partner: 61badd453944e8df8a8b7602
-                  created_at: '2021-12-16T06:31:54+00:00'
+                  created_at: '2021-12-16T06:31:54.123Z'
               properties:
                 id:
                   type: string
@@ -3063,7 +3063,7 @@ paths:
                 hg: 592fcc1bbf5897b150057000
                 quote: 61badd459e29a1d268cc9bcc
                 partner: 61badd453944e8df8a8b7602
-              created_at: '2021-12-16T06:31:54+00:00'
+              created_at: '2021-12-16T06:31:54.123Z'
       security: []
       tags:
         - orders
