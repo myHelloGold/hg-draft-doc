@@ -276,9 +276,9 @@ paths:
                         accrued_fees: '0.67424463'
                         uom: g
                     configuration:
-                      buy_enabled: false
+                      buy_enabled: true
                       sell_enabled: true
-                      smartsaver_enabled: true
+                      smartsaver_enabled: false
                       transfer_enabled: false
                       withdraw_enabled: false
                     recent_transactions:
@@ -436,9 +436,9 @@ paths:
                 deleted_at: null
                 configuration:
                   buy_enabled: true
-                  sell_enabled: false
-                  smartsaver_enabled: true
-                  transfer_enabled: true
+                  sell_enabled: true
+                  smartsaver_enabled: false
+                  transfer_enabled: false
                   withdraw_enabled: false
                 balances:
                   - type: MYR
@@ -560,9 +560,9 @@ paths:
                         accrued_fees: '0.67424463'
                         uom: g
                     configuration:
-                      buy_enabled: false
+                      buy_enabled: true
                       sell_enabled: true
-                      smartsaver_enabled: true
+                      smartsaver_enabled: false
                       transfer_enabled: false
                       withdrwa_enabled: false
                     recent_transactions:
@@ -719,9 +719,9 @@ paths:
                 deleted_at: null
                 configuration:
                   buy_enabled: true
-                  sell_enabled: false
-                  smartsaver_enabled: true
-                  transfer_enabled: true
+                  sell_enabled: true
+                  smartsaver_enabled: false
+                  transfer_enabled: false
                   withdraw_enabled: false
                 balances:
                   - type: MYR
@@ -818,9 +818,9 @@ paths:
                     deleted_at: null
                     configuration:
                       buy_enabled: true
-                      sell_enabled: false
-                      smartsaver_enabled: true
-                      transfer_enabled: true
+                      sell_enabled: true
+                      smartsaver_enabled: false
+                      transfer_enabled: false
                       withdraw_enabled: false
                     balances:
                       - type: MYR
@@ -989,9 +989,9 @@ paths:
                 deleted_at: null
                 configuration:
                   buy_enabled: true
-                  sell_enabled: false
-                  smartsaver_enabled: true
-                  transfer_enabled: true
+                  sell_enabled: true
+                  smartsaver_enabled: false
+                  transfer_enabled: false
                   withdraw_enabled: false
                 balances:
                   - type: MYR
