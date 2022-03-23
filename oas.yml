@@ -1548,7 +1548,7 @@ paths:
       description: |-
         Create a new quote for a user.
 
-        Quote will automatically expier after 2 minutes.
+        Quote will automatically expire after 2 minutes.
       parameters:
         - name: x-api-key
           in: header
