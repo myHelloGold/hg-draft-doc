@@ -2179,7 +2179,6 @@ paths:
                       tax: '0.00'
                       shipping: '0.00'
                       total: '249.47'
-                    expire_on: '2021-12-16T06:08:24.123Z'
                     reference:
                       quote: 61bad7607723df2833df0ad9
                       partner: 61bad7600814317188ad4094
@@ -2210,10 +2209,6 @@ paths:
                     type: string
                     minLength: 1
                     description: Timestamp of when the transaction was last updated.
-                  expire_on:
-                    type: string
-                    minLength: 1
-                    description: Timestamp of when the transaction will expire.
                   details:
                     type: object
                     properties:
@@ -2286,7 +2281,6 @@ paths:
                 status: pending
                 created_at: '2021-12-16T06:06:24.123Z'
                 updated_at: '2021-12-16T06:06:45.123Z'
-                expire_on: '2021-12-16T06:08:24.123Z'
                 details:
                   items:
                     - id: DXAU-001
@@ -2384,7 +2378,6 @@ paths:
                     tx_type: buy
                     created_at: '2021-12-16T06:06:24.123Z'
                     updated_at: '2021-12-16T06:06:45.123Z'
-                    expire_on: '2021-12-16T06:08:24.123Z'
                     status: pending
                     details:
                       items:
@@ -2426,11 +2419,6 @@ paths:
                     type: string
                     minLength: 1
                     description: Timestamp of when the transaction was last updated.
-                  expire_on:
-                    type: string
-                    minLength: 1
-                    description: Timestamp of when the transaction will expire.
-                    nullable: true
                   details:
                     type: object
                     properties:
@@ -2503,7 +2491,6 @@ paths:
                 status: pending
                 created_at: '2021-12-16T06:06:24.123Z'
                 updated_at: '2021-12-16T06:06:45.123Z'
-                expire_on: null
                 details:
                   items:
                     - id: DXAU-001
@@ -2565,7 +2552,6 @@ paths:
                     tx_type: buy
                     created_at: '2021-12-16T06:06:24.123Z'
                     updated_at: '2021-12-16T06:06:45.123Z'
-                    expire_on: null
                     status: cancelled
                     details:
                       items:
@@ -2607,11 +2593,6 @@ paths:
                     type: string
                     minLength: 1
                     description: Timestamp of when the transaction was last updated.
-                  expire_on:
-                    type: string
-                    minLength: 1
-                    description: Timestamp of when the transaction will expire.
-                    nullable: true
                   details:
                     type: object
                     properties:
@@ -2684,7 +2665,6 @@ paths:
                 status: cancelled
                 created_at: '2021-12-16T06:06:24.123Z'
                 updated_at: '2021-12-16T06:06:45.123Z'
-                expire_on: null
                 details:
                   items:
                     - id: DXAU-001
