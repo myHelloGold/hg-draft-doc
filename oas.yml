@@ -2163,139 +2163,163 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    type: order
-                    tx_type: buy
-                    status: pending
-                    id: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
-                    details:
-                      items:
-                        - id: DXAU-001
-                          uom: g
-                          quantity: '1.28320038'
-                          price: '249.47'
-                          symbol: XAUMYR
-                      subtotal: '249.47'
-                      discount: '0.00'
-                      tax: '0.00'
-                      shipping: '0.00'
-                      total: '249.47'
-                    reference:
-                      quote: 61bad7607723df2833df0ad9
-                      partner: 61bad7600814317188ad4094
-                    created_at: '2021-12-16T06:06:24.123Z'
-                    updated_at: '2021-12-16T06:06:45.123Z'
+                    id: 61bad7607723df2833df0ad9
+                    type: quote
+                    status: accepted
+                    order:
+                      id: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
+                      type: order
+                      tx_type: buy
+                      status: pending
+                      details:
+                        items:
+                          - id: DXAU-001
+                            uom: g
+                            quantity: '1.28320038'
+                            price: '249.47'
+                            symbol: XAUMYR
+                        subtotal: '249.47'
+                        discount: '0.00'
+                        tax: '0.00'
+                        shipping: '0.00'
+                        total: '249.47'
+                      reference:
+                        quote: 61bad7607723df2833df0ad9
+                        partner: 61bad7600814317188ad4094
+                      created_at: '2021-12-16T06:06:24.123Z'
+                      updated_at: '2021-12-16T06:06:45.123Z'
                 properties:
                   id:
                     type: string
                     minLength: 1
-                    description: The order identifier.
+                    description: The quote identifier.
                   type:
                     type: string
                     minLength: 1
                     description: The type of transaction
-                  tx_type:
-                    type: string
-                    minLength: 1
-                    description: The action of the transaction.
                   status:
                     type: string
                     minLength: 1
                     description: The status of the transaction.
-                  created_at:
-                    type: string
-                    minLength: 1
-                    description: Timestamp of when the transaction was created.
-                  updated_at:
-                    type: string
-                    minLength: 1
-                    description: Timestamp of when the transaction was last updated.
-                  details:
+                  order:
                     type: object
+                    description: The order object, created when quote is accepted.
                     properties:
-                      items:
-                        type: array
-                        uniqueItems: true
-                        minItems: 1
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              minLength: 1
-                              description: The product identifier.
-                            symbol:
-                              type: string
-                              minLength: 1
-                              description: The symbol of the asset.
-                            price:
-                              type: string
-                              minLength: 1
-                              description: The price of the asset.
-                            quantity:
-                              type: string
-                              minLength: 1
-                              description: The quantity of the trade.
-                            uom:
-                              type: string
-                              minLength: 1
-                              description: The Unit of Measurement (UOM) of the asset.
-                      subtotal:
+                      id:
                         type: string
                         minLength: 1
-                        description: The subtotal amount for the transaction.
-                      discount:
+                        description: The order identifier.
+                      type:
                         type: string
                         minLength: 1
-                        description: The discount amount for the transaction.
-                      tax:
+                        description: The type of transaction
+                      tx_type:
                         type: string
                         minLength: 1
-                        description: The tax amount for the transaction.
-                      shipping:
+                        description: The action of the transaction.
+                      status:
                         type: string
                         minLength: 1
-                        description: The shipping amount for the transaction.
-                      total:
+                        description: The status of the transaction.
+                      created_at:
                         type: string
                         minLength: 1
-                        description: The total amount for the transaction.
-                  reference:
-                    type: object
-                    properties:
-                      quote:
+                        description: Timestamp of when the transaction was created.
+                      updated_at:
                         type: string
                         minLength: 1
-                        description: The quote identifier that triggered the order.
-                      hg:
-                        type: string
-                        description: The HelloGold reference ID the transaction.
-                        minLength: 1
-                      partner:
-                        type: string
-                        minLength: 1
-                        description: The partner reference ID of the transaction.
+                        description: Timestamp of when the transaction was last updated.
+                      details:
+                        type: object
+                        properties:
+                          items:
+                            type: array
+                            uniqueItems: true
+                            minItems: 1
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                  minLength: 1
+                                  description: The product identifier.
+                                symbol:
+                                  type: string
+                                  minLength: 1
+                                  description: The symbol of the asset.
+                                price:
+                                  type: string
+                                  minLength: 1
+                                  description: The price of the asset.
+                                quantity:
+                                  type: string
+                                  minLength: 1
+                                  description: The quantity of the trade.
+                                uom:
+                                  type: string
+                                  minLength: 1
+                                  description: The Unit of Measurement (UOM) of the asset.
+                          subtotal:
+                            type: string
+                            minLength: 1
+                            description: The subtotal amount for the transaction.
+                          discount:
+                            type: string
+                            minLength: 1
+                            description: The discount amount for the transaction.
+                          tax:
+                            type: string
+                            minLength: 1
+                            description: The tax amount for the transaction.
+                          shipping:
+                            type: string
+                            minLength: 1
+                            description: The shipping amount for the transaction.
+                          total:
+                            type: string
+                            minLength: 1
+                            description: The total amount for the transaction.
+                      reference:
+                        type: object
+                        properties:
+                          quote:
+                            type: string
+                            minLength: 1
+                            description: The quote identifier that triggered the order.
+                          hg:
+                            type: string
+                            description: The HelloGold reference ID the transaction.
+                            minLength: 1
+                          partner:
+                            type: string
+                            minLength: 1
+                            description: The partner reference ID of the transaction.
               example:
-                id: 592fcc1bbf5897b150057000
-                type: order
-                tx_type: buy
-                status: pending
-                created_at: '2021-12-16T06:06:24.123Z'
-                updated_at: '2021-12-16T06:06:45.123Z'
-                details:
-                  items:
-                    - id: DXAU-001
-                      uom: g
-                      quantity: '1.28320038'
-                      price: '249.47'
-                      symbol: XAUMYR
-                  subtotal: '249.47'
-                  discount: '0.00'
-                  tax: '0.00'
-                  shipping: '0.00'
-                  total: '249.47'
-                reference:
-                  quote: 61bad7607723df2833df0ad9
-                  partner: 61bad7600814317188ad4094
+                id: 61bad7607723df2833df0ad9
+                type: quote
+                status: accepted
+                order:
+                  id: 592fcc1bbf5897b150057000
+                  type: order
+                  tx_type: buy
+                  status: pending
+                  created_at: '2021-12-16T06:06:24.123Z'
+                  updated_at: '2021-12-16T06:06:45.123Z'
+                  details:
+                    items:
+                      - id: DXAU-001
+                        uom: g
+                        quantity: '1.28320038'
+                        price: '249.47'
+                        symbol: XAUMYR
+                    subtotal: '249.47'
+                    discount: '0.00'
+                    tax: '0.00'
+                    shipping: '0.00'
+                    total: '249.47'
+                  reference:
+                    quote: 61bad7607723df2833df0ad9
+                    partner: 61bad7600814317188ad4094
       operationId: acceptQuote
       requestBody:
         content:
