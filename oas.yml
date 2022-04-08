@@ -2185,6 +2185,7 @@ paths:
                         total: '249.47'
                       reference:
                         quote: 61bad7607723df2833df0ad9
+                        hg: 592fcc1bbf5897b150057000
                         partner: 61bad7600814317188ad4094
                       created_at: '2021-12-16T06:06:24.123Z'
                       updated_at: '2021-12-16T06:06:45.123Z'
@@ -2319,6 +2320,7 @@ paths:
                     total: '249.47'
                   reference:
                     quote: 61bad7607723df2833df0ad9
+                    hg: 592fcc1bbf5897b150057000
                     partner: 61bad7600814317188ad4094
       operationId: acceptQuote
       requestBody:
@@ -2397,7 +2399,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    id: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
+                    id: 592fcc1bbf5897b150057000
                     type: order
                     tx_type: buy
                     created_at: '2021-12-16T06:06:24.123Z'
@@ -2417,6 +2419,7 @@ paths:
                       total: '249.47'
                     reference:
                       quote: 61bad7607723df2833df0ad9
+                      hg: 592fcc1bbf5897b150057000
                       partner: 61bad7600814317188ad4094
                 properties:
                   id:
@@ -2529,6 +2532,7 @@ paths:
                   total: '249.47'
                 reference:
                   quote: 61bad7607723df2833df0ad9
+                  hg: 592fcc1bbf5897b150057000
                   partner: 61bad7600814317188ad4094
       operationId: getOrder
       tags:
@@ -2571,7 +2575,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    id: 61bad7602f417f1bf762b885_81f9ee39-42a2-4882-ac3e-db8816d54490
+                    id: 592fcc1bbf5897b150057000
                     type: order
                     tx_type: buy
                     created_at: '2021-12-16T06:06:24.123Z'
@@ -2591,6 +2595,7 @@ paths:
                       total: '0.00'
                     reference:
                       quote: 61bad7607723df2833df0ad9
+                      hg: 592fcc1bbf5897b150057000
                       partner: 61bad7600814317188ad4094
                 properties:
                   id:
@@ -2703,6 +2708,7 @@ paths:
                   total: '0.00'
                 reference:
                   quote: 61bad7607723df2833df0ad9
+                  hg: 592fcc1bbf5897b150057000
                   partner: 61bad7600814317188ad4094
       operationId: cancelOrder
       requestBody:
