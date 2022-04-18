@@ -136,7 +136,7 @@ paths:
                       description: The mid price of the asset.
               example:
                 - ok: true
-                  timestamp: '2020-03-19T08:00:00.123Z'
+                  timestamp: '2022-04-14T06:54:55+00:00'
                   symbol: XAUMYR
                   buy_price: '211.78'
                   sell_price: '204.42'
