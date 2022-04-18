@@ -510,11 +510,26 @@ paths:
               schema:
                 type: object
                 properties:
-                  '':
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
+                  debug_id:
                     type: string
+                    minLength: 1
+                    description: The unique identifier for the error.
+                  name:
+                    type: string
+                    minLength: 1
+                    description: The name of the error.
+                  message:
+                    type: string
+                    minLength: 1
+                    description: The description of the error.
               example:
-                cws_code: '1010'
-                cws_message: partner parameter is missing
+                debug_id: '1010'
+                name: 'INVALID_REQUEST'
+                message: 'full_name parameter is missing'
       tags:
         - accounts
       operationId: createAccount
