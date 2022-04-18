@@ -267,7 +267,8 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    user_id: d1351e8b-b546-446a-836b-56fce02d5b44
+                    ok: true
+                    user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                     status: active
                     referral_code: lmnwtozuv2q
                     created_at: '2021-12-15T06:55:15.123Z'
@@ -291,7 +292,7 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-07-14T03:53:16.123Z'
+                        timestamp: '2020-07-14T03:53:16+00:00'
                         amount: '2.33233246'
                         value: '1579.88'
                         uom: g
@@ -299,7 +300,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: completed
-                        timestamp: '2020-06-18T16:48:50.123Z'
+                        timestamp: '2020-06-18T16:48:50+00:00'
                         amount: '9.60745608'
                         value: '1543.11'
                         uom: g
@@ -307,7 +308,7 @@ paths:
                         type: buy_gold
                         label: Buy Gold
                         status: cancelled
-                        timestamp: '2020-07-15T07:21:59.123Z'
+                        timestamp: '2020-07-15T07:21:59+00:00'
                         amount: '4.06835968'
                         value: '3208.98'
                         uom: g
@@ -315,11 +316,15 @@ paths:
                         type: sell_gold
                         label: Sell Gold
                         status: completed
-                        timestamp: '2020-03-01T17:55:26.123Z'
+                        timestamp: '2020-03-01T17:55:26+00:00'
                         amount: '2.97335211'
                         value: '2855.91'
                         uom: g
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   user_id:
                     type: string
                     minLength: 1
@@ -336,6 +341,7 @@ paths:
                     type: string
                     minLength: 1
                     description: The referral code for the account.
+                    nullable: true
                   created_at:
                     type: string
                     minLength: 1
@@ -433,11 +439,12 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
-                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
+                ok: true
+                user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 status: active
-                referral_code: 1nltb89xtko
-                created_at: '2021-12-15T06:55:15.123Z'
-                updated_at: '2021-12-15T06:55:36.123Z'
+                referral_code: null
+                created_at: '2021-12-15T06:55:15+00:00'
+                updated_at: '2021-12-15T06:55:36+00:00'
                 deleted_at: null
                 configuration:
                   buy_enabled: true
@@ -463,7 +470,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-07-14T03:53:16.123Z'
+                    timestamp: '2020-07-14T03:53:16+00:00'
                     amount: '2.33233246'
                     value: '1579.88'
                     uom: g
@@ -471,7 +478,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: completed
-                    timestamp: '2020-06-18T16:48:50.123Z'
+                    timestamp: '2020-06-18T16:48:50+00:00'
                     amount: '9.60745608'
                     value: '1543.11'
                     uom: g
@@ -479,7 +486,7 @@ paths:
                     type: buy_gold
                     label: Buy Gold
                     status: cancelled
-                    timestamp: '2020-07-15T07:21:59.123Z'
+                    timestamp: '2020-07-15T07:21:59+00:00'
                     amount: '4.06835968'
                     value: '3208.98'
                     uom: g
@@ -487,7 +494,7 @@ paths:
                     type: sell_gold
                     label: Sell Gold
                     status: completed
-                    timestamp: '2020-03-01T17:55:26.123Z'
+                    timestamp: '2020-03-01T17:55:26+00:00'
                     amount: '2.97335211'
                     value: '2855.91'
                     uom: g
