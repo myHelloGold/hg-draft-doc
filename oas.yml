@@ -574,7 +574,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    user_id: d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                     status: active
                     referral_code: lmnwtozuv2q
                     created_at: '2021-12-15T06:55:15.123Z'
@@ -739,7 +739,7 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
-                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 status: active
                 referral_code: 1nltb89xtko
                 created_at: '2021-12-15T06:55:15.123Z'
@@ -838,7 +838,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    user_id: d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                     status: active
                     referral_code: 1nltb89xtko
                     created_at: '2021-12-15T06:55:15.123Z'
@@ -1009,7 +1009,7 @@ paths:
                           minLength: 1
                           description: The Unit of Measurement (UOM) of the asset.
               example:
-                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 status: active
                 referral_code: 1nltb89xtko
                 created_at: '2021-12-15T06:55:15.123Z'
@@ -1181,7 +1181,7 @@ paths:
                     minLength: 1
                     description: Timestamp of when the account was deleted.
               example:
-                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 deleted: true
                 deleted_at: '2021-12-15T06:55:15.123Z'
       operationId: deleteAccount
@@ -1226,7 +1226,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    user_id: d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                     balances:
                       - type: MYR
                         total_balance: '1792.38'
@@ -1274,7 +1274,7 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
-                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 balances:
                   - type: MYR
                     total_balance: '1792.38'
@@ -1337,7 +1337,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    user_id: d1351e8b-b546-446a-836b-56fce02d5b44
+                    user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                     transactions:
                       - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
                         type: buy_gold
@@ -1479,7 +1479,7 @@ paths:
                         description: 'Continuation path to the previous set of data, if available.'
                         nullable: true
               example:
-                user_id: d1351e8b-b546-446a-836b-56fce02d5b44
+                user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 transactions:
                   - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
                     type: buy_gold
