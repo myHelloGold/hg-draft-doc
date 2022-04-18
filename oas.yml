@@ -102,7 +102,7 @@ paths:
                 uniqueItems: true
                 x-examples:
                   example-1:
-                    - timestamp: '2021-12-22T02:56:09.123Z'
+                    - timestamp: '2022-04-14T06:54:55+00:00'
                       symbol: XAUMYR
                       buy_price: '248.15'
                       sell_price: '236.20'
@@ -110,6 +110,10 @@ paths:
                 items:
                   type: object
                   properties:
+                    ok:
+                      type: boolean
+                      minLength: 1
+                      description: Flag indicating if the request is successful or not.
                     timestamp:
                       type: string
                       minLength: 1
@@ -131,7 +135,8 @@ paths:
                       minLength: 1
                       description: The mid price of the asset.
               example:
-                - timestamp: '2020-03-19T08:00:00.123Z'
+                - ok: true
+                  timestamp: '2020-03-19T08:00:00.123Z'
                   symbol: XAUMYR
                   buy_price: '211.78'
                   sell_price: '204.42'
