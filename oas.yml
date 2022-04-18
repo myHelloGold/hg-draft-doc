@@ -574,6 +574,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
+                    ok: true
                     user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                     status: active
                     referral_code: lmnwtozuv2q
@@ -627,6 +628,10 @@ paths:
                         value: '2855.91'
                         uom: g
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   user_id:
                     type: string
                     minLength: 1
@@ -739,6 +744,7 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
+                ok: true
                 user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 status: active
                 referral_code: 1nltb89xtko
@@ -838,6 +844,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
+                    ok: true
                     user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                     status: active
                     referral_code: 1nltb89xtko
@@ -897,6 +904,10 @@ paths:
                         value: '2855.91'
                         uom: g
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   user_id:
                     type: string
                     minLength: 1
@@ -1009,6 +1020,7 @@ paths:
                           minLength: 1
                           description: The Unit of Measurement (UOM) of the asset.
               example:
+                ok: true
                 user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 status: active
                 referral_code: 1nltb89xtko
@@ -1165,6 +1177,10 @@ paths:
                     deleted: true
                     deleted_at: '2021-12-15T06:55:15.123Z'
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   user_id:
                     type: string
                     minLength: 1
@@ -1181,6 +1197,7 @@ paths:
                     minLength: 1
                     description: Timestamp of when the account was deleted.
               example:
+                ok: true
                 user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 deleted: true
                 deleted_at: '2021-12-15T06:55:15.123Z'
@@ -1226,6 +1243,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
+                    ok: true
                     user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                     balances:
                       - type: MYR
@@ -1241,6 +1259,10 @@ paths:
                         accrued_fees: '0.75084219'
                         uom: g
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   user_id:
                     type: string
                     minLength: 1
@@ -1274,6 +1296,7 @@ paths:
                           description: The Unit of Measurement (UOM) of the asset.
                           nullable: true
               example:
+                ok: true
                 user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 balances:
                   - type: MYR
@@ -1337,6 +1360,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
+                    ok: true
                     user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                     transactions:
                       - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
@@ -1423,6 +1447,10 @@ paths:
                       next: 'https://stage-api.hellogold.com/accounts/transactions?offset=30'
                       previous: 'https://stage-api.hellogold.com/accounts/transactions?offset=10'
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   user_id:
                     type: string
                     minLength: 1
@@ -1479,6 +1507,7 @@ paths:
                         description: 'Continuation path to the previous set of data, if available.'
                         nullable: true
               example:
+                ok: true
                 user_id: 727ab067-28d9-4938-9ba1-64acfc373e7f
                 transactions:
                   - id: 4f11a51b-8f9d-46bf-842b-5a8d69dda06a
@@ -1609,6 +1638,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
+                    ok: true
                     type: quote
                     tx_type: buy
                     status: open
@@ -1631,6 +1661,10 @@ paths:
                       accepted: null
                       cancelled: null
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   id:
                     type: string
                     minLength: 1
@@ -1662,6 +1696,7 @@ paths:
                   details:
                     type: object
                     properties:
+                      
                       items:
                         type: array
                         uniqueItems: true
@@ -1721,6 +1756,7 @@ paths:
                         description: Timestamp of when the transaction was cancelled.
                         nullable: true
               example:
+                ok: true
                 id: 592fcc1bbf5897b150057000
                 type: quote
                 tx_type: buy
@@ -1823,6 +1859,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
+                    ok: true
                     type: quote
                     tx_type: buy
                     status: accepted
@@ -1845,6 +1882,10 @@ paths:
                     transition:
                       accepted: '2021-12-15T06:55:36.123Z'
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   id:
                     type: string
                     minLength: 1
@@ -1936,6 +1977,7 @@ paths:
                         description: Timestamp of when the transaction was cancelled.
                         nullable: true
               example:
+                ok: true
                 id: 592fcc1bbf5897b150057000
                 type: quote
                 tx_type: buy
@@ -1999,6 +2041,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
+                    ok: true
                     id: 592fcc1bbf5897b150057000
                     type: quote
                     tx_type: buy
@@ -2022,6 +2065,10 @@ paths:
                       accepted: null
                       cancelled: '2021-12-17T04:15:22.123Z'
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   id:
                     type: string
                     minLength: 1
@@ -2112,6 +2159,7 @@ paths:
                         description: Timestamp of when the transaction was cancelled.
                         nullable: true
               example:
+                ok: true
                 id: 592fcc1bbf5897b150057000
                 type: quote
                 tx_type: buy
@@ -2191,6 +2239,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
+                    ok: true
                     id: 61bad7607723df2833df0ad9
                     type: quote
                     status: accepted
@@ -2218,6 +2267,10 @@ paths:
                       created_at: '2021-12-16T06:06:24.123Z'
                       updated_at: '2021-12-16T06:06:45.123Z'
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   id:
                     type: string
                     minLength: 1
@@ -2324,6 +2377,7 @@ paths:
                             minLength: 1
                             description: The partner reference ID of the transaction.
               example:
+                ok: true
                 id: 61bad7607723df2833df0ad9
                 type: quote
                 status: accepted
@@ -2427,6 +2481,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
+                    ok: true
                     id: 592fcc1bbf5897b150057000
                     type: order
                     tx_type: buy
@@ -2450,6 +2505,10 @@ paths:
                       hg: 592fcc1bbf5897b150057000
                       partner: 61bad7600814317188ad4094
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   id:
                     type: string
                     minLength: 1
@@ -2540,6 +2599,7 @@ paths:
                         minLength: 1
                         description: The partner reference ID of the transaction.
               example:
+                ok: true
                 id: 592fcc1bbf5897b150057000
                 type: order
                 tx_type: buy
@@ -2603,6 +2663,7 @@ paths:
                 type: object
                 x-examples:
                   example-1:
+                    ok: true
                     id: 592fcc1bbf5897b150057000
                     type: order
                     tx_type: buy
@@ -2626,6 +2687,10 @@ paths:
                       hg: 592fcc1bbf5897b150057000
                       partner: 61bad7600814317188ad4094
                 properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
                   id:
                     type: string
                     minLength: 1
@@ -2716,6 +2781,7 @@ paths:
                         minLength: 1
                         description: The partner reference ID of the transaction.
               example:
+                ok: true
                 id: 592fcc1bbf5897b150057000
                 type: order
                 tx_type: buy
