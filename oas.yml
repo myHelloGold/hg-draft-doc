@@ -157,7 +157,6 @@ paths:
           in: header
           name: x-user-id
           description: The unique identifier of the user.
-          required: true
         - schema:
             type: string
             example: XAUMYR
