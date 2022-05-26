@@ -13,16 +13,241 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   description: |-
-    # Introduction
-    Welcome to HelloGold API, which is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
+    # Overview
+    Welcome to HelloGold Connect, a collection of APIs which are  organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
+
+    Integrating your product with HelloGold Connect means that you'll be in control of your own user flow and experience, while being able to:
+    - Show real time gold prices
+    - Create a user account
+    - Allow users to buy and/or sell gold
 
     ## Versioning
     The current API version is v1. The version is specified in the URL.
 
-    ## Responses
+    ## Contact us
+    Need help? Feel free to get in touch with our team by sending an email to us at hello@hellogold.com
+
+    # Getting Started
+
+    This section explains on a high level, various ways on how to integrate HelloGold Connect with your app, and allow your users to buy, save and sell physical investment-grade gold.
+
+    It assumes you know how to perform REST API calls.
+
+    ## Before You Start
+
+    You will need the following:
+    - A HelloGold Connect API key.
+
+    ## Show real time gold prices
+
+    Query the `GET /v1/al/ticker/price`. 
+
+    ```
+    curl --request GET \
+      --url 'https://stage-connect.hellogold.com/v1/al/ticker/price?symbol=XAUMYR' \
+      --header 'Content-Type: application/json' \
+    ```
+
+    If you've previously created a HelloGold account for your user, include the `x-user-id` parameter accordingly.
+
+    ```
+    curl --request GET \
+      --url 'https://stage-connect.hellogold.com/v1/al/ticker/price?symbol=XAUMYR' \
+      --header 'Content-Type: application/json' \
+      --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992'
+    ```
+
+    Any one of those two requests should return a response, with the current gold price:
+
+    ```
+    {
+      "ok": true,
+      "symbol": "XAUMYR",
+      "buy_price": "173.47",
+      "sell_price": "154.90",
+      "mid_price": "164.19",
+      "timestamp": "2022-05-25T04:04:08+00:00"
+    }
+    ```
+
+    ## Create a user account
+
+    A user account is required in order to perform any transaction on HelloGold Connect. To create an account for the user, query `POST /v1/al/accounts/create`. 
+
+    ```
+    curl --request POST \
+      --url https://stage-connect.hellogold.com/v1/al/accounts/create \
+      --header 'Content-Type: application/json' \
+      --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992' \
+      --header 'x-user-id: yassirtest9992' \
+      --data '{
+      "language": "en",
+      "kyc_level": 2,
+      "phone": "+601100009992",
+      "email": "yahya.yassir+debug-auth-yassirtest9992@hellogold.com",
+      "full_name": "Yassir9992",
+      "id_number": "830328119992",
+      "id_type": "idcard",
+      "nationality": "MYS",
+      "id_expiry": "2023-12-15"
+    }'
+    ```
+
+    This should return the account detail for the user.
+
+    ```
+    {
+      "ok": true,
+      "user_id": "yassirtest9992",
+      "status": "active",
+      "referral_code": null,
+      "created_at": "2022-05-25T07:53:25+00:00",
+      "updated_at": "2022-05-25T07:53:25+00:00",
+      "deleted_at": null,
+      "configuration": {
+        "buy_enabled": true,
+        "sell_enabled": true,
+        "smart_saver_enabled": true,
+        "transfer_enabled": true,
+        "withdraw_enabled": true
+      },
+      "balances": [
+        {
+          "type": "MYR",
+          "total_balance": "0.0",
+          "total_locked_balance": "0.0",
+          "total_available_balance": "0.0",
+          "accrued_fees": "0.00",
+          "uom": null
+        },
+        {
+          "type": "XAU",
+          "total_balance": "0.0",
+          "total_locked_balance": "0.0",
+          "total_available_balance": "0.0",
+          "accrued_fees": "0.0",
+          "uom": "g"
+        }
+      ],
+      "recent_transactions": []
+    }
+    ```
+
+    ## Buying gold
+
+    When the user has confirmed their intent to proceed with the transaction (either buy or sell), a quote needs to be created . To create a quote, query `POST /v1/al/quotes/create`.
+
+    ```
+    curl --request POST \
+      --url https://stage-connect.hellogold.com/v1/al/quotes/create \
+      --header 'Content-Type: application/json' \
+      --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992' \
+      --header 'x-user-id: yassirtest9992' \
+      --data '{
+      "tx_type": "buy",
+      "symbol": "XAUMYR",
+      "quantity": "0.1",
+      "uom": "g"
+    }'
+    ```
+
+    A quote will be returned as the response, where the rates will be locked for 2 minutes before the quote will expire.
+
+    ```
+    {
+      "ok": true,
+      "id": "b6da8391-ea86-431d-9235-98d7365b423e",
+      "type": "quote",
+      "tx_type": "buy",
+      "status": "open",
+      "created_at": "2022-05-26T04:21:21+00:00",
+      "updated_at": "2022-05-26T04:21:21+00:00",
+      "expire_on": "2022-05-26T04:23:21+00:00",
+      "details": {
+        "items": [
+          {
+            "id": "DXAU-001",
+            "symbol": "XAUMYR",
+            "quantity": "0.1",
+            "price": "17.35",
+            "uom": "g"
+          }
+        ],
+        "subtotal": "17.35",
+        "discount": "0.00",
+        "tax": "0.00",
+        "shipping": "0.00",
+        "total": "17.35"
+      },
+      "transition": {
+        "accepted": null,
+        "cancelled": null
+      }
+    }
+    ```
+
+    Once you've gotten a confirmation from the user to proceed with the order, query `POST /v1/al/quotes/accept` to proceed. Include your internal reference identifier for that order as the value for the `refId` parameter.
+
+    ```
+    curl --request POST \
+      --url https://stage-connect.hellogold.com/v1/al/quotes/accept \
+      --header 'Content-Type: application/json' \
+      --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992' \
+      --header 'x-user-id: yassirtest9992' \
+      --data '{
+      "quoteId": "b6da8391-ea86-431d-9235-98d7365b423e",
+      "refId": "YSR-5c0bfa90-dcab-11ec-9c02-5774bb48578d"
+    }'
+    ```
+
+    An order will then be returned as the response, and the gold will be credited to the user's account.
+
+    ```
+    {
+      "ok": true,
+      "id": "b6da8391-ea86-431d-9235-98d7365b423e",
+      "type": "quote",
+      "status": "accepted",
+      "order": {
+        "id": "5b909a9f-809c-4339-aa44-c4e333d7c30a",
+        "type": "order",
+        "tx_type": "buy",
+        "status": "complete",
+        "created_at": "2022-05-26T04:21:37+00:00",
+        "updated_at": "2022-05-26T04:21:38+00:00",
+        "details": {
+          "items": [
+            {
+              "id": "DXAU-001",
+              "uom": "g",
+              "quantity": "0.1",
+              "price": "17.35",
+              "symbol": "XAUMYR"
+            }
+          ],
+          "subtotal": "17.35",
+          "discount": "0.00",
+          "tax": "0.00",
+          "shipping": "0.00",
+          "total": "17.35"
+        },
+        "reference": {
+          "quote": "b6da8391-ea86-431d-9235-98d7365b423e",
+          "partner": "YSR-534cc060-dcab-11ec-9c02-5774bb48578d"
+        }
+      }
+    }
+    ```
+
+
+    ## Next steps
+
+    - Develop your app further and make use of any other endpoints as necessary.
+
+    # Responses
     HelloGold API will return HTTP status codes. Most of the response also includes JSON as part of the response bodies.
 
-    ### HTTP status codes
+    ## HTTP status codes
     HelloGold API will return HTTP `2XX` status codes for any successful requests. For failed requests, HelloGold API will return either HTTP `4XX` status codes when there's an error with the requests, or HTTP `5XX` status codes when there's an issue on our side.
 
     Error responses usually includes JSON document in the response body which will contain information about the error.
@@ -37,9 +262,6 @@ info:
     | 422 Unprocessable Entity  | UNPROCESSABLE_ENTITY. The system cannon complete the action specified in the request due to the request action is semantically incorrect, or fails business validation. |
     | 500 Internal Server Error | INTERNAL_SERVER_ERROR. An internal server error has occurred.  The client provides a correct request, but something unexpected has happened on the server. |
     | 503 Service Unavailable   | SERVICE_UNAVAILABLE. Service unavailable. |
-
-    ## Contact us
-    Need help? Feel free to get in touch with our team by sending an email to us at hello@hellogold.com
 
     # Environment
 
@@ -157,6 +379,7 @@ paths:
           in: header
           name: x-user-id
           description: The unique identifier of the user.
+          required: true
         - schema:
             type: string
             example: XAUMYR
