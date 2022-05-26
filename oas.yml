@@ -46,6 +46,7 @@ info:
     curl --request GET \
       --url 'https://stage-connect.hellogold.com/v1/al/ticker/price?symbol=XAUMYR' \
       --header 'Content-Type: application/json' \
+      --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992'
     ```
 
     If you've previously created a HelloGold account for your user, include the `x-user-id` parameter accordingly.
@@ -54,7 +55,8 @@ info:
     curl --request GET \
       --url 'https://stage-connect.hellogold.com/v1/al/ticker/price?symbol=XAUMYR' \
       --header 'Content-Type: application/json' \
-      --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992'
+      --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992' \
+      --header 'x-user-id: yassirtest9992'
     ```
 
     Any one of those two requests should return a response, with the current gold price:
