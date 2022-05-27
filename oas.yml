@@ -269,10 +269,11 @@ info:
 
     The domain name for each environment are listed below:
 
-    | Type               | Domain name                     |
-    | ------------------ | ------------------------------- |
+    | Type               | Domain name                         |
+    | ------------------ | ----------------------------------- |
     | Staging            | https://stage-connect.hellogold.com |
-    | Production         | https://connect.hellogold.com   |
+    | UAT                | https://uat-connect.hellogold.com   |
+    | Production         | https://connect.hellogold.com       |
 
     # Types
 
