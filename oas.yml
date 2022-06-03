@@ -29,6 +29,12 @@ info:
 
     # Getting Started
 
+    <p align="center">
+      <img src="https://raw.githubusercontent.com/myHelloGold/hg-draft-doc/main/assets/HG_Connect_Flow-with_Landing.png">
+    </p>
+    <p align="center">
+      <img src="https://raw.githubusercontent.com/myHelloGold/hg-draft-doc/main/assets/HG_Connect_Flow-without_Landing.png">
+    </p>
     This section explains on a high level, various ways on how to integrate HelloGold Connect with your app, and allow your users to buy, save and sell physical investment-grade gold.
 
     It assumes you know how to perform REST API calls.
