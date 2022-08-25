@@ -266,8 +266,8 @@ info:
 
     1. At the end of each business day, the Partner receives the Settlement Report.
     2. Partner verifies the report internally against their own record. Depending on the outcome of the internal verification:
-      - Partner raises a dispute and cross checks the affected transaction with HelloGold, OR
-      - No dispute is found
+    	- Partner raises a dispute and cross checks the affected transaction with HelloGold, OR
+    	- No dispute is found
     3. Once all disputes (if any) are resolved, the respective party (either HelloGold or Partner) proceeds to make the payment (if any) within 2 working days.
 
     ### Example 1
