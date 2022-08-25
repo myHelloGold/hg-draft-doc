@@ -250,6 +250,38 @@ info:
 
     - Develop your app further and make use of any other endpoints as necessary.
 
+    # Settlement
+
+    Settlement is the process in which HelloGold collects or pays the amounts due from/to the partners for  transactions that are completed by the partner's user. Amounts receivable and payable to partners are offset for settlement. Settlements are done in the Settlement Currency of a partner's choosing.
+
+    ## Settlement Cycle
+
+    The settlement cycle is 'T+2' working days (where 'T' is the transaction date).
+
+    ## Settlement Process
+
+    [image here]
+
+    Following is the process flow for Settlement:
+
+    1. At the end of each business day, the Partner receives the Settlement Report.
+    2. Partner verifies the report internally against their own record. Depending on the outcome of the internal verification:
+      - Partner raises a dispute and cross checks the affected transaction with HelloGold, OR
+      - No dispute is found
+    3. Once all disputes (if any) are resolved, the respective party (either HelloGold or Partner) proceeds to make the payment (if any) within 2 working days.
+
+    ### Example 1
+
+    There are a total of 20 transactions on 1st August 2022, and the standard settlement schedule is T+2 working days (where 'T' is the transaction date).
+
+    Once the Partner has verified the transactions and confirmed that there is no further dispute to be raised, payment would be remitted by 3rd August 2022.
+
+    ### Example 2
+
+    There are a total of 20 transactions on 1st August 2022, and the standard settlement schedule is T+2 working days (where 'T' is the transaction date).
+
+    If there are issues found in the transactions logged in the report dated 1st August 2022, then Partner is to raise a dispute with HelloGold accordingly. After verification was done by both parties and assuming that the dispute was solved on 5th August 2022, the payment should be remitted by 9th August 2022.
+
     # Responses
     HelloGold API will return HTTP status codes. Most of the response also includes JSON as part of the response bodies.
 
