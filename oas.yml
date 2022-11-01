@@ -2683,14 +2683,19 @@ paths:
                   type: string
                   minLength: 1
                   description: The quote unique identifier.
+                immediatePayment:
+                  type: string
+                  description: 'Flag to indicate payment flow. Set `true` to trigger CashToGold flow, and update balance in system maintained by HG.'
               required:
                 - refId
                 - quoteId
+                - immediatePayment
             examples:
               example-1:
                 value:
                   refId: 61bad7600814317188ad4094
                   quoteId: 61bad7607723df2833df0ad9
+                  immediatePayment: true
           application/xml:
             schema:
               type: object
