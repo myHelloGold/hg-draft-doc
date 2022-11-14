@@ -1666,6 +1666,114 @@ paths:
                   type: string
                   description: The callback URL to be used for the transaction.
     parameters: []
+  /v1/al/topups/get:
+    get:
+      summary: Get a topup
+      description: Get information about a specific quote.
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: 1e6d7c24-6ef9-46a9-be38-2a6fe4775031
+          required: true
+          description: The API key required for authentication.
+        - name: x-user-id
+          in: header
+          schema:
+            type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
+          example: 727ab067-28d9-4938-9ba1-64acfc373e7f
+          required: true
+          description: The unique identifier of the user.
+        - schema:
+            type: string
+          in: query
+          name: topupId
+          description: The topup unique identifier.
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                    minLength: 1
+                    description: Flag indicating if the request is successful or not.
+                  id:
+                    type: string
+                    minLength: 1
+                    description: The topup identifier.
+                  type:
+                    type: string
+                    minLength: 1
+                    description: The type of transaction
+                  method:
+                    type: string
+                    minLength: 1
+                    description: The method of the transaction.
+                  status:
+                    type: string
+                    minLength: 1
+                    description: The status of the transaction.
+                  created_at:
+                    type: string
+                    minLength: 1
+                    description: Timestamp of when the transaction was created.
+                  updated_at:
+                    type: string
+                    minLength: 1
+                    description: Timestamp of when the transaction was last updated.
+                  metadata:
+                    type: object
+                    properties:
+                      callback_url:
+                        type: string
+                        description: The callback URL.
+                        nullable: true
+                      description:
+                        type: string
+                        description: Notes included with the transaction.
+                        nullable: true
+              example:
+                ok: true
+                id: 6783e6c6-c3f5-4716-8039-d68fafa9e218
+                type: topup
+                method: balance
+                status: success
+                created_at: '2022-07-27T05:51:04+00:00'
+                updated_at: '2022-07-27T05:51:04+00:00'
+                metadata:
+                  callback_url: 'https://callback/url/here'
+                  description: ''
+              x-examples:
+                example-1:
+                  value:
+                    ok: true
+                    id: 6783e6c6-c3f5-4716-8039-d68fafa9e218
+                    type: topup
+                    method: balance
+                    status: success
+                    created_at: '2022-07-27T05:51:04+00:00'
+                    updated_at: '2022-07-27T05:51:04+00:00'
+                    metadata:
+                      callback_url: 'https://callback/url/here'
+                      description: ''
+      operationId: getTopup
+      tags:
+        - topups
+    parameters: []
   /v1/al/quotes/create:
     post:
       summary: Create a quote
