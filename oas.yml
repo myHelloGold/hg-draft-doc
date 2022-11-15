@@ -24,9 +24,11 @@ x-tagGroups:
       - accounts
   - name: Transactions
     tags:
-      - topups
       - quotes
       - orders
+  - name: WIP
+    tags:
+      - topups
 paths:
   /v1/al/ticker/price:
     parameters: []
