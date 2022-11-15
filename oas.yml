@@ -19,6 +19,14 @@ x-tagGroups:
   - name: Price
     tags:
       - ticker
+  - name: Accounts
+    tags:
+      - accounts
+  - name: Transactions
+    tags:
+      - topups
+      - quotes
+      - orders
 paths:
   /v1/al/ticker/price:
     parameters: []
