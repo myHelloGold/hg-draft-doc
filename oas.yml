@@ -15,6 +15,10 @@ info:
   description: "# Overview\nWelcome to HelloGold Connect, a collection of APIs which are  organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\n\nIntegrating your product with HelloGold Connect means that you'll be in control of your own user flow and experience, while being able to:\n- Get current gold prices\n- Create a user account\n- Allow users to buy and/or sell gold\n\n## Versioning\nThe current API version is v1. The version is specified in the URL.\n\n## Contact us\nNeed help? Feel free to get in touch with our team by sending an email to us at hello@hellogold.com\n\n# Getting Started\n\n<div style=\"text-align:center;\">\n  <a href=\"https://raw.githubusercontent.com/myHelloGold/hg-draft-doc/main/assets/HG_Connect_Flow-without_Landing.png\" target=\"_blank\"><img style=\"max-width:80%;border:1px solid rgba(38,50,56,0.1);padding:2px;\" alt=\"Example flow showing an integration, on a high level.\"src=\"https://raw.githubusercontent.com/myHelloGold/hg-draft-doc/main/assets/HG_Connect_Flow-without_Landing.png\"/></a>\n</div>\n\nThis section explains on a high level, various ways on how to integrate HelloGold Connect with your app, and allow your users to buy, save and sell physical investment-grade gold.\n\nIt assumes you know how to perform REST API calls.\n\n## Before You Start\n\nYou will need the following:\n- A HelloGold Connect API key.\n\n## Get current gold prices\n\nQuery the `GET /v1/al/ticker/price`. \n\n```\ncurl --request GET \\\n  --url 'https://stage-connect.hellogold.com/v1/al/ticker/price?symbol=XAUMYR' \\\n  --header 'Content-Type: application/json' \\\n  --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992'\n```\n\nIf you've previously created a HelloGold account for your user, include the `x-user-id` parameter accordingly.\n\n```\ncurl --request GET \\\n  --url 'https://stage-connect.hellogold.com/v1/al/ticker/price?symbol=XAUMYR' \\\n  --header 'Content-Type: application/json' \\\n  --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992' \\\n  --header 'x-user-id: 7153cb797036415a99393752870514d1'\n```\n\nAny one of those two requests should return a response, with the current gold price:\n\n```\n{\n  \"ok\": true,\n  \"symbol\": \"XAUMYR\",\n  \"buy_price\": \"173.47\",\n  \"sell_price\": \"154.90\",\n  \"mid_price\": \"164.19\",\n  \"timestamp\": \"2022-05-25T04:04:08+00:00\"\n}\n```\n\n## Create a user account\n\nA user account is required in order to perform any transaction on HelloGold Connect. To create an account for the user, query `POST /v1/al/accounts/create`. \n\n```\ncurl --request POST \\\n  --url https://stage-connect.hellogold.com/v1/al/accounts/create \\\n  --header 'Content-Type: application/json' \\\n  --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992' \\\n  --header 'x-user-id: 7153cb797036415a99393752870514d1' \\\n  --data '{\n  \"language\": \"en\",\n  \"kyc_level\": 2,\n  \"phone\": \"+601100009992\",\n  \"email\": \"john.doe@example.com\",\n  \"full_name\": \"John Doe\",\n  \"id_number\": \"830328119992\",\n  \"id_type\": \"idcard\",\n  \"nationality\": \"MYS\",\n  \"id_expiry\": \"2023-12-15\"\n}'\n```\n\nThis should return the account detail for the user.\n\n```\n{\n  \"ok\": true,\n  \"user_id\": \"7153cb797036415a99393752870514d1\",\n  \"status\": \"active\",\n  \"referral_code\": null,\n  \"created_at\": \"2022-05-25T07:53:25+00:00\",\n  \"updated_at\": \"2022-05-25T07:53:25+00:00\",\n  \"deleted_at\": null,\n  \"configuration\": {\n    \"buy_enabled\": true,\n    \"sell_enabled\": true,\n    \"smart_saver_enabled\": true,\n    \"transfer_enabled\": true,\n    \"withdraw_enabled\": true\n  },\n  \"balances\": [\n    {\n      \"type\": \"MYR\",\n      \"total_balance\": \"0.0\",\n      \"total_locked_balance\": \"0.0\",\n      \"total_available_balance\": \"0.0\",\n      \"accrued_fees\": \"0.00\",\n      \"uom\": null\n    },\n    {\n      \"type\": \"XAU\",\n      \"total_balance\": \"0.0\",\n      \"total_locked_balance\": \"0.0\",\n      \"total_available_balance\": \"0.0\",\n      \"accrued_fees\": \"0.0\",\n      \"uom\": \"g\"\n    }\n  ],\n  \"recent_transactions\": []\n}\n```\n\n## Buying gold\n\nWhen the user has confirmed their intent to proceed with the transaction (either buy or sell), a quote needs to be created . To create a quote, query `POST /v1/al/quotes/create`.\n\n```\ncurl --request POST \\\n  --url https://stage-connect.hellogold.com/v1/al/quotes/create \\\n  --header 'Content-Type: application/json' \\\n  --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992' \\\n  --header 'x-user-id: 7153cb797036415a99393752870514d1' \\\n  --data '{\n  \"tx_type\": \"buy\",\n  \"symbol\": \"XAUMYR\",\n  \"quantity\": \"0.1\",\n  \"uom\": \"g\"\n}'\n```\n\nA quote will be returned as the response, where the rates will be locked for 2 minutes before the quote will expire.\n\n```\n{\n  \"ok\": true,\n  \"id\": \"b6da8391-ea86-431d-9235-98d7365b423e\",\n  \"type\": \"quote\",\n  \"tx_type\": \"buy\",\n  \"status\": \"open\",\n  \"created_at\": \"2022-05-26T04:21:21+00:00\",\n  \"updated_at\": \"2022-05-26T04:21:21+00:00\",\n  \"expire_on\": \"2022-05-26T04:23:21+00:00\",\n  \"details\": {\n    \"items\": [\n      {\n        \"id\": \"DXAU-001\",\n        \"symbol\": \"XAUMYR\",\n        \"quantity\": \"0.1\",\n        \"price\": \"17.35\",\n        \"uom\": \"g\"\n      }\n    ],\n    \"subtotal\": \"17.35\",\n    \"discount\": \"0.00\",\n    \"tax\": \"0.00\",\n    \"shipping\": \"0.00\",\n    \"total\": \"17.35\"\n  },\n  \"transition\": {\n    \"accepted\": null,\n    \"cancelled\": null\n  }\n}\n```\n\nOnce you've gotten a confirmation from the user to proceed with the order, call `POST /v1/al/quotes/accept` to proceed. Include your internal reference identifier for that order as the value for the `refId` parameter.\n\n```\ncurl --request POST \\\n  --url https://stage-connect.hellogold.com/v1/al/quotes/accept \\\n  --header 'Content-Type: application/json' \\\n  --header 'x-api-key: b5c2c6a2-f496-448c-9d3d-486437a3b992' \\\n  --header 'x-user-id: 7153cb797036415a99393752870514d1' \\\n  --data '{\n  \"quoteId\": \"b6da8391-ea86-431d-9235-98d7365b423e\",\n  \"refId\": \"TEST-7b4e3716e90844279fe1f5d567ef2c98\"\n}'\n```\n\nAn order will then be returned as the response, and the gold will be credited to the user's account.\n\n```\n{\n  \"ok\": true,\n  \"id\": \"b6da8391-ea86-431d-9235-98d7365b423e\",\n  \"type\": \"quote\",\n  \"status\": \"accepted\",\n  \"order\": {\n    \"id\": \"5b909a9f-809c-4339-aa44-c4e333d7c30a\",\n    \"type\": \"order\",\n    \"tx_type\": \"buy\",\n    \"status\": \"complete\",\n    \"created_at\": \"2022-05-26T04:21:37+00:00\",\n    \"updated_at\": \"2022-05-26T04:21:38+00:00\",\n    \"details\": {\n      \"items\": [\n        {\n          \"id\": \"DXAU-001\",\n          \"uom\": \"g\",\n          \"quantity\": \"0.1\",\n          \"price\": \"17.35\",\n          \"symbol\": \"XAUMYR\"\n        }\n      ],\n      \"subtotal\": \"17.35\",\n      \"discount\": \"0.00\",\n      \"tax\": \"0.00\",\n      \"shipping\": \"0.00\",\n      \"total\": \"17.35\"\n    },\n    \"reference\": {\n      \"quote\": \"b6da8391-ea86-431d-9235-98d7365b423e\",\n      \"partner\": \"TEST-7b4e3716e90844279fe1f5d567ef2c98\"\n    }\n  }\n}\n```\n\n\n## Next steps\n\n- Develop your app further and make use of any other endpoints as necessary.\n\n# Settlement\n\nSettlement is the process in which HelloGold collects or pays the amounts due from/to the partners for  transactions that are completed by the partner's user. Amounts receivable and payable to partners are offset for settlement. Settlements are done in the Settlement Currency of a partner's choosing.\n\n## Settlement Cycle\n\nThe settlement cycle is 'T+2' working days (where 'T' is the transaction date).\n\n## Settlement Process\n\n[image here]\n\nFollowing is the process flow for Settlement:\n\n1. At the end of each business day, the Partner receives the Settlement Report.\n2. Partner verifies the report internally against their own record. Depending on the outcome of the internal verification:\n\t- Partner raises a dispute and cross checks the affected transaction with HelloGold, OR\n\t- No dispute is found\n3. Once all disputes (if any) are resolved, the respective party (either HelloGold or Partner) proceeds to make the payment (if any) within 2 working days.\n\n### Example 1\n\nThere are a total of 20 transactions on 1st August 2022, and the standard settlement schedule is T+2 working days (where 'T' is the transaction date).\n\nOnce the Partner has verified the transactions and confirmed that there is no further dispute to be raised, payment would be remitted by 3rd August 2022.\n\n### Example 2\n\nThere are a total of 20 transactions on 1st August 2022, and the standard settlement schedule is T+2 working days (where 'T' is the transaction date).\n\nIf there are issues found in the transactions logged in the report dated 1st August 2022, then Partner is to raise a dispute with HelloGold accordingly. After verification was done by both parties and assuming that the dispute was solved on 5th August 2022, the payment should be remitted by 9th August 2022.\n\n# Responses\nHelloGold API will return HTTP status codes. Most of the response also includes JSON as part of the response bodies.\n\n## HTTP status codes\nHelloGold API will return HTTP `2XX` status codes for any successful requests. For failed requests, HelloGold API will return either HTTP `4XX` status codes when there's an error with the requests, or HTTP `5XX` status codes when there's an issue on our side.\n\nError responses usually includes JSON document in the response body which will contain information about the error.\n\n| Status Code               | Description                |\n|---------------------------|----------------------------|\n| 200 OK                    | The request is successful. |\n| 400 Bad Request           | INVALID_REQUEST. The request is not well-formed, syntactically incorrect, or violates the schema. |\n| 401 Unauthorized          | INVALID_CLIENT. The client is not authorized to access the resource.  INVALID_TOKEN. The provided token is invalid due to either being expired, revoked, malformed or invalid. |\n| 403 Forbidden             | NOT_AUTHORIZED. The user does not have the permission to perform the operation. |\n| 404 Not Found             | NOT_FOUND. The requested resource does not exists. |\n| 422 Unprocessable Entity  | UNPROCESSABLE_ENTITY. The system cannon complete the action specified in the request due to the request action is semantically incorrect, or fails business validation. |\n| 500 Internal Server Error | INTERNAL_SERVER_ERROR. An internal server error has occurred.  The client provides a correct request, but something unexpected has happened on the server. |\n| 503 Service Unavailable   | SERVICE_UNAVAILABLE. Service unavailable. |\n\n# Environment\n\nThe domain name for each environment are listed below:\n\n| Type               | Domain name                         |\n| ------------------ | ----------------------------------- |\n| Staging            | https://stage-connect.hellogold.com |\n| UAT                | https://uat-connect.hellogold.com   |\n| Production         | https://connect.hellogold.com       |\n\n# Types\n\n## Timestamp\nUnless explicitly specified, all timestamps from HelloGold Connect are returned in UTC, based on ISO 8601. Example as follows:\n\n```text\n2021-04-13T07:22:02+00:00\n```\n\n# Authentication\nHelloGold API uses API keys to authenticate requests. At the moment, API keys will only be provided to selected partners, manually.\n\nPlease ensure that you keep your API keys secure. Do not share your secret API keys publicly.\n\nAll requests should be made over HTTPS. Any calls made over plain HTTP, or without authentication will fail.\n\n<SecurityDefinitions />\n\n## Passing the user identification\nHelloGold API requires both the API key, and user identification to be included, as part of any request.\n\nExample:\n```\nAPI_KEY='1e6d7c24-6ef9-46a9-be38-2a6fe4775031'\nUSER_ID='727ab067-28d9-4938-9ba1-64acfc373e7f'\n\ncurl --request GET \\\n  --url 'https://stage-connect.hellogold.com/v1/al/placeholder' \\\n  --header 'Content-Type: application/json' \\\n  --header \"x-api-key: ${API_KEY}\" \\\n  --header \"x-user-id: ${USER_ID}\"\n```"
 servers:
   - url: 'https://stage-connect.hellogold.com'
+tags:
+  - name: webhook
+    description: |
+      Test description for webhook. Lorem ipsum dolor sit amet.
 x-tagGroups:
   - name: Price
     tags:
@@ -29,6 +33,7 @@ x-tagGroups:
   - name: WIP
     tags:
       - topups
+      - webhook
 paths:
   /v1/al/ticker/price:
     parameters: []
@@ -2953,6 +2958,87 @@ paths:
       security: []
       tags:
         - orders
+  /v1/al/webhook/list:
+    parameters: []
+    get:
+      summary: Get current price
+      operationId: listWebhook
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                x-examples:
+                  example-1:
+                    - timestamp: '2022-04-14T06:54:55+00:00'
+                      symbol: XAUMYR
+                      buy_price: '248.15'
+                      sell_price: '236.20'
+                      mid_price: '242.18'
+                items:
+                  type: object
+                  properties:
+                    ok:
+                      type: boolean
+                      minLength: 1
+                      description: Flag indicating if the request is successful or not.
+                    timestamp:
+                      type: string
+                      minLength: 1
+                      description: The timestamp of when the price snapshot is taken.
+                    symbol:
+                      type: string
+                      minLength: 1
+                      description: The symbol of the asset.
+                    buy_price:
+                      type: string
+                      minLength: 1
+                      description: The buy price of the asset.
+                    sell_price:
+                      type: string
+                      minLength: 1
+                      description: The sell price of the asset.
+                    mid_price:
+                      type: string
+                      minLength: 1
+                      description: The mid price of the asset.
+              example:
+                - ok: true
+                  timestamp: '2022-04-14T06:54:55+00:00'
+                  symbol: XAUMYR
+                  buy_price: '211.78'
+                  sell_price: '204.42'
+                  mid_price: '208.11'
+      description: List available webhook events
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: x-api-key
+          description: The API key required for authentication.
+          required: true
+        - schema:
+            type: string
+            pattern: '^[A-Za-z0-9+=,.@-]+$'
+            minLength: 1
+            maxLength: 128
+          in: header
+          name: x-user-id
+          description: The unique identifier of the user.
+          required: true
+        - schema:
+            type: string
+            example: XAUMYR
+          in: query
+          name: symbol
+          description: The symbol of the asset.
+      tags:
+        - webhook
 components:
   securitySchemes:
     x-api-key:
