@@ -2961,7 +2961,7 @@ paths:
   /v1/al/webhook/list:
     parameters: []
     get:
-      summary: Get current price
+      summary: Get webhook events
       operationId: listWebhook
       responses:
         '200':
