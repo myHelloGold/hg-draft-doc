@@ -18,7 +18,7 @@ servers:
 tags:
   - name: webhook
     description: |
-      Test description for webhook. Lorem ipsum dolor sit amet.
+      Webhooks are a type of software connection that can be used by applications to communicate with each other. HelloGold can send automated messages to your application when something happens, so your app will be notified immediately after specific events occur, instead of calling a specific API regularly.
 x-tagGroups:
   - name: Price
     tags:
